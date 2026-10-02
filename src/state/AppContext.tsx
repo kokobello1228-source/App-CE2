@@ -1,0 +1,64 @@
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+import { setSpeechRate } from '../services/speech';
+import { Repository } from '../storage/repository';
+import { DEFAULT_SETTINGS, type Settings } from '../storage/settings';
+
+interface AppState {
+  repo: Repository;
+  settings: Settings;
+  updateSettings(patch: Partial<Settings>): Promise<void>;
+  /** Incremented after each session so screens reload their data. */
+  dataVersion: number;
+  notifyDataChanged(): void;
+}
+
+const AppContext = createContext<AppState | null>(null);
+
+export function AppProvider({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
+  const [repo, setRepo] = useState<Repository | null>(null);
+  const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+  const [dataVersion, setDataVersion] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const opened = await Repository.open();
+      const stored = await opened.getSettings();
+      if (cancelled) return;
+      setSpeechRate(stored.voiceRate);
+      setSettings(stored);
+      setRepo(opened);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const updateSettings = useCallback(
+    async (patch: Partial<Settings>) => {
+      if (!repo) return;
+      await repo.saveSettings(patch);
+      setSettings((previous) => {
+        const next = { ...previous, ...patch };
+        setSpeechRate(next.voiceRate);
+        return next;
+      });
+    },
+    [repo],
+  );
+
+  const notifyDataChanged = useCallback(() => setDataVersion((v) => v + 1), []);
+
+  if (!repo) return <>{fallback}</>;
+  return (
+    <AppContext.Provider value={{ repo, settings, updateSettings, dataVersion, notifyDataChanged }}>
+      {children}
+    </AppContext.Provider>
+  );
+}
+
+export function useApp(): AppState {
+  const value = useContext(AppContext);
+  if (!value) throw new Error('useApp must be used inside AppProvider');
+  return value;
+}

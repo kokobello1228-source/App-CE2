@@ -1,0 +1,1061 @@
+[
+ {
+  "id": "F2-001",
+  "word": "lune",
+  "level": 1,
+  "sentence": "La lune brille dans le ciel.",
+  "invariable": false
+ },
+ {
+  "id": "F2-002",
+  "word": "vélo",
+  "level": 1,
+  "sentence": "Sofia roule à vélo.",
+  "invariable": false
+ },
+ {
+  "id": "F2-003",
+  "word": "robe",
+  "level": 1,
+  "sentence": "Ma tante porte une robe verte.",
+  "invariable": false
+ },
+ {
+  "id": "F2-004",
+  "word": "moto",
+  "level": 1,
+  "sentence": "La moto fait du bruit.",
+  "invariable": false
+ },
+ {
+  "id": "F2-005",
+  "word": "ami",
+  "level": 1,
+  "sentence": "Théo est mon ami.",
+  "invariable": false
+ },
+ {
+  "id": "F2-006",
+  "word": "salade",
+  "level": 1,
+  "sentence": "Nous mangeons de la salade.",
+  "invariable": false
+ },
+ {
+  "id": "F2-007",
+  "word": "tomate",
+  "level": 1,
+  "sentence": "La tomate est bien mûre.",
+  "invariable": false
+ },
+ {
+  "id": "F2-008",
+  "word": "bol",
+  "level": 1,
+  "sentence": "Je bois mon chocolat dans un bol.",
+  "invariable": false
+ },
+ {
+  "id": "F2-009",
+  "word": "sac",
+  "level": 1,
+  "sentence": "Range ta trousse dans ton sac.",
+  "invariable": false
+ },
+ {
+  "id": "F2-010",
+  "word": "porte",
+  "level": 1,
+  "sentence": "Ferme la porte, s’il te plaît.",
+  "invariable": false
+ },
+ {
+  "id": "F2-011",
+  "word": "carte",
+  "level": 1,
+  "sentence": "Papi m’a envoyé une carte.",
+  "invariable": false
+ },
+ {
+  "id": "F2-012",
+  "word": "lac",
+  "level": 1,
+  "sentence": "Les canards nagent sur le lac.",
+  "invariable": false
+ },
+ {
+  "id": "F2-013",
+  "word": "mer",
+  "level": 1,
+  "sentence": "Les bateaux naviguent sur la mer.",
+  "invariable": false
+ },
+ {
+  "id": "F2-014",
+  "word": "mur",
+  "level": 1,
+  "sentence": "Le dessin est accroché au mur.",
+  "invariable": false
+ },
+ {
+  "id": "F2-015",
+  "word": "rue",
+  "level": 1,
+  "sentence": "Nous habitons dans cette rue.",
+  "invariable": false
+ },
+ {
+  "id": "F2-016",
+  "word": "route",
+  "level": 1,
+  "sentence": "La route monte jusqu’au village.",
+  "invariable": false
+ },
+ {
+  "id": "F2-017",
+  "word": "poule",
+  "level": 1,
+  "sentence": "La poule a pondu un œuf.",
+  "invariable": false
+ },
+ {
+  "id": "F2-018",
+  "word": "roue",
+  "level": 1,
+  "sentence": "La roue du vélo est crevée.",
+  "invariable": false
+ },
+ {
+  "id": "F2-019",
+  "word": "lavabo",
+  "level": 1,
+  "sentence": "Je me lave les mains au lavabo.",
+  "invariable": false
+ },
+ {
+  "id": "F2-020",
+  "word": "domino",
+  "level": 1,
+  "sentence": "Il manque un domino dans la boîte.",
+  "invariable": false
+ },
+ {
+  "id": "F2-021",
+  "word": "farine",
+  "level": 1,
+  "sentence": "Il faut de la farine pour faire des crêpes.",
+  "invariable": false
+ },
+ {
+  "id": "F2-022",
+  "word": "cabane",
+  "level": 1,
+  "sentence": "Nous avons construit une cabane.",
+  "invariable": false
+ },
+ {
+  "id": "F2-023",
+  "word": "banane",
+  "level": 1,
+  "sentence": "Le singe mange une banane.",
+  "invariable": false
+ },
+ {
+  "id": "F2-024",
+  "word": "orange",
+  "level": 1,
+  "sentence": "Je presse une orange.",
+  "invariable": false
+ },
+ {
+  "id": "F2-025",
+  "word": "jupe",
+  "level": 1,
+  "sentence": "Lina met sa jupe à fleurs.",
+  "invariable": false
+ },
+ {
+  "id": "F2-026",
+  "word": "pirate",
+  "level": 1,
+  "sentence": "Le pirate cherche un trésor.",
+  "invariable": false
+ },
+ {
+  "id": "F2-027",
+  "word": "parc",
+  "level": 1,
+  "sentence": "Nous jouons au parc.",
+  "invariable": false
+ },
+ {
+  "id": "F2-028",
+  "word": "fil",
+  "level": 1,
+  "sentence": "La couturière coupe le fil.",
+  "invariable": false
+ },
+ {
+  "id": "F2-029",
+  "word": "sol",
+  "level": 1,
+  "sentence": "Le ballon roule sur le sol.",
+  "invariable": false
+ },
+ {
+  "id": "F2-030",
+  "word": "table",
+  "level": 1,
+  "sentence": "Le repas est servi sur la table.",
+  "invariable": false
+ },
+ {
+  "id": "F2-031",
+  "word": "livre",
+  "level": 1,
+  "sentence": "Ce livre raconte une belle histoire.",
+  "invariable": false
+ },
+ {
+  "id": "F2-032",
+  "word": "arbre",
+  "level": 1,
+  "sentence": "L’écureuil grimpe dans l’arbre.",
+  "invariable": false
+ },
+ {
+  "id": "F2-033",
+  "word": "sucre",
+  "level": 1,
+  "sentence": "Je mets un peu de sucre dans le yaourt.",
+  "invariable": false
+ },
+ {
+  "id": "F2-034",
+  "word": "tigre",
+  "level": 1,
+  "sentence": "Le tigre a des rayures.",
+  "invariable": false
+ },
+ {
+  "id": "F2-035",
+  "word": "zèbre",
+  "level": 1,
+  "sentence": "Le zèbre est noir et blanc.",
+  "invariable": false
+ },
+ {
+  "id": "F2-036",
+  "word": "rose",
+  "level": 1,
+  "sentence": "Cette rose sent très bon.",
+  "invariable": false
+ },
+ {
+  "id": "F2-037",
+  "word": "papa",
+  "level": 1,
+  "sentence": "Papa prépare le dîner.",
+  "invariable": false
+ },
+ {
+  "id": "F2-038",
+  "word": "vache",
+  "level": 1,
+  "sentence": "La vache donne du lait.",
+  "invariable": false
+ },
+ {
+  "id": "F2-039",
+  "word": "niche",
+  "level": 1,
+  "sentence": "Le chien dort dans sa niche.",
+  "invariable": false
+ },
+ {
+  "id": "F2-040",
+  "word": "cheval",
+  "level": 1,
+  "sentence": "Le cheval galope dans le pré.",
+  "invariable": false,
+  "plurals": [
+   "chevaux"
+  ]
+ },
+ {
+  "id": "F2-041",
+  "word": "bouche",
+  "level": 1,
+  "sentence": "Ouvre grand la bouche.",
+  "invariable": false
+ },
+ {
+  "id": "F2-042",
+  "word": "mouton",
+  "level": 1,
+  "sentence": "Le mouton a une laine épaisse.",
+  "invariable": false
+ },
+ {
+  "id": "F2-043",
+  "word": "bonbon",
+  "level": 1,
+  "sentence": "Elle m’a donné un bonbon.",
+  "invariable": false
+ },
+ {
+  "id": "F2-044",
+  "word": "jardin",
+  "level": 1,
+  "sentence": "Les fleurs poussent dans le jardin.",
+  "invariable": false
+ },
+ {
+  "id": "F2-045",
+  "word": "lapin",
+  "level": 1,
+  "sentence": "Le lapin mange une carotte.",
+  "invariable": false
+ },
+ {
+  "id": "F2-046",
+  "word": "sapin",
+  "level": 1,
+  "sentence": "Nous décorons le sapin.",
+  "invariable": false
+ },
+ {
+  "id": "F2-047",
+  "word": "matin",
+  "level": 1,
+  "sentence": "Ce matin, il fait froid.",
+  "invariable": false
+ },
+ {
+  "id": "F2-048",
+  "word": "vite",
+  "level": 1,
+  "sentence": "Le guépard court très vite.",
+  "invariable": true
+ },
+ {
+  "id": "F2-049",
+  "word": "midi",
+  "level": 1,
+  "sentence": "Nous déjeunons à midi.",
+  "invariable": true
+ },
+ {
+  "id": "F2-050",
+  "word": "tulipe",
+  "level": 1,
+  "sentence": "La tulipe est rouge.",
+  "invariable": false
+ },
+ {
+  "id": "F2-051",
+  "word": "chat",
+  "level": 2,
+  "sentence": "Le chat dort sur le tapis.",
+  "invariable": false
+ },
+ {
+  "id": "F2-052",
+  "word": "souris",
+  "level": 2,
+  "sentence": "La souris se cache dans un trou.",
+  "invariable": false
+ },
+ {
+  "id": "F2-053",
+  "word": "tapis",
+  "level": 2,
+  "sentence": "Le tapis est tout doux.",
+  "invariable": false
+ },
+ {
+  "id": "F2-054",
+  "word": "nuit",
+  "level": 2,
+  "sentence": "La nuit, on voit les étoiles.",
+  "invariable": false
+ },
+ {
+  "id": "F2-055",
+  "word": "lait",
+  "level": 2,
+  "sentence": "Je bois un verre de lait.",
+  "invariable": false
+ },
+ {
+  "id": "F2-056",
+  "word": "bras",
+  "level": 2,
+  "sentence": "Il porte son petit frère dans ses bras.",
+  "invariable": false
+ },
+ {
+  "id": "F2-057",
+  "word": "riz",
+  "level": 2,
+  "sentence": "Nous mangeons du riz avec du poisson.",
+  "invariable": false
+ },
+ {
+  "id": "F2-058",
+  "word": "maison",
+  "level": 2,
+  "sentence": "Leur maison a un toit rouge.",
+  "invariable": false
+ },
+ {
+  "id": "F2-059",
+  "word": "poisson",
+  "level": 2,
+  "sentence": "Le poisson nage dans le bocal.",
+  "invariable": false
+ },
+ {
+  "id": "F2-060",
+  "word": "garçon",
+  "level": 2,
+  "sentence": "Ce garçon s’appelle Adam.",
+  "invariable": false
+ },
+ {
+  "id": "F2-061",
+  "word": "chapeau",
+  "level": 2,
+  "sentence": "Le magicien sort un lapin de son chapeau.",
+  "invariable": false
+ },
+ {
+  "id": "F2-062",
+  "word": "bateau",
+  "level": 2,
+  "sentence": "Le bateau quitte le port.",
+  "invariable": false
+ },
+ {
+  "id": "F2-063",
+  "word": "oiseau",
+  "level": 2,
+  "sentence": "Un oiseau chante sur la branche.",
+  "invariable": false
+ },
+ {
+  "id": "F2-064",
+  "word": "château",
+  "level": 2,
+  "sentence": "Le roi vit dans un château.",
+  "invariable": false
+ },
+ {
+  "id": "F2-065",
+  "word": "gâteau",
+  "level": 2,
+  "sentence": "Mamie a fait un gâteau aux pommes.",
+  "invariable": false
+ },
+ {
+  "id": "F2-066",
+  "word": "pain",
+  "level": 2,
+  "sentence": "Je vais acheter du pain.",
+  "invariable": false
+ },
+ {
+  "id": "F2-067",
+  "word": "main",
+  "level": 2,
+  "sentence": "Lève la main pour parler.",
+  "invariable": false
+ },
+ {
+  "id": "F2-068",
+  "word": "train",
+  "level": 2,
+  "sentence": "Le train entre en gare.",
+  "invariable": false
+ },
+ {
+  "id": "F2-069",
+  "word": "neige",
+  "level": 2,
+  "sentence": "La neige tombe sur la montagne.",
+  "invariable": false
+ },
+ {
+  "id": "F2-070",
+  "word": "baleine",
+  "level": 2,
+  "sentence": "La baleine est un très grand animal.",
+  "invariable": false
+ },
+ {
+  "id": "F2-071",
+  "word": "montagne",
+  "level": 2,
+  "sentence": "Nous marchons dans la montagne.",
+  "invariable": false
+ },
+ {
+  "id": "F2-072",
+  "word": "araignée",
+  "level": 2,
+  "sentence": "L’araignée tisse sa toile.",
+  "invariable": false
+ },
+ {
+  "id": "F2-073",
+  "word": "fille",
+  "level": 2,
+  "sentence": "Cette fille joue du violon.",
+  "invariable": false
+ },
+ {
+  "id": "F2-074",
+  "word": "famille",
+  "level": 2,
+  "sentence": "Toute la famille est réunie.",
+  "invariable": false
+ },
+ {
+  "id": "F2-075",
+  "word": "soleil",
+  "level": 2,
+  "sentence": "Le soleil se lève.",
+  "invariable": false
+ },
+ {
+  "id": "F2-076",
+  "word": "abeille",
+  "level": 2,
+  "sentence": "L’abeille butine les fleurs.",
+  "invariable": false
+ },
+ {
+  "id": "F2-077",
+  "word": "éléphant",
+  "level": 2,
+  "sentence": "L’éléphant a une longue trompe.",
+  "invariable": false
+ },
+ {
+  "id": "F2-078",
+  "word": "photo",
+  "level": 2,
+  "sentence": "Regarde cette photo de vacances.",
+  "invariable": false
+ },
+ {
+  "id": "F2-079",
+  "word": "pomme",
+  "level": 2,
+  "sentence": "Je croque une pomme.",
+  "invariable": false
+ },
+ {
+  "id": "F2-080",
+  "word": "ballon",
+  "level": 2,
+  "sentence": "Lance-moi le ballon.",
+  "invariable": false
+ },
+ {
+  "id": "F2-081",
+  "word": "école",
+  "level": 2,
+  "sentence": "Je vais à l’école à pied.",
+  "invariable": false
+ },
+ {
+  "id": "F2-082",
+  "word": "élève",
+  "level": 2,
+  "sentence": "Chaque élève a un casier.",
+  "invariable": false
+ },
+ {
+  "id": "F2-083",
+  "word": "crayon",
+  "level": 2,
+  "sentence": "Taille ton crayon.",
+  "invariable": false
+ },
+ {
+  "id": "F2-084",
+  "word": "cahier",
+  "level": 2,
+  "sentence": "Écris la date dans ton cahier.",
+  "invariable": false
+ },
+ {
+  "id": "F2-085",
+  "word": "escalier",
+  "level": 2,
+  "sentence": "Je monte l’escalier.",
+  "invariable": false
+ },
+ {
+  "id": "F2-086",
+  "word": "dessin",
+  "level": 2,
+  "sentence": "Ton dessin est magnifique.",
+  "invariable": false
+ },
+ {
+  "id": "F2-087",
+  "word": "classe",
+  "level": 2,
+  "sentence": "Notre classe est au premier étage.",
+  "invariable": false
+ },
+ {
+  "id": "F2-088",
+  "word": "trésor",
+  "level": 2,
+  "sentence": "Les enfants ont trouvé un trésor.",
+  "invariable": false
+ },
+ {
+  "id": "F2-089",
+  "word": "cerise",
+  "level": 2,
+  "sentence": "La cerise est rouge et sucrée.",
+  "invariable": false
+ },
+ {
+  "id": "F2-090",
+  "word": "girafe",
+  "level": 2,
+  "sentence": "La girafe a un long cou.",
+  "invariable": false
+ },
+ {
+  "id": "F2-091",
+  "word": "genou",
+  "level": 2,
+  "sentence": "Je me suis fait mal au genou.",
+  "invariable": false,
+  "plurals": [
+   "genoux"
+  ]
+ },
+ {
+  "id": "F2-092",
+  "word": "mouchoir",
+  "level": 2,
+  "sentence": "Prends un mouchoir pour te moucher.",
+  "invariable": false
+ },
+ {
+  "id": "F2-093",
+  "word": "histoire",
+  "level": 2,
+  "sentence": "Raconte-moi une histoire.",
+  "invariable": false
+ },
+ {
+  "id": "F2-094",
+  "word": "jaune",
+  "level": 2,
+  "sentence": "Le citron est jaune.",
+  "invariable": false
+ },
+ {
+  "id": "F2-095",
+  "word": "chaud",
+  "level": 2,
+  "sentence": "Le thé est très chaud.",
+  "invariable": false
+ },
+ {
+  "id": "F2-096",
+  "word": "froid",
+  "level": 2,
+  "sentence": "En hiver, il fait froid.",
+  "invariable": false
+ },
+ {
+  "id": "F2-097",
+  "word": "grand",
+  "level": 2,
+  "sentence": "Mon frère est grand.",
+  "invariable": false
+ },
+ {
+  "id": "F2-098",
+  "word": "petit",
+  "level": 2,
+  "sentence": "Le chaton est tout petit.",
+  "invariable": false
+ },
+ {
+  "id": "F2-099",
+  "word": "fourmi",
+  "level": 2,
+  "sentence": "La fourmi porte une miette.",
+  "invariable": false
+ },
+ {
+  "id": "F2-100",
+  "word": "village",
+  "level": 2,
+  "sentence": "Le village est au bord de la rivière.",
+  "invariable": false
+ },
+ {
+  "id": "F2-101",
+  "word": "toujours",
+  "level": 3,
+  "sentence": "Il est toujours à l’heure.",
+  "invariable": true
+ },
+ {
+  "id": "F2-102",
+  "word": "beaucoup",
+  "level": 3,
+  "sentence": "J’aime beaucoup les fraises.",
+  "invariable": true
+ },
+ {
+  "id": "F2-103",
+  "word": "maintenant",
+  "level": 3,
+  "sentence": "Range ta chambre maintenant.",
+  "invariable": true
+ },
+ {
+  "id": "F2-104",
+  "word": "longtemps",
+  "level": 3,
+  "sentence": "Nous avons attendu longtemps.",
+  "invariable": true
+ },
+ {
+  "id": "F2-105",
+  "word": "aujourd’hui",
+  "level": 3,
+  "sentence": "Aujourd’hui, c’est mon anniversaire.",
+  "invariable": true
+ },
+ {
+  "id": "F2-106",
+  "word": "demain",
+  "level": 3,
+  "sentence": "Demain, nous irons à la plage.",
+  "invariable": true
+ },
+ {
+  "id": "F2-107",
+  "word": "hier",
+  "level": 3,
+  "sentence": "Hier, il a plu toute la journée.",
+  "invariable": true
+ },
+ {
+  "id": "F2-108",
+  "word": "souvent",
+  "level": 3,
+  "sentence": "Je vais souvent chez ma grand-mère.",
+  "invariable": true
+ },
+ {
+  "id": "F2-109",
+  "word": "parfois",
+  "level": 3,
+  "sentence": "Parfois, nous mangeons dehors.",
+  "invariable": true
+ },
+ {
+  "id": "F2-110",
+  "word": "encore",
+  "level": 3,
+  "sentence": "Je veux encore un peu de soupe.",
+  "invariable": true
+ },
+ {
+  "id": "F2-111",
+  "word": "jamais",
+  "level": 3,
+  "sentence": "Il ne ment jamais.",
+  "invariable": true
+ },
+ {
+  "id": "F2-112",
+  "word": "après",
+  "level": 3,
+  "sentence": "Nous jouerons après le goûter.",
+  "invariable": true
+ },
+ {
+  "id": "F2-113",
+  "word": "avant",
+  "level": 3,
+  "sentence": "Lave-toi les mains avant de manger.",
+  "invariable": true
+ },
+ {
+  "id": "F2-114",
+  "word": "pendant",
+  "level": 3,
+  "sentence": "Il a dormi pendant le voyage.",
+  "invariable": true
+ },
+ {
+  "id": "F2-115",
+  "word": "depuis",
+  "level": 3,
+  "sentence": "Elle apprend le piano depuis un an.",
+  "invariable": true
+ },
+ {
+  "id": "F2-116",
+  "word": "dehors",
+  "level": 3,
+  "sentence": "Les enfants jouent dehors.",
+  "invariable": true
+ },
+ {
+  "id": "F2-117",
+  "word": "devant",
+  "level": 3,
+  "sentence": "Le bus s’arrête devant l’école.",
+  "invariable": true
+ },
+ {
+  "id": "F2-118",
+  "word": "derrière",
+  "level": 3,
+  "sentence": "Le chat se cache derrière le rideau.",
+  "invariable": true
+ },
+ {
+  "id": "F2-119",
+  "word": "ensemble",
+  "level": 3,
+  "sentence": "Nous chantons tous ensemble.",
+  "invariable": true
+ },
+ {
+  "id": "F2-120",
+  "word": "bientôt",
+  "level": 3,
+  "sentence": "Les vacances arrivent bientôt.",
+  "invariable": true
+ },
+ {
+  "id": "F2-121",
+  "word": "trop",
+  "level": 3,
+  "sentence": "Cette soupe est trop chaude.",
+  "invariable": true
+ },
+ {
+  "id": "F2-122",
+  "word": "très",
+  "level": 3,
+  "sentence": "Il fait très beau.",
+  "invariable": true
+ },
+ {
+  "id": "F2-123",
+  "word": "assez",
+  "level": 3,
+  "sentence": "Tu as assez mangé ?",
+  "invariable": true
+ },
+ {
+  "id": "F2-124",
+  "word": "vingt",
+  "level": 3,
+  "sentence": "J’ai vingt billes dans mon sac.",
+  "invariable": true
+ },
+ {
+  "id": "F2-125",
+  "word": "cent",
+  "level": 3,
+  "sentence": "Ce livre a cent pages.",
+  "invariable": true
+ },
+ {
+  "id": "F2-126",
+  "word": "temps",
+  "level": 3,
+  "sentence": "Quel temps fait-il aujourd’hui ?",
+  "invariable": false
+ },
+ {
+  "id": "F2-127",
+  "word": "corps",
+  "level": 3,
+  "sentence": "Le cœur est un muscle du corps.",
+  "invariable": false
+ },
+ {
+  "id": "F2-128",
+  "word": "doigt",
+  "level": 3,
+  "sentence": "Je me suis coupé le doigt.",
+  "invariable": false
+ },
+ {
+  "id": "F2-129",
+  "word": "pied",
+  "level": 3,
+  "sentence": "Je me suis tordu le pied.",
+  "invariable": false
+ },
+ {
+  "id": "F2-130",
+  "word": "nez",
+  "level": 3,
+  "sentence": "Le clown a un nez rouge.",
+  "invariable": false
+ },
+ {
+  "id": "F2-131",
+  "word": "dos",
+  "level": 3,
+  "sentence": "Je porte mon cartable sur le dos.",
+  "invariable": false
+ },
+ {
+  "id": "F2-132",
+  "word": "heure",
+  "level": 3,
+  "sentence": "Quelle heure est-il ?",
+  "invariable": false
+ },
+ {
+  "id": "F2-133",
+  "word": "automne",
+  "level": 3,
+  "sentence": "En automne, les feuilles tombent.",
+  "invariable": false
+ },
+ {
+  "id": "F2-134",
+  "word": "hiver",
+  "level": 3,
+  "sentence": "En hiver, il neige parfois.",
+  "invariable": false
+ },
+ {
+  "id": "F2-135",
+  "word": "femme",
+  "level": 3,
+  "sentence": "Cette femme est pilote d’avion.",
+  "invariable": false
+ },
+ {
+  "id": "F2-136",
+  "word": "monsieur",
+  "level": 3,
+  "sentence": "Bonjour, monsieur.",
+  "invariable": false,
+  "plurals": [
+   "messieurs"
+  ]
+ },
+ {
+  "id": "F2-137",
+  "word": "printemps",
+  "level": 3,
+  "sentence": "Au printemps, les fleurs poussent.",
+  "invariable": false
+ },
+ {
+  "id": "F2-138",
+  "word": "quatre",
+  "level": 3,
+  "sentence": "Une chaise a quatre pieds.",
+  "invariable": true
+ },
+ {
+  "id": "F2-139",
+  "word": "premier",
+  "level": 3,
+  "sentence": "Il est arrivé premier à la course.",
+  "invariable": false
+ },
+ {
+  "id": "F2-140",
+  "word": "dernier",
+  "level": 3,
+  "sentence": "C’est le dernier jour des vacances.",
+  "invariable": false
+ },
+ {
+  "id": "F2-141",
+  "word": "mercredi",
+  "level": 3,
+  "sentence": "Le mercredi, je vais au judo.",
+  "invariable": false
+ },
+ {
+  "id": "F2-142",
+  "word": "semaine",
+  "level": 3,
+  "sentence": "Une semaine a sept jours.",
+  "invariable": false
+ },
+ {
+  "id": "F2-143",
+  "word": "année",
+  "level": 3,
+  "sentence": "Une année a douze mois.",
+  "invariable": false
+ },
+ {
+  "id": "F2-144",
+  "word": "enfant",
+  "level": 3,
+  "sentence": "Cet enfant a huit ans.",
+  "invariable": false
+ },
+ {
+  "id": "F2-145",
+  "word": "personne",
+  "level": 3,
+  "sentence": "Il n’y a personne dans la cour.",
+  "invariable": false
+ },
+ {
+  "id": "F2-146",
+  "word": "sorcière",
+  "level": 3,
+  "sentence": "La sorcière a un chapeau pointu.",
+  "invariable": false
+ },
+ {
+  "id": "F2-147",
+  "word": "voiture",
+  "level": 3,
+  "sentence": "La voiture est garée devant la maison.",
+  "invariable": false
+ },
+ {
+  "id": "F2-148",
+  "word": "bonjour",
+  "level": 3,
+  "sentence": "Je dis bonjour à la maîtresse.",
+  "invariable": true
+ },
+ {
+  "id": "F2-149",
+  "word": "merci",
+  "level": 3,
+  "sentence": "Dis merci quand on te donne quelque chose.",
+  "invariable": true
+ },
+ {
+  "id": "F2-150",
+  "word": "pourquoi",
+  "level": 3,
+  "sentence": "Pourquoi le ciel est-il bleu ?",
+  "invariable": true
+ }
+]

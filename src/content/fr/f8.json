@@ -1,0 +1,362 @@
+[
+ {
+  "id": "F8-001",
+  "level": 1,
+  "tense": "present",
+  "sentence": "Aujourd’hui, Léo [joue] au ballon dans la cour."
+ },
+ {
+  "id": "F8-002",
+  "level": 1,
+  "tense": "present",
+  "sentence": "En ce moment, maman [prépare] une soupe de légumes."
+ },
+ {
+  "id": "F8-003",
+  "level": 1,
+  "tense": "present",
+  "sentence": "Maintenant, les élèves [rangent] leurs cahiers."
+ },
+ {
+  "id": "F8-004",
+  "level": 1,
+  "tense": "present",
+  "sentence": "Aujourd’hui, nous [regardons] un film sur les dauphins."
+ },
+ {
+  "id": "F8-005",
+  "level": 1,
+  "tense": "present",
+  "sentence": "En ce moment, tu [dessines] un grand château."
+ },
+ {
+  "id": "F8-006",
+  "level": 1,
+  "tense": "imparfait",
+  "sentence": "Autrefois, les enfants [marchaient] longtemps pour aller à l’école."
+ },
+ {
+  "id": "F8-007",
+  "level": 1,
+  "tense": "imparfait",
+  "sentence": "Quand il était petit, Nathan [jouait] avec un ours en peluche."
+ },
+ {
+  "id": "F8-008",
+  "level": 1,
+  "tense": "imparfait",
+  "sentence": "L’an dernier, Chloé [habitait] près de la mer."
+ },
+ {
+  "id": "F8-009",
+  "level": 1,
+  "tense": "imparfait",
+  "sentence": "Avant, mes grands-parents [cultivaient] des tomates dans leur jardin."
+ },
+ {
+  "id": "F8-010",
+  "level": 1,
+  "tense": "imparfait",
+  "sentence": "Hier soir, nous [écoutions] une histoire de dragons."
+ },
+ {
+  "id": "F8-011",
+  "level": 1,
+  "tense": "futur",
+  "sentence": "Demain, Inès [visitera] le musée avec sa classe."
+ },
+ {
+  "id": "F8-012",
+  "level": 1,
+  "tense": "futur",
+  "sentence": "La semaine prochaine, nous [planterons] des fleurs."
+ },
+ {
+  "id": "F8-013",
+  "level": 1,
+  "tense": "futur",
+  "sentence": "Ce soir, papa [racontera] une histoire de pirates."
+ },
+ {
+  "id": "F8-014",
+  "level": 1,
+  "tense": "futur",
+  "sentence": "Dans deux jours, les CE2 [chanteront] à la fête de l’école."
+ },
+ {
+  "id": "F8-015",
+  "level": 1,
+  "tense": "futur",
+  "sentence": "L’été prochain, tu [nageras] dans la rivière."
+ },
+ {
+  "id": "F8-016",
+  "level": 1,
+  "tense": "passe_compose",
+  "sentence": "Hier, Léa [a mangé] une pomme bien rouge."
+ },
+ {
+  "id": "F8-017",
+  "level": 1,
+  "tense": "passe_compose",
+  "sentence": "Ce matin, Sami [a oublié] son goûter à la maison."
+ },
+ {
+  "id": "F8-018",
+  "level": 1,
+  "tense": "passe_compose",
+  "sentence": "La semaine dernière, nous [avons visité] une ferme."
+ },
+ {
+  "id": "F8-019",
+  "level": 1,
+  "tense": "passe_compose",
+  "sentence": "Hier soir, les enfants [ont regardé] les étoiles."
+ },
+ {
+  "id": "F8-020",
+  "level": 1,
+  "tense": "passe_compose",
+  "sentence": "Dimanche dernier, tu [as aidé] ta voisine à porter ses courses."
+ },
+ {
+  "id": "F8-021",
+  "level": 2,
+  "tense": "present",
+  "sentence": "Le chat de Lucas [est] sur le canapé."
+ },
+ {
+  "id": "F8-022",
+  "level": 2,
+  "tense": "present",
+  "sentence": "Mes cousins [ont] un petit chien noir."
+ },
+ {
+  "id": "F8-023",
+  "level": 2,
+  "tense": "present",
+  "sentence": "Nous [sommes] contents de partir en voyage."
+ },
+ {
+  "id": "F8-024",
+  "level": 2,
+  "tense": "present",
+  "sentence": "Tu [as] un joli sac à dos."
+ },
+ {
+  "id": "F8-025",
+  "level": 2,
+  "tense": "present",
+  "sentence": "Le boulanger [ouvre] sa boutique très tôt."
+ },
+ {
+  "id": "F8-026",
+  "level": 2,
+  "tense": "imparfait",
+  "sentence": "Le ciel [était] tout gris."
+ },
+ {
+  "id": "F8-027",
+  "level": 2,
+  "tense": "imparfait",
+  "sentence": "Les enfants [avaient] froid dans le jardin."
+ },
+ {
+  "id": "F8-028",
+  "level": 2,
+  "tense": "imparfait",
+  "sentence": "Nous [étions] dans la cour quand la cloche a sonné."
+ },
+ {
+  "id": "F8-029",
+  "level": 2,
+  "tense": "imparfait",
+  "sentence": "Tu [avais] une écharpe rouge."
+ },
+ {
+  "id": "F8-030",
+  "level": 2,
+  "tense": "imparfait",
+  "sentence": "Mon frère [regardait] les oiseaux par la fenêtre."
+ },
+ {
+  "id": "F8-031",
+  "level": 2,
+  "tense": "futur",
+  "sentence": "Tu [seras] le premier à lire ce livre."
+ },
+ {
+  "id": "F8-032",
+  "level": 2,
+  "tense": "futur",
+  "sentence": "Les invités [auront] une part de gâteau."
+ },
+ {
+  "id": "F8-033",
+  "level": 2,
+  "tense": "futur",
+  "sentence": "Je [serai] prête à huit heures."
+ },
+ {
+  "id": "F8-034",
+  "level": 2,
+  "tense": "futur",
+  "sentence": "Nous [aurons] un nouveau tableau dans la classe."
+ },
+ {
+  "id": "F8-035",
+  "level": 2,
+  "tense": "futur",
+  "sentence": "Ma sœur [arrivera] par le train."
+ },
+ {
+  "id": "F8-036",
+  "level": 2,
+  "tense": "passe_compose",
+  "sentence": "Les élèves [ont été] très sages pendant la sortie."
+ },
+ {
+  "id": "F8-037",
+  "level": 2,
+  "tense": "passe_compose",
+  "sentence": "Nous [avons eu] de la chance."
+ },
+ {
+  "id": "F8-038",
+  "level": 2,
+  "tense": "passe_compose",
+  "sentence": "Tu [as eu] une bonne note en dictée."
+ },
+ {
+  "id": "F8-039",
+  "level": 2,
+  "tense": "passe_compose",
+  "sentence": "Le facteur [a apporté] un gros colis."
+ },
+ {
+  "id": "F8-040",
+  "level": 2,
+  "tense": "passe_compose",
+  "sentence": "Elles [sont arrivées] en retard."
+ },
+ {
+  "id": "F8-041",
+  "level": 3,
+  "tense": "present",
+  "sentence": "Les pompiers [viennent] très vite."
+ },
+ {
+  "id": "F8-042",
+  "level": 3,
+  "tense": "present",
+  "sentence": "Je [fais] un gâteau au chocolat."
+ },
+ {
+  "id": "F8-043",
+  "level": 3,
+  "tense": "present",
+  "sentence": "Mon oncle [prend] le métro tous les matins."
+ },
+ {
+  "id": "F8-044",
+  "level": 3,
+  "tense": "present",
+  "sentence": "Vous [allez] à la bibliothèque."
+ },
+ {
+  "id": "F8-045",
+  "level": 3,
+  "tense": "present",
+  "sentence": "Les oiseaux [peuvent] voler très haut."
+ },
+ {
+  "id": "F8-046",
+  "level": 3,
+  "tense": "imparfait",
+  "sentence": "Le petit garçon [voulait] un vélo bleu."
+ },
+ {
+  "id": "F8-047",
+  "level": 3,
+  "tense": "imparfait",
+  "sentence": "Nous [faisions] des bulles de savon."
+ },
+ {
+  "id": "F8-048",
+  "level": 3,
+  "tense": "imparfait",
+  "sentence": "Les marins [voyaient] la côte au loin."
+ },
+ {
+  "id": "F8-049",
+  "level": 3,
+  "tense": "imparfait",
+  "sentence": "Tu [prenais] toujours le même chemin."
+ },
+ {
+  "id": "F8-050",
+  "level": 3,
+  "tense": "imparfait",
+  "sentence": "Mes amis [allaient] souvent au parc."
+ },
+ {
+  "id": "F8-051",
+  "level": 3,
+  "tense": "futur",
+  "sentence": "Nous [ferons] une cabane dans les bois."
+ },
+ {
+  "id": "F8-052",
+  "level": 3,
+  "tense": "futur",
+  "sentence": "Les hirondelles [reviendront] au printemps."
+ },
+ {
+  "id": "F8-053",
+  "level": 3,
+  "tense": "futur",
+  "sentence": "Tu [pourras] jouer après tes devoirs."
+ },
+ {
+  "id": "F8-054",
+  "level": 3,
+  "tense": "futur",
+  "sentence": "Mes parents [iront] au marché."
+ },
+ {
+  "id": "F8-055",
+  "level": 3,
+  "tense": "futur",
+  "sentence": "Je [verrai] le spectacle avec mes amis."
+ },
+ {
+  "id": "F8-056",
+  "level": 3,
+  "tense": "passe_compose",
+  "sentence": "Ma tante [est venue] pour mon anniversaire."
+ },
+ {
+  "id": "F8-057",
+  "level": 3,
+  "tense": "passe_compose",
+  "sentence": "Les enfants [ont fait] un bonhomme de neige."
+ },
+ {
+  "id": "F8-058",
+  "level": 3,
+  "tense": "passe_compose",
+  "sentence": "Karim [a pris] son parapluie."
+ },
+ {
+  "id": "F8-059",
+  "level": 3,
+  "tense": "passe_compose",
+  "sentence": "Nous [sommes allés] à la piscine."
+ },
+ {
+  "id": "F8-060",
+  "level": 3,
+  "tense": "passe_compose",
+  "sentence": "Tu [as vu] un arc-en-ciel."
+ }
+]
