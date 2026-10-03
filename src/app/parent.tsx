@@ -125,7 +125,7 @@ function ParentArea() {
       <TextInput
         value={name}
         onChangeText={setName}
-        onEndEditing={() => void updateSettings({ childName: name.trim() || 'Mia' })}
+        onEndEditing={() => void updateSettings({ childName: name.trim() })}
         style={styles.input}
         accessibilityLabel="Prénom de l’enfant"
       />

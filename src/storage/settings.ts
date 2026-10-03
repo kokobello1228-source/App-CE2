@@ -9,7 +9,8 @@ export interface Settings {
 }
 
 export const DEFAULT_SETTINGS: Settings = {
-  childName: 'Mia',
+  /** Asked at first launch; empty until then. */
+  childName: '',
   dailyMinutes: 10,
   voiceRate: 0.9,
   timerInPractice: false,

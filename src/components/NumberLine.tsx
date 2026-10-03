@@ -3,12 +3,13 @@ import Svg, { Line, Polygon, Rect, Text as SvgText } from 'react-native-svg';
 import { valueAt, type M3Item } from '../skills/m3/logic';
 import { colors } from '../theme';
 
-const WIDTH = 640;
-const HEIGHT = 230;
-const MARGIN = 70;
-const LINE_Y = 175;
-const BOX_W = 92;
-const BOX_H = 52;
+const WIDTH = 520;
+const HEIGHT = 240;
+const MARGIN = 58;
+const LINE_Y = 185;
+const BOX_W = 100;
+const BOX_H = 60;
+const FONT = 'Helvetica, Arial, sans-serif';
 
 /**
  * Number line drawn like the official booklet: the two ends are labelled in
@@ -22,8 +23,8 @@ export function NumberLine({ item }: { item: M3Item }) {
   const [first, last] = item.labels;
   // The empty box is lifted when it would overlap an end label.
   const nearEnd = item.arrow * spacing < BOX_W + 24 || (item.intervals - item.arrow) * spacing < BOX_W + 24;
-  const emptyBoxY = nearEnd ? 8 : 70;
-  const labelBoxY = 70;
+  const emptyBoxY = nearEnd ? 6 : 76;
+  const labelBoxY = 76;
   return (
     <View
       accessible
@@ -59,7 +60,7 @@ export function NumberLine({ item }: { item: M3Item }) {
           />
         ))}
         {[first, last].map((i) => (
-          <SvgText key={`t${i}`} x={x(i)} y={labelBoxY + 37} fontSize={30} fill={colors.text} textAnchor="middle">
+          <SvgText key={`t${i}`} x={x(i)} y={labelBoxY + 43} fontSize={36} fontFamily={FONT} fill={colors.text} textAnchor="middle">
             {String(valueAt(item, i))}
           </SvgText>
         ))}
@@ -72,7 +73,7 @@ export function NumberLine({ item }: { item: M3Item }) {
           stroke={colors.primary}
           strokeWidth={3}
         />
-        <SvgText x={arrowX} y={emptyBoxY + 37} fontSize={30} fontWeight="bold" fill={colors.primary} textAnchor="middle">
+        <SvgText x={arrowX} y={emptyBoxY + 43} fontSize={36} fontFamily={FONT} fontWeight="bold" fill={colors.primary} textAnchor="middle">
           ?
         </SvgText>
         <Line x1={arrowX} y1={emptyBoxY + BOX_H} x2={arrowX} y2={LINE_Y - 22} stroke={colors.primary} strokeWidth={4} />

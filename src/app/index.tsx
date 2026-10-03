@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import type { Domain } from '../../skills.config';
 import { BigButton } from '../components/BigButton';
@@ -15,7 +15,40 @@ const UNIVERSES: { domain: Domain; title: string; emoji: string }[] = [
   { domain: 'math', title: 'Mathématiques', emoji: '🔢' },
 ];
 
+/** First launch: ask the child's first name (kept on the device only). */
+function Welcome() {
+  const { updateSettings } = useApp();
+  const [name, setName] = useState('');
+  const save = () => {
+    if (name.trim()) void updateSettings({ childName: name.trim() });
+  };
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top']}>
+      <Screen>
+        <Text style={styles.greeting}>Bienvenue ! 👋</Text>
+        <Text style={styles.welcomeText}>Comment t’appelles-tu ?</Text>
+        <TextInput
+          value={name}
+          onChangeText={setName}
+          onSubmitEditing={save}
+          autoCorrect={false}
+          autoFocus
+          placeholder="Ton prénom"
+          accessibilityLabel="Ton prénom"
+          style={styles.nameInput}
+        />
+        <BigButton label="C’est parti !" onPress={save} disabled={!name.trim()} />
+      </Screen>
+    </SafeAreaView>
+  );
+}
+
 export default function Home() {
+  const { settings } = useApp();
+  return settings.childName ? <HomeScreen /> : <Welcome />;
+}
+
+function HomeScreen() {
   const { repo, settings, dataVersion } = useApp();
   const [streak, setStreak] = useState(0);
   const [stars, setStars] = useState(0);
@@ -44,7 +77,8 @@ export default function Home() {
         </View>
 
         <BigButton
-          label={`☀️  Séance du jour (${settings.dailyMinutes} min)`}
+          label="☀️  Séance du jour"
+          accessibilityHint={`${settings.dailyMinutes} minutes`}
           onPress={() => router.push({ pathname: '/session', params: { mode: 'daily' } })}
           style={styles.daily}
         />
@@ -86,4 +120,9 @@ const styles = StyleSheet.create({
   universeTitle: { fontSize: font.body + 2, fontWeight: '800', color: colors.primaryText, textAlign: 'center' },
   parentLink: { alignSelf: 'center', padding: space.m },
   parentText: { fontSize: font.small + 2, color: colors.textMuted },
+  welcomeText: { fontSize: font.large, color: colors.text },
+  nameInput: {
+    minHeight: 72, borderWidth: 3, borderColor: colors.primary, borderRadius: radius.m, backgroundColor: colors.surface,
+    fontSize: font.title, paddingHorizontal: space.m, color: colors.text,
+  },
 });

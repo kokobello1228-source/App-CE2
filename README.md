@@ -1,6 +1,6 @@
 # Repères CE2
 
-Application mobile d'entraînement aux évaluations nationales « Repères CE2 », pour Mia.
+Application d'entraînement aux évaluations nationales « Repères CE2 » pour un enfant de CE2.
 100 % hors ligne : pas de compte, pas de serveur, pas de publicité, aucune donnée collectée.
 
 ## État actuel : étape 2 (toutes les mathématiques)
@@ -26,34 +26,39 @@ Fonctionnalités : séance du jour, entraînement libre, « Comme à l'école »
 synthèse vocale, difficulté adaptative, répétition espacée des erreurs, étoiles et série de jours,
 espace parent provisoire. Référence officielle résumée dans `docs/reference-officielle-2026.md`.
 
-## Lancer l'application sur le téléphone (Expo Go)
+## Utiliser l'application sur iPhone (application web, gratuite)
 
-1. Sur le téléphone, installer (ou mettre à jour) **Expo Go** depuis l'App Store ou le Play Store.
-   Le projet utilise le SDK Expo 57 : il faut la version récente d'Expo Go.
-2. Sur l'ordinateur (Node.js 20 ou plus récent) :
-   ```bash
-   git clone <url-du-dépôt> App-CE2
-   cd App-CE2
-   git checkout claude/new-session-dbdg8i
-   npm install
-   npx expo start
-   ```
-3. Scanner le QR code affiché :
-   - **iPhone** : avec l'appareil photo, puis ouvrir dans Expo Go ;
-   - **Android** : depuis l'application Expo Go (« Scan QR code »).
+L'application est publiée automatiquement sur GitHub Pages à chaque nouvelle version :
+**https://kokobello1228-source.github.io/App-CE2/**
 
-Le téléphone et l'ordinateur doivent être sur le même Wi-Fi. Si le réseau bloque la connexion
-(Wi-Fi public, VPN), utiliser `npx expo start --tunnel`.
+1. Ouvrir ce lien dans **Safari** sur l'iPhone.
+2. Toucher le bouton **Partager** (carré avec une flèche vers le haut), puis **« Sur l'écran d'accueil »**.
+3. Lancer l'application depuis son icône « Repères CE2 ». Elle fonctionne ensuite sans connexion.
 
-### Conseils
+Les progrès sont enregistrés dans l'iPhone (aucune donnée envoyée). Les mises à jour arrivent
+toutes seules : la nouvelle version est installée en arrière-plan et s'affiche au lancement suivant.
 
-- **Voix** : la qualité dépend des voix françaises installées sur le téléphone.
-  - iPhone : Réglages → Accessibilité → Contenu énoncé → Voix → Français → télécharger une voix
-    « améliorée » (par exemple Audrey ou Thomas). L'application choisit automatiquement une voix améliorée.
-  - Android : Paramètres → Gestion globale / Système → Synthèse vocale → moteur Google → installer
-    les données vocales « Français (France) ».
-- Si aucun son ne sort sur iPhone, vérifier que le bouton silencieux est désactivé.
-- **Espace parent** : accessible en bas de l'accueil, protégé par une multiplication.
+### Mise en place (une seule fois, depuis l'iPhone)
+
+GitHub Pages gratuit nécessite un dépôt public. Sur github.com (dans Safari) :
+1. Dépôt → **Settings → General → Danger Zone → Change visibility → Public**.
+2. **Settings → Pages → Build and deployment → Source : « GitHub Actions »**.
+3. Si la publication est refusée pour cette branche : **Settings → Environments → github-pages →
+   Deployment branches** → ajouter `claude/new-session-dbdg8i`.
+4. **Actions → « Publier l'application web » → Run workflow** pour la première publication.
+
+### Option future : vraie application iPhone
+
+Le même code peut être compilé en application native (EAS Build) avec un compte développeur
+Apple (99 €/an) : meilleure voix, stockage SQLite, installation par lien. Rien n'est à refaire.
+
+### Pour les développeurs : tester avec Expo Go
+
+```bash
+npm install
+npx expo start          # QR code à scanner avec l'iPhone (Expo Go)
+npm run build:web       # construit l'application web dans dist/
+```
 
 ## Développement
 

@@ -72,7 +72,7 @@ function Summary({
 }: { session: PreparedSession; summary: SessionSummary; records: AnswerRecord[]; childName: string }) {
   const school = session.mode === 'school';
   const mistakes = records.filter((r) => !r.correct);
-  const message = `Bravo ${childName} ! Tu as réussi ${summary.correct} question${summary.correct > 1 ? 's' : ''} sur ${summary.total}.`;
+  const message = `Bravo${childName ? ` ${childName}` : ''} ! Tu as réussi ${summary.correct} question${summary.correct > 1 ? 's' : ''} sur ${summary.total}.`;
   useEffect(() => {
     void speak(message);
   }, [message]);

@@ -5,7 +5,6 @@ import { colors } from '../theme';
 
 const CELL = 100;
 const WIDTH = GRID_COLS * CELL;
-const HEIGHT = GRID_ROWS * CELL;
 const UNIT = 9;
 const BAR_W = 13;
 const CUBE = 17;
@@ -54,6 +53,9 @@ function CellContent({ cell }: { cell: Cell }) {
 
 /** Collection of base-10 blocks laid out on a grid (in order or scattered). */
 export function Base10Blocks({ cells }: { cells: Cell[] }) {
+  // Only the rows that hold blocks are drawn (no big empty area).
+  const rows = Math.min(GRID_ROWS, Math.max(2, ...cells.map((c) => c.row + 1)));
+  const HEIGHT = rows * CELL;
   return (
     <View
       accessible

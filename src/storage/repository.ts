@@ -2,33 +2,15 @@ import * as SQLite from 'expo-sqlite';
 import type { SkillId } from '../../skills.config';
 import type { Mode } from '../engine/session';
 import type { ReviewEntry, ReviewUpdate } from '../engine/spacedRepetition';
-import type { ItemBase, Level } from '../skills/types';
+import type { Level } from '../skills/types';
 import { MIGRATIONS } from './migrations';
 import { DEFAULT_SETTINGS, type Settings } from './settings';
+import { HISTORY_WINDOW, type AttemptInput, type SkillHistory, type Store } from './store';
 
-export interface AttemptInput {
-  sessionId: number;
-  skillId: SkillId;
-  level: Level;
-  mode: Mode;
-  item: ItemBase;
-  answer: string;
-  correct: boolean;
-  errorTag: string | null;
-  isReview: boolean;
-}
-
-export interface SkillHistory {
-  correct: number;
-  total: number;
-  lastPracticedAt: number | null;
-}
-
-/** Number of most recent attempts used for the band estimate of a skill. */
-export const HISTORY_WINDOW = 30;
+export type { AttemptInput, SkillHistory } from './store';
 
 /** Local persistence (SQLite). Nothing ever leaves the device. */
-export class Repository {
+export class Repository implements Store {
   private constructor(private readonly db: SQLite.SQLiteDatabase) {}
 
   static async open(name = 'reperes-ce2.db'): Promise<Repository> {
