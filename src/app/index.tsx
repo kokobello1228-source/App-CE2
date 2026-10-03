@@ -9,7 +9,7 @@ import { SeyesPaper } from '../components/SeyesPaper';
 import { Text } from '../components/Text';
 import { computeStreak, toDayString } from '../engine/session';
 import { speak } from '../services/speech';
-import { isAvailable } from '../skills/registry';
+import { isAvailable, SPECIAL_ROUTES } from '../skills/registry';
 import { useApp } from '../state/AppContext';
 import { colors, font, fonts, radius, shadow, space } from '../theme';
 
@@ -80,7 +80,7 @@ function HomeScreen() {
   }, [repo, dataVersion]);
 
   const greeting = `Bonjour ${settings.childName} !`;
-  const count = (domain: Domain) => SKILL_ORDER.filter((id) => SKILLS[id].domain === domain && isAvailable(id)).length;
+  const count = (domain: Domain) => SKILL_ORDER.filter((id) => SKILLS[id].domain === domain && (isAvailable(id) || SPECIAL_ROUTES[id] !== undefined)).length;
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <Screen>

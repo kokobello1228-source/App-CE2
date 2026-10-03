@@ -1,0 +1,1070 @@
+[
+ {
+  "id": "F1-01",
+  "level": 1,
+  "title": "Le cerf-volant de Malo",
+  "text": "Ce samedi, le vent soufflait fort sur la plage. Malo avait apporté le cerf-volant rouge que son grand-père lui avait offert pour son anniversaire. Il avait une longue queue faite de rubans jaunes.\n\nMalo déroula la ficelle et se mit à courir. Le cerf-volant monta très haut, au-dessus des mouettes. « Regarde, papi ! Il touche presque les nuages ! » cria-t-il.\n\nSoudain, une rafale plus forte arracha la ficelle de ses mains. Le cerf-volant s’envola vers les rochers et disparut derrière une dune. Malo sentit les larmes monter à ses yeux.\n\nSon grand-père posa la main sur son épaule. « Viens, on va le chercher ensemble. » Ils marchèrent longtemps dans le sable. Derrière la dune, ils trouvèrent une petite fille assise près d’un buisson. Elle tenait le cerf-volant rouge dans ses bras.\n\n« Il est tombé juste à côté de moi, dit-elle en souriant. Il est vraiment beau. Je m’appelle Zoé. »\n\nMalo hésita un instant, puis il eut une idée. « Tu veux le faire voler avec moi ? » Zoé accepta avec joie. Tout l’après-midi, les deux enfants coururent sur la plage en tenant la ficelle à deux mains, bien serrée cette fois.\n\nLe soir, en rentrant, Malo dit à son grand-père : « Aujourd’hui, j’ai perdu mon cerf-volant, mais j’ai trouvé une amie. » Le grand-père sourit sans rien dire.",
+  "words": 211,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "De quelle couleur est le cerf-volant de Malo ?",
+    "answer": "rouge",
+    "distractors": [
+     "jaune",
+     "bleu",
+     "vert"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qui a offert le cerf-volant à Malo ?",
+    "answer": "son grand-père",
+    "distractors": [
+     "son papa",
+     "Zoé",
+     "sa maîtresse"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Pourquoi le cerf-volant s’est-il envolé ?",
+    "answer": "Une rafale de vent a arraché la ficelle.",
+    "distractors": [
+     "Malo l’a lâché exprès.",
+     "Une mouette a coupé la ficelle.",
+     "Le grand-père a tiré trop fort."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que ressent Malo quand le cerf-volant disparaît ?",
+    "answer": "Il est triste.",
+    "distractors": [
+     "Il est content.",
+     "Il a faim.",
+     "Il est fier."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où les deux enfants trouvent-ils le cerf-volant ?",
+    "answer": "derrière une dune",
+    "distractors": [
+     "dans la mer",
+     "sur un rocher",
+     "dans un arbre"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Malo tient-il la ficelle « bien serrée cette fois » ?",
+    "answer": "Pour ne plus perdre le cerf-volant.",
+    "distractors": [
+     "Parce que la ficelle est cassée.",
+     "Pour faire plaisir à Zoé.",
+     "Parce qu’il a froid aux mains."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le grand-père sourit-il à la fin ?",
+    "answer": "Il est content que Malo ait une nouvelle amie.",
+    "distractors": [
+     "Il a retrouvé ses lunettes.",
+     "Il trouve le cerf-volant ridicule.",
+     "Il veut rentrer à la maison."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle phrase résume le mieux l’histoire ?",
+    "answer": "En perdant son cerf-volant, Malo se fait une amie.",
+    "distractors": [
+     "Malo apprend à fabriquer un cerf-volant.",
+     "Zoé vole le cerf-volant de Malo.",
+     "Malo et son grand-père pêchent à la plage."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-02",
+  "level": 1,
+  "title": "La surprise d’Aya",
+  "text": "Dans trois jours, ce sera l’anniversaire de maman. Aya veut lui préparer une surprise, mais elle n’a pas d’argent pour acheter un cadeau.\n\nElle réfléchit dans sa chambre en regardant par la fenêtre. Dans le jardin, les rosiers de maman sont couverts de fleurs roses. Aya a une idée : elle va peindre un tableau avec les roses du jardin !\n\nChaque soir, après l’école, elle s’enferme dans sa chambre avec ses pinceaux. Quand maman frappe à la porte, Aya cache vite la feuille sous son lit. « Qu’est-ce que tu fabriques ? demande maman. — Rien, rien ! » répond Aya en riant.\n\nLe deuxième soir, catastrophe : son petit frère Nathan entre dans la chambre et renverse le verre d’eau sur le tableau. Les couleurs coulent partout. Aya a envie de crier, puis elle regarde mieux. Les taches d’eau ressemblent à des gouttes de pluie sur les fleurs. C’est encore plus joli !\n\nLe jour de l’anniversaire, Aya tend un rouleau de papier attaché avec un ruban. Maman l’ouvre doucement. Ses yeux brillent. « Ce sont mes roses… sous la pluie ! C’est le plus beau cadeau du monde. »\n\nNathan, tout fier, s’écrie : « La pluie, c’est moi qui l’ai faite ! » Toute la famille éclate de rire. Maman accroche le tableau dans la cuisine, juste au-dessus de la table.",
+  "words": 209,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Pour qui Aya prépare-t-elle une surprise ?",
+    "answer": "pour sa maman",
+    "distractors": [
+     "pour son frère",
+     "pour sa maîtresse",
+     "pour sa mamie"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que décide de faire Aya ?",
+    "answer": "peindre un tableau",
+    "distractors": [
+     "acheter des fleurs",
+     "écrire une poésie",
+     "faire un gâteau"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Aya cache-t-elle la feuille sous son lit ?",
+    "answer": "Pour que maman ne découvre pas la surprise.",
+    "distractors": [
+     "Parce que le tableau est raté.",
+     "Parce que Nathan veut le prendre.",
+     "Pour le faire sécher."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qui renverse le verre d’eau ?",
+    "answer": "Nathan, son petit frère",
+    "distractors": [
+     "Aya",
+     "maman",
+     "le chat"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Aya ne crie-t-elle pas finalement ?",
+    "answer": "Les taches rendent le tableau encore plus joli.",
+    "distractors": [
+     "Maman arrive dans la chambre.",
+     "Elle a mal à la gorge.",
+     "Nathan s’excuse tout de suite."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que ressent maman en découvrant le cadeau ?",
+    "answer": "Elle est très émue et contente.",
+    "distractors": [
+     "Elle est en colère.",
+     "Elle a peur.",
+     "Elle s’ennuie."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où maman accroche-t-elle le tableau ?",
+    "answer": "dans la cuisine",
+    "distractors": [
+     "dans sa chambre",
+     "dans le jardin",
+     "dans le couloir"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Que nous apprend cette histoire ?",
+    "answer": "Une erreur peut parfois rendre quelque chose plus beau.",
+    "distractors": [
+     "Il ne faut jamais peindre avec de l’eau.",
+     "Les cadeaux doivent coûter cher.",
+     "Les petits frères sont toujours méchants."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-03",
+  "level": 1,
+  "title": "Le hérisson du jardin",
+  "text": "Un soir d’automne, Lucas aide son papa à ramasser les feuilles mortes dans le jardin. Ils forment un gros tas au pied du vieux pommier.\n\nLe lendemain matin, Lucas remarque que le tas a bougé. Il s’approche sans faire de bruit et entend un petit grognement. Une boule piquante sort la tête des feuilles : c’est un hérisson !\n\nLucas court chercher son papa. « Il faut le laisser tranquille, explique papa. Le hérisson cherche un endroit pour dormir tout l’hiver. Notre tas de feuilles est parfait pour lui. »\n\nLucas veut l’aider. Il pose une soucoupe d’eau près du tas. « Surtout pas de lait, dit papa, cela le rendrait malade. » Avec sa maman, Lucas fabrique aussi une petite maison en bois avec un trou pour entrer. Ils la remplissent de paille et la placent derrière la haie.\n\nPendant plusieurs jours, Lucas observe le jardin depuis la fenêtre de la cuisine. Un soir, il aperçoit le hérisson qui traverse la pelouse et se glisse dans la maison de bois.\n\nTout l’hiver, Lucas pense à son petit voisin endormi. Au printemps, quand les premières fleurs apparaissent, il voit le hérisson sortir en trottinant, suivi de trois petits hérissons. Lucas sourit : la maison de bois est devenue la maison de toute une famille.",
+  "words": 207,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "À quelle saison commence l’histoire ?",
+    "answer": "en automne",
+    "distractors": [
+     "en été",
+     "au printemps",
+     "en hiver"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où se cache le hérisson au début ?",
+    "answer": "dans le tas de feuilles",
+    "distractors": [
+     "dans le pommier",
+     "dans la cuisine",
+     "sous la voiture"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le hérisson cherche-t-il un abri ?",
+    "answer": "Pour dormir pendant tout l’hiver.",
+    "distractors": [
+     "Pour manger les pommes.",
+     "Pour jouer avec Lucas.",
+     "Parce qu’il est perdu."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que ne faut-il pas donner au hérisson ?",
+    "answer": "du lait",
+    "distractors": [
+     "de l’eau",
+     "de la paille",
+     "des feuilles"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Avec qui Lucas fabrique-t-il la maison de bois ?",
+    "answer": "avec sa maman",
+    "distractors": [
+     "avec son papa",
+     "tout seul",
+     "avec ses copains"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Lucas observe-t-il le jardin depuis la fenêtre ?",
+    "answer": "Pour voir le hérisson sans le déranger.",
+    "distractors": [
+     "Parce qu’il pleut.",
+     "Parce qu’il est puni.",
+     "Pour surveiller les oiseaux."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que comprend Lucas au printemps ?",
+    "answer": "Le hérisson a eu des bébés dans la maison.",
+    "distractors": [
+     "Le hérisson est parti pour toujours.",
+     "La maison de bois est cassée.",
+     "Son papa a acheté d’autres hérissons."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le meilleur titre pour cette histoire ?",
+    "answer": "Une maison pour le hérisson",
+    "distractors": [
+     "Le pommier de papa",
+     "La neige dans le jardin",
+     "Le chat de Lucas"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-04",
+  "level": 1,
+  "title": "Le grand jour de Sami",
+  "text": "Ce matin, Sami a mal au ventre. Ce n’est pas une maladie : aujourd’hui, il doit réciter sa poésie devant toute la classe, et il a peur de se tromper.\n\nDans le bus, il répète les vers dans sa tête. « Le petit escargot monte sur la colline… » Mais après la deuxième strophe, il ne se souvient plus de rien. Son cœur bat très vite.\n\nÀ l’école, sa copine Jade remarque qu’il est pâle. « Qu’est-ce qui t’arrive ? » Sami lui explique. Jade réfléchit, puis elle dit : « Moi, quand j’ai peur, je regarde une seule personne, comme si je parlais juste à elle. Tu n’as qu’à me regarder ! »\n\nQuand la maîtresse appelle son nom, Sami se lève. Ses jambes tremblent un peu. Il se place devant le tableau et cherche Jade des yeux. Elle est au troisième rang. Elle lui fait un petit signe de la main.\n\nSami commence. Les mots arrivent les uns après les autres, comme par magie. Arrivé à la troisième strophe, il hésite. Jade fait semblant de ramper avec sa main, comme un escargot. Sami se souvient aussitôt : « … et le soir il s’endort sous une feuille de menthe. »\n\nToute la classe applaudit. La maîtresse le félicite pour sa belle voix. En retournant à sa place, Sami chuchote à Jade : « Merci, petit escargot ! » Et pour la première fois de la journée, il n’a plus du tout mal au ventre.",
+  "words": 228,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Que doit faire Sami aujourd’hui ?",
+    "answer": "réciter une poésie",
+    "distractors": [
+     "passer une dictée",
+     "chanter une chanson",
+     "faire un exposé"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Sami a-t-il mal au ventre ?",
+    "answer": "Parce qu’il a peur de réciter.",
+    "distractors": [
+     "Parce qu’il a trop mangé.",
+     "Parce qu’il est malade.",
+     "Parce que le bus roule vite."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qui aide Sami ?",
+    "answer": "Jade",
+    "distractors": [
+     "la maîtresse",
+     "sa maman",
+     "le chauffeur du bus"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Quel conseil Jade donne-t-elle à Sami ?",
+    "answer": "Regarder une seule personne.",
+    "distractors": [
+     "Fermer les yeux.",
+     "Lire sur une feuille.",
+     "Parler très vite."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "De quel animal parle la poésie ?",
+    "answer": "un escargot",
+    "distractors": [
+     "un lapin",
+     "un oiseau",
+     "une souris"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Jade fait-elle ramper sa main ?",
+    "answer": "Pour aider Sami à se souvenir de la suite.",
+    "distractors": [
+     "Pour faire rire la classe.",
+     "Parce qu’elle s’ennuie.",
+     "Pour attraper un escargot."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Comment se sent Sami à la fin ?",
+    "answer": "soulagé et content",
+    "distractors": [
+     "toujours inquiet",
+     "en colère contre Jade",
+     "très fatigué"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le message de cette histoire ?",
+    "answer": "Avec l’aide d’un ami, on peut vaincre sa peur.",
+    "distractors": [
+     "Il ne faut jamais réciter de poésie.",
+     "Les escargots sont très rapides.",
+     "Il faut toujours prendre le bus."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-05",
+  "level": 2,
+  "title": "La clé perdue",
+  "text": "Tous les mercredis, Nora va chez Madame Lemoine, sa voisine du dessous. La vieille dame lui apprend à jouer aux échecs et lui prépare des crêpes au sucre.\n\nCe mercredi-là, Nora trouve Madame Lemoine assise sur une marche de l’escalier, l’air très ennuyé. « J’ai perdu ma clé, soupire-t-elle. Impossible de rentrer chez moi. Je l’avais pourtant dans mon panier en revenant du marché. »\n\nNora décide de mener l’enquête, comme les détectives de ses livres. Elle demande : « Qu’avez-vous fait en rentrant ? — Je me suis arrêtée chez le boulanger, puis j’ai donné du pain aux pigeons dans le square. »\n\nNora file à la boulangerie. Le boulanger n’a rien vu. Elle court ensuite au square. Sous le banc, au milieu des miettes, quelque chose brille. Elle se penche… c’est un capuchon de stylo. Déçue, elle s’assoit sur le banc pour réfléchir.\n\nSoudain, elle remarque un pigeon qui picore près de la fontaine. Il tire sur un ruban rouge. Au bout du ruban pend une petite clé dorée ! Nora s’approche doucement, et le pigeon s’envole en lâchant son trésor.\n\nQuand Nora revient avec la clé, Madame Lemoine n’en croit pas ses yeux. « C’est le ruban que j’avais accroché à ma clé pour ne pas la perdre ! » Ce jour-là, les crêpes ont un goût encore meilleur. Et Nora gagne sa première partie d’échecs.",
+  "words": 218,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Que fait Nora chez Madame Lemoine tous les mercredis ?",
+    "answer": "Elle apprend à jouer aux échecs.",
+    "distractors": [
+     "Elle fait ses devoirs.",
+     "Elle promène le chien.",
+     "Elle arrose les plantes."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où Madame Lemoine est-elle allée avant de perdre sa clé ?",
+    "answer": "au marché, chez le boulanger et au square",
+    "distractors": [
+     "à la piscine",
+     "à l’école",
+     "chez le médecin"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Nora fait-elle « comme les détectives de ses livres » ?",
+    "answer": "Elle pose des questions et cherche des indices.",
+    "distractors": [
+     "Elle porte un chapeau.",
+     "Elle appelle la police.",
+     "Elle écrit un livre."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que trouve Nora sous le banc ?",
+    "answer": "un capuchon de stylo",
+    "distractors": [
+     "la clé",
+     "un ruban rouge",
+     "une crêpe"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Nora est-elle déçue sous le banc ?",
+    "answer": "Elle croyait avoir trouvé la clé.",
+    "distractors": [
+     "Le banc est mouillé.",
+     "Les pigeons l’embêtent.",
+     "Elle a perdu son stylo."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qui avait la clé ?",
+    "answer": "un pigeon",
+    "distractors": [
+     "le boulanger",
+     "un chat",
+     "un enfant du square"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi les crêpes ont-elles « un goût encore meilleur » ?",
+    "answer": "Tout le monde est heureux d’avoir retrouvé la clé.",
+    "distractors": [
+     "Madame Lemoine a ajouté du chocolat.",
+     "Nora a fait les crêpes elle-même.",
+     "Les crêpes sont plus grandes."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle phrase résume le mieux l’histoire ?",
+    "answer": "Nora mène l’enquête et retrouve la clé de sa voisine.",
+    "distractors": [
+     "Nora apprend à faire des crêpes.",
+     "Un pigeon vole le panier de Madame Lemoine.",
+     "Madame Lemoine déménage dans un autre quartier."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-06",
+  "level": 2,
+  "title": "Le concours de cabanes",
+  "text": "Au centre de loisirs, l’animatrice annonce un grand concours : chaque équipe devra construire une cabane dans le bois avant la fin de la semaine. La plus solide et la plus belle gagnera.\n\nL’équipe de Yanis compte quatre enfants. Yanis veut tout décider : « On fera une cabane très haute, avec une tour ! » Mais Lila trouve que c’est trop compliqué, et Bilal préfère une cabane cachée sous les branches. Personne n’est d’accord. Le premier jour, ils se disputent tellement qu’ils ne posent pas une seule branche.\n\nLe deuxième jour, la petite Rose, qui ne parle presque jamais, sort un carnet de son sac. Elle a dessiné une cabane : des murs en branches entrelacées, un toit de fougères et une petite fenêtre ronde. « Chacun pourrait faire une partie », propose-t-elle timidement.\n\nLes autres regardent le dessin. Il est vraiment réussi. Yanis se charge des gros piquets, Lila tresse les branches, Bilal ramasse les fougères et Rose dirige les travaux avec son carnet.\n\nLe vendredi, un orage éclate pendant la nuit. Le lendemain matin, plusieurs cabanes se sont écroulées. Celle de l’équipe de Yanis est toujours debout, à peine mouillée à l’intérieur.\n\nIls ne gagnent pas le prix de la plus belle cabane, mais celui de la plus solide. En recevant la médaille, Yanis la tend à Rose : « C’est toi qui as eu la meilleure idée. » Rose devient toute rouge, mais elle sourit.",
+  "words": 228,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Que doivent construire les équipes ?",
+    "answer": "une cabane",
+    "distractors": [
+     "un bateau",
+     "un château de sable",
+     "une maquette"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi l’équipe ne pose-t-elle aucune branche le premier jour ?",
+    "answer": "Les enfants se disputent au lieu de travailler.",
+    "distractors": [
+     "Il pleut très fort.",
+     "Ils n’ont pas d’outils.",
+     "L’animatrice les en empêche."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Comment est Rose au début de l’histoire ?",
+    "answer": "timide",
+    "distractors": [
+     "bavarde",
+     "méchante",
+     "paresseuse"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qu’y a-t-il dans le carnet de Rose ?",
+    "answer": "le dessin d’une cabane",
+    "distractors": [
+     "une liste de courses",
+     "une histoire",
+     "une carte du bois"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Quel est le rôle de Lila ?",
+    "answer": "Elle tresse les branches.",
+    "distractors": [
+     "Elle plante les piquets.",
+     "Elle ramasse les fougères.",
+     "Elle dirige les travaux."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la cabane résiste-t-elle à l’orage ?",
+    "answer": "Elle a été bien construite, chacun a fait sa part.",
+    "distractors": [
+     "Elle est cachée dans une grotte.",
+     "L’animatrice l’a réparée.",
+     "L’orage ne passe pas au-dessus."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Yanis donne-t-il la médaille à Rose ?",
+    "answer": "Il reconnaît que c’est grâce à son idée.",
+    "distractors": [
+     "La médaille est trop lourde pour lui.",
+     "Rose la lui a demandée.",
+     "Il ne l’aime pas."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Que nous apprend cette histoire ?",
+    "answer": "En travaillant ensemble, on réussit mieux.",
+    "distractors": [
+     "Il faut toujours écouter le plus grand.",
+     "Les orages détruisent tout.",
+     "Il vaut mieux travailler seul."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-07",
+  "level": 2,
+  "title": "Le secret du phare",
+  "text": "Pendant les vacances, Hugo loge chez son oncle Paul, le gardien du vieux phare. Tout en haut de la tour, une énorme lampe tourne chaque nuit pour guider les bateaux.\n\nUn soir, une tempête se lève. Les vagues frappent les rochers et le vent hurle. Soudain, toutes les lumières s’éteignent : une panne ! Dans le noir, Hugo entend son oncle chercher sa lampe de poche. « Un bateau de pêche doit rentrer au port cette nuit, dit l’oncle Paul d’une voix inquiète. Sans le phare, il risque de heurter les rochers. »\n\nIls montent l’escalier en colimaçon, marche après marche. Il y en a cent douze. En haut, l’oncle Paul ouvre une vieille caisse en bois. À l’intérieur se trouve une grosse lanterne à pétrole, que les anciens gardiens utilisaient autrefois. « Elle n’a pas servi depuis vingt ans… J’espère qu’elle fonctionne encore. »\n\nL’oncle Paul craque une allumette. La flamme tremble, puis grandit. Hugo tient la lanterne pendant que son oncle la fixe devant les grandes vitres. Une lumière jaune se répand sur la mer.\n\nUne heure plus tard, ils aperçoivent au loin les feux d’un petit bateau qui contourne les rochers et rejoint le port sain et sauf. Le pêcheur fait retentir trois coups de sirène.\n\n« Tu entends ? sourit l’oncle Paul. Il nous dit merci. » Hugo est trop fatigué pour répondre, mais il se dit que c’étaient les plus belles vacances de sa vie.",
+  "words": 231,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Quel est le métier de l’oncle Paul ?",
+    "answer": "gardien de phare",
+    "distractors": [
+     "pêcheur",
+     "capitaine de bateau",
+     "boulanger"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi l’oncle Paul est-il inquiet ?",
+    "answer": "Un bateau risque de heurter les rochers sans lumière.",
+    "distractors": [
+     "Il a peur du noir.",
+     "Hugo s’est perdu.",
+     "La tempête a cassé sa maison."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Combien de marches compte l’escalier ?",
+    "answer": "cent douze",
+    "distractors": [
+     "vingt",
+     "trois",
+     "mille"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que trouvent-ils dans la caisse en bois ?",
+    "answer": "une lanterne à pétrole",
+    "distractors": [
+     "une lampe de poche",
+     "des allumettes",
+     "une sirène"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi l’oncle Paul dit-il « J’espère qu’elle fonctionne encore » ?",
+    "answer": "La lanterne est très vieille et n’a pas servi depuis longtemps.",
+    "distractors": [
+     "Elle est neuve.",
+     "Il ne sait pas l’allumer.",
+     "Hugo l’a cassée."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Combien de coups de sirène le pêcheur fait-il ?",
+    "answer": "trois",
+    "distractors": [
+     "un",
+     "deux",
+     "cinq"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que veulent dire les coups de sirène ?",
+    "answer": "Le pêcheur remercie le gardien et Hugo.",
+    "distractors": [
+     "Le bateau est en panne.",
+     "Il y a un nouveau danger.",
+     "La tempête recommence."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel titre conviendrait aussi à cette histoire ?",
+    "answer": "Une nuit de tempête au phare",
+    "distractors": [
+     "Les vacances à la montagne",
+     "Le pêcheur et le poisson d’or",
+     "Hugo apprend à nager"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-08",
+  "level": 2,
+  "title": "Le carnet de Léonie",
+  "text": "Léonie vient d’arriver dans une nouvelle école. Elle ne connaît personne et, à la récréation, elle reste seule près du préau. Pour se rassurer, elle sort de sa poche un petit carnet vert dans lequel elle dessine tout ce qu’elle voit.\n\nLe jeudi, en rentrant en classe, Léonie s’aperçoit que son carnet a disparu. Elle fouille son cartable, ses poches, son casier : rien. Elle a envie de pleurer, car ce carnet contient tous ses dessins depuis deux ans.\n\nLe lendemain, le carnet est posé sur sa table. Quelqu’un a glissé un papier entre deux pages : « Tes dessins sont magnifiques. Tu veux bien m’apprendre à dessiner les chevaux ? Rendez-vous sous le marronnier. Signé : T. »\n\nLéonie se demande qui est ce mystérieux « T ». À la récréation, elle s’approche du marronnier en serrant son carnet. Un garçon de sa classe l’attend, un peu gêné. C’est Thomas, celui qui est toujours au fond de la classe et qui ne dit jamais rien.\n\n« Je l’ai trouvé par terre dans la cour, explique-t-il. Je voulais te le rendre tout de suite, mais j’ai regardé les dessins… et je n’ai pas osé te parler. »\n\nLéonie éclate de rire. Elle ouvre son carnet à une page blanche et commence à dessiner une crinière. Thomas s’assoit à côté d’elle. Le lundi suivant, ils sont trois sous le marronnier, puis cinq. Léonie n’est plus jamais seule à la récréation.",
+  "words": 229,
+  "questions": [
+   {
+    "type": "inference",
+    "question": "Pourquoi Léonie reste-t-elle seule à la récréation ?",
+    "answer": "Elle vient d’arriver et ne connaît personne.",
+    "distractors": [
+     "Elle est punie.",
+     "Elle n’aime pas jouer.",
+     "Elle a mal à la jambe."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "De quelle couleur est le carnet ?",
+    "answer": "vert",
+    "distractors": [
+     "rouge",
+     "bleu",
+     "jaune"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Léonie a-t-elle envie de pleurer ?",
+    "answer": "Son carnet contient tous ses dessins depuis deux ans.",
+    "distractors": [
+     "Elle a une mauvaise note.",
+     "Thomas s’est moqué d’elle.",
+     "Elle a perdu son cartable."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que demande le mystérieux « T » ?",
+    "answer": "Qu’elle lui apprenne à dessiner les chevaux.",
+    "distractors": [
+     "Qu’elle lui donne son carnet.",
+     "Qu’elle fasse ses devoirs.",
+     "Qu’elle change de place."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où est le rendez-vous ?",
+    "answer": "sous le marronnier",
+    "distractors": [
+     "devant le portail",
+     "dans la classe",
+     "à la cantine"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Thomas n’a-t-il pas rendu le carnet tout de suite ?",
+    "answer": "Il était trop timide pour lui parler.",
+    "distractors": [
+     "Il voulait le garder.",
+     "Il l’avait oublié chez lui.",
+     "La maîtresse le lui avait interdit."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que se passe-t-il le lundi suivant ?",
+    "answer": "D’autres enfants viennent dessiner avec eux.",
+    "distractors": [
+     "Léonie change d’école.",
+     "Thomas perd le carnet.",
+     "Ils se disputent."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le sujet principal de l’histoire ?",
+    "answer": "Grâce à ses dessins, Léonie se fait des amis.",
+    "distractors": [
+     "Léonie apprend à monter à cheval.",
+     "Thomas vole le carnet de Léonie.",
+     "La classe part en voyage."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-09",
+  "level": 3,
+  "title": "Le corbeau et le hibou",
+  "text": "Au sommet d’un grand chêne vivait un corbeau très fier de sa voix. Chaque matin, il croassait si fort que tous les habitants de la forêt se réveillaient en sursaut. « Personne ne chante aussi bien que moi ! » répétait-il à qui voulait l’entendre.\n\nDans un trou du même arbre habitait un vieux hibou. Il dormait le jour et chassait la nuit. Le vacarme du corbeau l’empêchait de se reposer, mais il ne disait rien.\n\nUn jour, les animaux décidèrent d’organiser un concours de chant. Le corbeau s’inscrivit le premier, certain de gagner. Il passa des heures à s’entraîner, croassant encore plus fort qu’avant. Les écureuils se bouchaient les oreilles et les lapins restaient cachés au fond de leurs terriers.\n\nLe soir du concours, la mésange chanta une mélodie légère, le rossignol fit pleurer d’émotion toute l’assemblée, et même la grenouille fut applaudie. Quand vint le tour du corbeau, il gonfla ses plumes et lança un cri si puissant que les feuilles tremblèrent. Un silence gêné suivit.\n\nLe corbeau, vexé, s’envola vers le vieux chêne. Le hibou l’attendait sur sa branche. « Tu as une voix forte, lui dit-il doucement, mais chanter, ce n’est pas crier. Celui qui n’écoute jamais les autres ne peut pas apprendre. »\n\nLe lendemain, pour la première fois, le corbeau resta silencieux au lever du soleil. Il écouta la mésange, puis le rossignol. Et toute la forêt, étonnée, put enfin dormir un peu plus longtemps.",
+  "words": 236,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Où vit le corbeau ?",
+    "answer": "au sommet d’un grand chêne",
+    "distractors": [
+     "dans un trou",
+     "au bord de la rivière",
+     "dans un terrier"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le hibou est-il gêné par le corbeau ?",
+    "answer": "Il dort le jour et le bruit l’empêche de se reposer.",
+    "distractors": [
+     "Le corbeau lui vole sa nourriture.",
+     "Le corbeau chante faux la nuit.",
+     "Il veut gagner le concours."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi les écureuils se bouchent-ils les oreilles ?",
+    "answer": "Le corbeau croasse beaucoup trop fort.",
+    "distractors": [
+     "Il fait très froid.",
+     "Ils ont peur du hibou.",
+     "Ils n’aiment pas la mésange."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Qui fait pleurer d’émotion l’assemblée ?",
+    "answer": "le rossignol",
+    "distractors": [
+     "la mésange",
+     "le corbeau",
+     "la grenouille"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que signifie le « silence gêné » après le cri du corbeau ?",
+    "answer": "Les animaux n’ont pas aimé sa façon de chanter.",
+    "distractors": [
+     "Les animaux sont endormis.",
+     "Tout le monde est émerveillé.",
+     "Le concours est terminé."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que veut dire le hibou par « chanter, ce n’est pas crier » ?",
+    "answer": "Bien chanter demande de la douceur, pas seulement de la force.",
+    "distractors": [
+     "Il faut chanter encore plus fort.",
+     "Les corbeaux ne savent pas parler.",
+     "Le hibou veut participer au concours."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le corbeau reste-t-il silencieux le lendemain ?",
+    "answer": "Il a compris la leçon et veut écouter les autres.",
+    "distractors": [
+     "Il a mal à la gorge.",
+     "Il est parti en voyage.",
+     "Il dort encore."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle est la morale de cette fable ?",
+    "answer": "Pour progresser, il faut savoir écouter les autres.",
+    "distractors": [
+     "Il faut toujours chanter très fort.",
+     "Les hiboux sont plus forts que les corbeaux.",
+     "Il ne faut jamais faire de concours."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-10",
+  "level": 3,
+  "title": "La graine de Mamie Lou",
+  "text": "Le jour de ses huit ans, Inès reçut un drôle de cadeau de sa grand-mère : une petite boîte en métal contenant une seule graine noire, à peine plus grosse qu’un pépin de pomme. « Prends-en soin, et tu verras ce qu’elle devient », dit Mamie Lou avec un clin d’œil.\n\nInès planta la graine dans un pot, sur le rebord de sa fenêtre. Chaque matin, elle vérifiait la terre. Une semaine passa, puis deux. Rien. Sa cousine Clara, qui avait reçu une console de jeux, se moquait d’elle : « Une graine ! Tu parles d’un cadeau ! »\n\nInès faillit abandonner. Pourtant, elle continua à arroser le pot, sans trop y croire. Un matin, elle aperçut une minuscule pointe verte. Les jours suivants, la tige grandit, puis des feuilles en forme de cœur apparurent.\n\nAu début de l’été, la plante était devenue si grande qu’il fallut la planter dans le jardin. Elle grimpa le long du grillage, dépassa la haie et se couvrit de bourgeons. Un matin d’août, Inès poussa un cri : des dizaines de fleurs jaunes, immenses, s’étaient ouvertes et tournaient leur cœur vers le soleil.\n\nMamie Lou vint admirer la plante. « Quand j’avais ton âge, ma grand-mère m’avait offert une graine de la même fleur. Depuis, chaque été, je garde quelques graines pour les offrir. »\n\nÀ l’automne, Inès récolta des centaines de graines noires. Elle en remplit une petite boîte en métal, qu’elle garda précieusement. Le jour de l’anniversaire de Clara, c’est elle qui lui fit un clin d’œil.",
+  "words": 245,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "Quel cadeau Inès reçoit-elle de sa grand-mère ?",
+    "answer": "une graine dans une boîte en métal",
+    "distractors": [
+     "une console de jeux",
+     "un pot de fleurs",
+     "un livre sur les plantes"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que reçoit Clara pour son anniversaire au début de l’histoire ?",
+    "answer": "une console de jeux",
+    "distractors": [
+     "une graine",
+     "une boîte en métal",
+     "un vélo"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Inès faillit-elle abandonner ?",
+    "answer": "La graine ne poussait pas après plusieurs semaines.",
+    "distractors": [
+     "Le pot était cassé.",
+     "Mamie Lou le lui a demandé.",
+     "Clara a pris la graine."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Quelle forme ont les feuilles ?",
+    "answer": "en forme de cœur",
+    "distractors": [
+     "en forme d’étoile",
+     "rondes",
+     "pointues comme des aiguilles"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Quelle fleur la graine est-elle devenue, d’après les indices ?",
+    "answer": "un tournesol",
+    "distractors": [
+     "une rose",
+     "une tulipe",
+     "une marguerite"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Mamie Lou garde-t-elle des graines chaque été ?",
+    "answer": "Pour continuer à les offrir, comme sa propre grand-mère.",
+    "distractors": [
+     "Pour les manger.",
+     "Pour les vendre au marché.",
+     "Parce qu’elle les collectionne."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que va probablement offrir Inès à Clara ?",
+    "answer": "une boîte avec une graine",
+    "distractors": [
+     "une console de jeux",
+     "un bouquet de roses",
+     "une poupée"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le message de cette histoire ?",
+    "answer": "La patience permet de voir grandir de belles choses.",
+    "distractors": [
+     "Les jeux vidéo sont meilleurs que les plantes.",
+     "Il ne faut jamais arroser les graines.",
+     "Les grands-mères font de mauvais cadeaux."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-11",
+  "level": 3,
+  "title": "Le renard et la cigogne pressée",
+  "text": "Une cigogne, revenant d’Afrique, se posa au bord d’un étang pour se reposer. Elle était pressée de rejoindre son nid sur le clocher du village, où l’attendaient ses petits.\n\nUn renard rusé sortit des roseaux. « Bonjour, belle voyageuse ! Vous semblez épuisée. Venez donc dîner chez moi ce soir, j’ai préparé une délicieuse soupe aux grenouilles. » La cigogne, affamée, hésita. Elle se méfiait des renards, mais la soupe la tentait.\n\n« Je vous remercie, répondit-elle, mais je dois d’abord vérifier une chose. » Elle fit le tour de l’étang et remarqua, près de la tanière du renard, une assiette plate et un grand bol très étroit. « Voilà qui m’étonne », pensa-t-elle.\n\nLe soir venu, elle arriva avec un panier. Le renard servit la soupe… dans l’assiette plate pour la cigogne, et dans le bol étroit pour lui-même. La cigogne, avec son long bec, ne pouvait rien attraper dans l’assiette. Le renard ricanait déjà.\n\nMais la cigogne sortit tranquillement de son panier un long tuyau de roseau, le plongea dans l’assiette et aspira la soupe jusqu’à la dernière goutte. Quant au renard, il eut beau tirer la langue, son museau restait coincé dans le bol trop étroit qu’il avait choisi pour la vexer.\n\n« Merci pour ce repas, dit la cigogne en s’envolant. La prochaine fois, réfléchissez avant de tendre un piège : on y tombe parfois soi-même. »",
+  "words": 221,
+  "questions": [
+   {
+    "type": "prelevement",
+    "question": "D’où revient la cigogne ?",
+    "answer": "d’Afrique",
+    "distractors": [
+     "du village",
+     "de la montagne",
+     "de la mer"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la cigogne est-elle pressée ?",
+    "answer": "Ses petits l’attendent dans son nid.",
+    "distractors": [
+     "Elle a peur de l’orage.",
+     "Elle veut manger des grenouilles.",
+     "Le renard la poursuit."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la cigogne hésite-t-elle à accepter l’invitation ?",
+    "answer": "Elle se méfie des renards.",
+    "distractors": [
+     "Elle n’aime pas la soupe.",
+     "Elle n’a pas faim.",
+     "Elle ne connaît pas l’étang."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que remarque la cigogne près de la tanière ?",
+    "answer": "une assiette plate et un bol étroit",
+    "distractors": [
+     "un piège à oiseaux",
+     "un panier de grenouilles",
+     "un tuyau de roseau"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Quel était le plan du renard ?",
+    "answer": "Servir la cigogne dans une assiette où elle ne pourrait pas manger.",
+    "distractors": [
+     "Offrir un vrai bon repas à la cigogne.",
+     "Voler les petits de la cigogne.",
+     "Apprendre à voler."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Comment la cigogne mange-t-elle la soupe ?",
+    "answer": "avec un tuyau de roseau",
+    "distractors": [
+     "avec une cuillère",
+     "avec son bec directement",
+     "elle ne la mange pas"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le renard ne peut-il pas manger ?",
+    "answer": "Son museau est coincé dans le bol trop étroit.",
+    "distractors": [
+     "La soupe est trop chaude.",
+     "La cigogne a tout mangé.",
+     "Il n’a pas faim."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle est la morale de cette histoire ?",
+    "answer": "Celui qui tend un piège peut y tomber lui-même.",
+    "distractors": [
+     "Il faut toujours accepter les invitations.",
+     "Les renards font la meilleure soupe.",
+     "Les cigognes ne mangent que des grenouilles."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F1-12",
+  "level": 3,
+  "title": "Les bottes de sept lieues de Karim",
+  "text": "Karim habitait une ferme isolée, à trois kilomètres de l’école. Chaque matin, il marchait sur un chemin de terre en traînant les pieds, car ses vieilles bottes en caoutchouc étaient trop petites et lui faisaient mal.\n\nUn soir de novembre, il trouva dans le grenier une paire de bottes en cuir, toutes poussiéreuses. Elles avaient appartenu à son arrière-grand-père, qui avait été facteur dans la région. Sur la semelle, on devinait une inscription presque effacée : « Pour celui qui va loin ».\n\nLe lendemain, Karim les enfila. Elles étaient un peu grandes, mais si confortables qu’il eut l’impression de flotter. Il arriva à l’école avant tout le monde, sans être fatigué. « Ce sont des bottes magiques ! » se dit-il.\n\nPendant des semaines, Karim ne quitta plus ses bottes. Il marchait vite, gagnait toutes les courses en sport et proposait même de porter les sacs de ses camarades. Un jour, la semelle se décolla. Désespéré, Karim les apporta au cordonnier du village.\n\nLe vieil artisan examina les bottes en souriant. « Je connais ce modèle. Ces bottes ne sont pas magiques, mon garçon. Elles sont simplement bien faites, à ta taille, et tu marches enfin sans avoir mal. Le reste, c’est toi qui l’as fait. »\n\nKarim rentra chez lui pensif. Sur le chemin, il remarqua qu’il marchait toujours aussi vite. Il comprit alors que les bottes l’avaient surtout aidé à croire qu’il en était capable.",
+  "words": 230,
+  "questions": [
+   {
+    "type": "inference",
+    "question": "Pourquoi Karim traîne-t-il les pieds au début ?",
+    "answer": "Ses bottes trop petites lui font mal.",
+    "distractors": [
+     "Il n’aime pas l’école.",
+     "Le chemin est en montée.",
+     "Il est très fatigué."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Où Karim trouve-t-il les bottes en cuir ?",
+    "answer": "dans le grenier",
+    "distractors": [
+     "à l’école",
+     "chez le cordonnier",
+     "dans la grange"
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "À qui appartenaient les bottes ?",
+    "answer": "à son arrière-grand-père, facteur",
+    "distractors": [
+     "à son papa",
+     "au cordonnier",
+     "à un géant"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi Karim croit-il que les bottes sont magiques ?",
+    "answer": "Il arrive vite et sans fatigue à l’école.",
+    "distractors": [
+     "Elles changent de couleur.",
+     "Elles parlent.",
+     "Elles brillent la nuit."
+    ]
+   },
+   {
+    "type": "prelevement",
+    "question": "Que se passe-t-il un jour avec les bottes ?",
+    "answer": "La semelle se décolle.",
+    "distractors": [
+     "Karim les perd.",
+     "Elles deviennent trop petites.",
+     "Un camarade les vole."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Selon le cordonnier, pourquoi Karim marche-t-il si bien ?",
+    "answer": "Les bottes sont confortables et à sa taille.",
+    "distractors": [
+     "Les bottes sont vraiment magiques.",
+     "Karim prend le bus en cachette.",
+     "Le chemin est devenu plus court."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Que comprend Karim à la fin ?",
+    "answer": "Il était capable de marcher vite par lui-même.",
+    "distractors": [
+     "Il doit racheter des bottes magiques.",
+     "Le cordonnier est un magicien.",
+     "Il ne doit plus aller à l’école."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le message de cette histoire ?",
+    "answer": "Croire en soi aide à réussir.",
+    "distractors": [
+     "Il faut toujours porter de vieilles bottes.",
+     "La magie existe vraiment.",
+     "Les cordonniers fabriquent des jouets."
+    ]
+   }
+  ]
+ }
+]

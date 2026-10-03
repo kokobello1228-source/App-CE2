@@ -1,0 +1,673 @@
+[
+ {
+  "id": "F11-001",
+  "level": 1,
+  "word": "fleur",
+  "family": [
+   "fleuriste",
+   "fleurir",
+   "fleuri"
+  ],
+  "intruder": "fleuve"
+ },
+ {
+  "id": "F11-002",
+  "level": 1,
+  "word": "jardin",
+  "family": [
+   "jardinier",
+   "jardiner",
+   "jardinage"
+  ],
+  "intruder": "jambon"
+ },
+ {
+  "id": "F11-003",
+  "level": 1,
+  "word": "lait",
+  "family": [
+   "laitier",
+   "laiterie",
+   "laitage"
+  ],
+  "intruder": "laid"
+ },
+ {
+  "id": "F11-004",
+  "level": 1,
+  "word": "dent",
+  "family": [
+   "dentiste",
+   "dentifrice",
+   "dentier"
+  ],
+  "intruder": "dinde"
+ },
+ {
+  "id": "F11-005",
+  "level": 1,
+  "word": "chat",
+  "family": [
+   "chaton",
+   "chatte",
+   "chatière"
+  ],
+  "intruder": "château"
+ },
+ {
+  "id": "F11-006",
+  "level": 1,
+  "word": "terre",
+  "family": [
+   "terrain",
+   "enterrer",
+   "terrier"
+  ],
+  "intruder": "terrible"
+ },
+ {
+  "id": "F11-007",
+  "level": 1,
+  "word": "neige",
+  "family": [
+   "neiger",
+   "enneigé",
+   "neigeux"
+  ],
+  "intruder": "nageur"
+ },
+ {
+  "id": "F11-008",
+  "level": 1,
+  "word": "laver",
+  "family": [
+   "lavage",
+   "lavabo",
+   "lave-linge"
+  ],
+  "intruder": "lavande"
+ },
+ {
+  "id": "F11-009",
+  "level": 1,
+  "word": "chant",
+  "family": [
+   "chanter",
+   "chanteur",
+   "chanson"
+  ],
+  "intruder": "champ"
+ },
+ {
+  "id": "F11-010",
+  "level": 1,
+  "word": "dessin",
+  "family": [
+   "dessiner",
+   "dessinateur",
+   "redessiner"
+  ],
+  "intruder": "dessert"
+ },
+ {
+  "id": "F11-011",
+  "level": 1,
+  "word": "sel",
+  "family": [
+   "salé",
+   "saler",
+   "salière"
+  ],
+  "intruder": "selle"
+ },
+ {
+  "id": "F11-012",
+  "level": 1,
+  "word": "coiffer",
+  "family": [
+   "coiffeur",
+   "coiffure",
+   "décoiffé"
+  ],
+  "intruder": "coffre"
+ },
+ {
+  "id": "F11-013",
+  "level": 1,
+  "word": "long",
+  "family": [
+   "longueur",
+   "allonger",
+   "longtemps"
+  ],
+  "intruder": "loupe"
+ },
+ {
+  "id": "F11-014",
+  "level": 1,
+  "word": "jour",
+  "family": [
+   "journée",
+   "journal",
+   "bonjour"
+  ],
+  "intruder": "jouet"
+ },
+ {
+  "id": "F11-015",
+  "level": 1,
+  "word": "froid",
+  "family": [
+   "refroidir",
+   "froidement",
+   "froideur"
+  ],
+  "intruder": "froissé"
+ },
+ {
+  "id": "F11-016",
+  "level": 1,
+  "word": "sport",
+  "family": [
+   "sportif",
+   "sportive",
+   "multisport"
+  ],
+  "intruder": "support"
+ },
+ {
+  "id": "F11-017",
+  "level": 1,
+  "word": "bois",
+  "family": [
+   "boisé",
+   "déboiser",
+   "sous-bois"
+  ],
+  "intruder": "boisson"
+ },
+ {
+  "id": "F11-018",
+  "level": 1,
+  "word": "porte",
+  "family": [
+   "portail",
+   "portière",
+   "portier"
+  ],
+  "intruder": "porc"
+ },
+ {
+  "id": "F11-019",
+  "level": 1,
+  "word": "poisson",
+  "family": [
+   "poissonnier",
+   "poissonnerie",
+   "poissonneux"
+  ],
+  "intruder": "poison"
+ },
+ {
+  "id": "F11-020",
+  "level": 1,
+  "word": "lune",
+  "family": [
+   "lunaire",
+   "alunir",
+   "demi-lune"
+  ],
+  "intruder": "lutin"
+ },
+ {
+  "id": "F11-021",
+  "level": 2,
+  "word": "grand",
+  "family": [
+   "grandir",
+   "agrandir",
+   "grandeur"
+  ],
+  "intruder": "grange"
+ },
+ {
+  "id": "F11-022",
+  "level": 2,
+  "word": "mont",
+  "family": [
+   "montagne",
+   "montagnard",
+   "montagneux"
+  ],
+  "intruder": "montre"
+ },
+ {
+  "id": "F11-023",
+  "level": 2,
+  "word": "fort",
+  "family": [
+   "forteresse",
+   "renforcer",
+   "fortement"
+  ],
+  "intruder": "fortune"
+ },
+ {
+  "id": "F11-024",
+  "level": 2,
+  "word": "peur",
+  "family": [
+   "peureux",
+   "apeuré",
+   "peureusement"
+  ],
+  "intruder": "pleurer"
+ },
+ {
+  "id": "F11-025",
+  "level": 2,
+  "word": "vent",
+  "family": [
+   "venter",
+   "éventail",
+   "paravent"
+  ],
+  "intruder": "vente"
+ },
+ {
+  "id": "F11-026",
+  "level": 2,
+  "word": "roue",
+  "family": [
+   "rouler",
+   "roulette",
+   "rouleau"
+  ],
+  "intruder": "rouge"
+ },
+ {
+  "id": "F11-027",
+  "level": 2,
+  "word": "plume",
+  "family": [
+   "plumage",
+   "plumer",
+   "déplumé"
+  ],
+  "intruder": "pluie"
+ },
+ {
+  "id": "F11-028",
+  "level": 2,
+  "word": "glace",
+  "family": [
+   "glacer",
+   "glaçon",
+   "glacial"
+  ],
+  "intruder": "glisser"
+ },
+ {
+  "id": "F11-029",
+  "level": 2,
+  "word": "pied",
+  "family": [
+   "piéton",
+   "piétiner",
+   "cale-pied"
+  ],
+  "intruder": "pie"
+ },
+ {
+  "id": "F11-030",
+  "level": 2,
+  "word": "chaud",
+  "family": [
+   "chauffer",
+   "réchauffer",
+   "chaudière"
+  ],
+  "intruder": "chaussure"
+ },
+ {
+  "id": "F11-031",
+  "level": 2,
+  "word": "mer",
+  "family": [
+   "marin",
+   "marée",
+   "outre-mer"
+  ],
+  "intruder": "mère"
+ },
+ {
+  "id": "F11-032",
+  "level": 2,
+  "word": "tête",
+  "family": [
+   "entêté",
+   "têtu",
+   "en-tête"
+  ],
+  "intruder": "tétine"
+ },
+ {
+  "id": "F11-033",
+  "level": 2,
+  "word": "vie",
+  "family": [
+   "vivre",
+   "vivant",
+   "survivre"
+  ],
+  "intruder": "vide"
+ },
+ {
+  "id": "F11-034",
+  "level": 2,
+  "word": "dur",
+  "family": [
+   "durcir",
+   "dureté",
+   "endurci"
+  ],
+  "intruder": "duvet"
+ },
+ {
+  "id": "F11-035",
+  "level": 2,
+  "word": "riche",
+  "family": [
+   "richesse",
+   "enrichir",
+   "richement"
+  ],
+  "intruder": "ricaner"
+ },
+ {
+  "id": "F11-036",
+  "level": 2,
+  "word": "nager",
+  "family": [
+   "nage",
+   "nageur",
+   "nageoire"
+  ],
+  "intruder": "neige"
+ },
+ {
+  "id": "F11-037",
+  "level": 2,
+  "word": "bras",
+  "family": [
+   "brassard",
+   "embrasser",
+   "avant-bras"
+  ],
+  "intruder": "brasier"
+ },
+ {
+  "id": "F11-038",
+  "level": 2,
+  "word": "sale",
+  "family": [
+   "salir",
+   "saleté",
+   "salissant"
+  ],
+  "intruder": "salon"
+ },
+ {
+  "id": "F11-039",
+  "level": 2,
+  "word": "parfum",
+  "family": [
+   "parfumer",
+   "parfumerie",
+   "parfumé"
+  ],
+  "intruder": "parfois"
+ },
+ {
+  "id": "F11-040",
+  "level": 2,
+  "word": "lent",
+  "family": [
+   "lentement",
+   "ralentir",
+   "lenteur"
+  ],
+  "intruder": "lentille"
+ },
+ {
+  "id": "F11-041",
+  "level": 3,
+  "word": "écrire",
+  "family": [
+   "écriture",
+   "écrivain",
+   "réécrire"
+  ],
+  "intruder": "écraser"
+ },
+ {
+  "id": "F11-042",
+  "level": 3,
+  "word": "voir",
+  "family": [
+   "revoir",
+   "voyant",
+   "prévoir"
+  ],
+  "intruder": "voisin"
+ },
+ {
+  "id": "F11-043",
+  "level": 3,
+  "word": "cheval",
+  "family": [
+   "chevalier",
+   "chevaucher",
+   "chevaline"
+  ],
+  "intruder": "cheveu"
+ },
+ {
+  "id": "F11-044",
+  "level": 3,
+  "word": "sauter",
+  "family": [
+   "sauterelle",
+   "sautiller",
+   "sursauter"
+  ],
+  "intruder": "sauce"
+ },
+ {
+  "id": "F11-045",
+  "level": 3,
+  "word": "goût",
+  "family": [
+   "goûter",
+   "dégoûtant",
+   "ragoût"
+  ],
+  "intruder": "goutte"
+ },
+ {
+  "id": "F11-046",
+  "level": 3,
+  "word": "chien",
+  "family": [
+   "chienne",
+   "chiot",
+   "chienchien"
+  ],
+  "intruder": "chimie"
+ },
+ {
+  "id": "F11-047",
+  "level": 3,
+  "word": "faim",
+  "family": [
+   "affamé",
+   "famine",
+   "affamer"
+  ],
+  "intruder": "famille"
+ },
+ {
+  "id": "F11-048",
+  "level": 3,
+  "word": "plein",
+  "family": [
+   "remplir",
+   "pleinement",
+   "trop-plein"
+  ],
+  "intruder": "pleuvoir"
+ },
+ {
+  "id": "F11-049",
+  "level": 3,
+  "word": "lumière",
+  "family": [
+   "allumer",
+   "lumineux",
+   "illuminer"
+  ],
+  "intruder": "limace"
+ },
+ {
+  "id": "F11-050",
+  "level": 3,
+  "word": "bon",
+  "family": [
+   "bonté",
+   "bonbon",
+   "bonheur"
+  ],
+  "intruder": "bond"
+ },
+ {
+  "id": "F11-051",
+  "level": 3,
+  "word": "nez",
+  "family": [
+   "nasal",
+   "nasiller",
+   "pince-nez"
+  ],
+  "intruder": "navet"
+ },
+ {
+  "id": "F11-052",
+  "level": 3,
+  "word": "pierre",
+  "family": [
+   "pierreux",
+   "empierrer",
+   "pierraille"
+  ],
+  "intruder": "pieuvre"
+ },
+ {
+  "id": "F11-053",
+  "level": 3,
+  "word": "mur",
+  "family": [
+   "muraille",
+   "murer",
+   "emmurer"
+  ],
+  "intruder": "mûr"
+ },
+ {
+  "id": "F11-054",
+  "level": 3,
+  "word": "lire",
+  "family": [
+   "lecture",
+   "lecteur",
+   "relire"
+  ],
+  "intruder": "lierre"
+ },
+ {
+  "id": "F11-055",
+  "level": 3,
+  "word": "boucher (fermer)",
+  "family": [
+   "bouchon",
+   "déboucher",
+   "bouche-trou"
+  ],
+  "intruder": "boucherie"
+ },
+ {
+  "id": "F11-056",
+  "level": 3,
+  "word": "an",
+  "family": [
+   "année",
+   "anniversaire",
+   "annuel"
+  ],
+  "intruder": "âne"
+ },
+ {
+  "id": "F11-057",
+  "level": 3,
+  "word": "ciel",
+  "family": [
+   "céleste",
+   "gratte-ciel",
+   "arc-en-ciel"
+  ],
+  "intruder": "cil"
+ },
+ {
+  "id": "F11-058",
+  "level": 3,
+  "word": "main",
+  "family": [
+   "manuel",
+   "manette",
+   "maintenir"
+  ],
+  "intruder": "manteau"
+ },
+ {
+  "id": "F11-059",
+  "level": 3,
+  "word": "loup",
+  "family": [
+   "louve",
+   "louveteau",
+   "loup-garou"
+  ],
+  "intruder": "loupe"
+ },
+ {
+  "id": "F11-060",
+  "level": 3,
+  "word": "école",
+  "family": [
+   "écolier",
+   "scolaire",
+   "écolière"
+  ],
+  "intruder": "écorce"
+ },
+ {
+  "id": "F11-061",
+  "level": 3,
+  "word": "jeune",
+  "family": [
+   "jeunesse",
+   "rajeunir",
+   "jeunot"
+  ],
+  "intruder": "jaune"
+ }
+]

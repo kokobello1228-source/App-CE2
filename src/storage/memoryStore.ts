@@ -3,7 +3,7 @@ import type { Mode } from '../engine/session';
 import type { ReviewEntry, ReviewUpdate } from '../engine/spacedRepetition';
 import type { Level } from '../skills/types';
 import { DEFAULT_SETTINGS, type Settings } from './settings';
-import { HISTORY_WINDOW, type AttemptInput, type SkillHistory, type Store } from './store';
+import { HISTORY_WINDOW, type AttemptInput, type FluencyResult, type SkillHistory, type Store } from './store';
 
 /** Where the JSON state is kept (browser storage on the web, nothing in tests). */
 export interface Persistence {
@@ -38,6 +38,7 @@ interface State {
   attempts: Attempt[];
   reviews: Record<string, ReviewEntry>;
   school: { skillId: SkillId; correct: number; total: number; createdAt: number }[];
+  fluency: FluencyResult[];
 }
 
 /** Keeps storage small: older answers are dropped beyond this count. */
@@ -45,7 +46,7 @@ export const MAX_ATTEMPTS = 5000;
 const MAX_SESSIONS = 2000;
 
 const emptyState = (): State => ({
-  version: 1, nextId: 1, settings: {}, levels: {}, sessions: [], attempts: [], reviews: {}, school: [],
+  version: 1, nextId: 1, settings: {}, levels: {}, sessions: [], attempts: [], reviews: {}, school: [], fluency: [],
 });
 
 const reviewId = (skillId: string, itemKey: string) => `${skillId}|${itemKey}`;
@@ -191,6 +192,15 @@ export class MemoryStore implements Store {
   async saveSchoolResult(skillId: SkillId, correct: number, total: number): Promise<void> {
     this.state.school.push({ skillId, correct, total, createdAt: this.now() });
     this.persist();
+  }
+
+  async saveFluencyResult(r: Omit<FluencyResult, 'createdAt'>): Promise<void> {
+    this.state.fluency.push({ ...r, createdAt: this.now() });
+    this.persist();
+  }
+
+  async fluencyResults(): Promise<FluencyResult[]> {
+    return [...this.state.fluency];
   }
 
   async resetAll(): Promise<void> {

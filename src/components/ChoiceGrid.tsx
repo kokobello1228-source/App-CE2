@@ -17,7 +17,7 @@ interface Props {
 
 /** Multiple-choice answers as large cards; the selected one gets the ink colour and a tick. */
 export function ChoiceGrid({ choices, selected, onSelect, disabled, renderChoice, columns = 2 }: Props) {
-  const basis = columns === 3 ? '31%' : '47%';
+  const basis = columns === 3 ? '31%' : columns === 1 ? '100%' : '47%';
   return (
     <View style={styles.grid} accessibilityRole="radiogroup">
       {choices.map((choice) => {

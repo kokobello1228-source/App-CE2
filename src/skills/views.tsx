@@ -1,6 +1,10 @@
 import type { ComponentType } from 'react';
 import type { SkillId } from '../../skills.config';
+import { F1View } from './f1/View';
 import { F2View } from './f2/View';
+import { F3View } from './f3/View';
+import { F4View } from './f4/View';
+import { QcmView } from './QcmView';
 import { F8View } from './f8/View';
 import { M10View } from './m10/View';
 import { M11View } from './m11/View';
@@ -25,8 +29,19 @@ const as = (view: unknown) => view as AnyView;
 
 /** Display component of each implemented skill. */
 export const SKILL_VIEWS: Partial<Record<SkillId, AnyView>> = {
+  F1: as(F1View),
   F2: as(F2View),
+  F3: as(F3View),
+  F4: as(F4View),
+  F5: as(QcmView),
+  F6: as(QcmView),
+  F7: as(QcmView),
   F8: as(F8View),
+  F9: as(QcmView),
+  F10: as(QcmView),
+  F11: as(QcmView),
+  F12: as(QcmView),
+  F13: as(QcmView),
   M1: as(M1View),
   M2: as(M2View),
   M3: as(M3View),

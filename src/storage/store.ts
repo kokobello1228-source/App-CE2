@@ -22,6 +22,16 @@ export interface SkillHistory {
   lastPracticedAt: number | null;
 }
 
+/** One reading-aloud measure (F14). */
+export interface FluencyResult {
+  textId: string;
+  wordsRead: number;
+  errors: number;
+  seconds: number;
+  wcpm: number;
+  createdAt: number;
+}
+
 /** Number of most recent attempts used for the band estimate of a skill. */
 export const HISTORY_WINDOW = 30;
 
@@ -48,5 +58,7 @@ export interface Store {
   dueReviews(skillId: SkillId, now: number, limit: number): Promise<ReviewEntry[]>;
   dueReviewCounts(now: number): Promise<Partial<Record<SkillId, number>>>;
   saveSchoolResult(skillId: SkillId, correct: number, total: number): Promise<void>;
+  saveFluencyResult(result: Omit<FluencyResult, 'createdAt'>): Promise<void>;
+  fluencyResults(): Promise<FluencyResult[]>;
   resetAll(): Promise<void>;
 }

@@ -1,0 +1,856 @@
+[
+ {
+  "id": "F67-001",
+  "sentence": "Le boulanger prépare des croissants chaque matin.",
+  "groups": [
+   "Le boulanger",
+   "prépare",
+   "des croissants",
+   "chaque matin"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-002",
+  "sentence": "Ma petite sœur dessine un arc-en-ciel sur son cahier.",
+  "groups": [
+   "Ma petite sœur",
+   "dessine",
+   "un arc-en-ciel",
+   "sur son cahier"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-003",
+  "sentence": "Les élèves rangent leurs affaires dans le casier.",
+  "groups": [
+   "Les élèves",
+   "rangent",
+   "leurs affaires",
+   "dans le casier"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-004",
+  "sentence": "Le chat noir regarde les oiseaux par la fenêtre.",
+  "groups": [
+   "Le chat noir",
+   "regarde",
+   "les oiseaux",
+   "par la fenêtre"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-005",
+  "sentence": "Mon grand-père cultive des fraises dans son jardin.",
+  "groups": [
+   "Mon grand-père",
+   "cultive",
+   "des fraises",
+   "dans son jardin"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-006",
+  "sentence": "Les enfants jouent au ballon dans la cour.",
+  "groups": [
+   "Les enfants",
+   "jouent",
+   "au ballon",
+   "dans la cour"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-007",
+  "sentence": "La maîtresse raconte une histoire aux élèves.",
+  "groups": [
+   "La maîtresse",
+   "raconte",
+   "une histoire",
+   "aux élèves"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-008",
+  "sentence": "Le facteur apporte une lettre à Léa.",
+  "groups": [
+   "Le facteur",
+   "apporte",
+   "une lettre",
+   "à Léa"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-009",
+  "sentence": "Il mange une pomme à la récréation.",
+  "groups": [
+   "Il",
+   "mange",
+   "une pomme",
+   "à la récréation"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-010",
+  "sentence": "Elles chantent une chanson pour la fête.",
+  "groups": [
+   "Elles",
+   "chantent",
+   "une chanson",
+   "pour la fête"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-011",
+  "sentence": "Nous visitons le musée avec la classe.",
+  "groups": [
+   "Nous",
+   "visitons",
+   "le musée",
+   "avec la classe"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-012",
+  "sentence": "Tu prépares ton cartable pour demain.",
+  "groups": [
+   "Tu",
+   "prépares",
+   "ton cartable",
+   "pour demain"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-013",
+  "sentence": "Chaque soir, Inès arrose les plantes.",
+  "groups": [
+   "Chaque soir",
+   "Inès",
+   "arrose",
+   "les plantes"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-014",
+  "sentence": "Dans la forêt, les écureuils cachent des noisettes.",
+  "groups": [
+   "Dans la forêt",
+   "les écureuils",
+   "cachent",
+   "des noisettes"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-015",
+  "sentence": "Le dimanche, papa lave la voiture.",
+  "groups": [
+   "Le dimanche",
+   "papa",
+   "lave",
+   "la voiture"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-016",
+  "sentence": "Pendant la sieste, le bébé serre son doudou.",
+  "groups": [
+   "Pendant la sieste",
+   "le bébé",
+   "serre",
+   "son doudou"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-017",
+  "sentence": "Le vent emporte les feuilles dans la rue.",
+  "groups": [
+   "Le vent",
+   "emporte",
+   "les feuilles",
+   "dans la rue"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-018",
+  "sentence": "Les pompiers arrivent très vite avec leur camion.",
+  "groups": [
+   "Les pompiers",
+   "arrivent",
+   "très vite",
+   "avec leur camion"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-019",
+  "sentence": "Sami colle une image dans son album.",
+  "groups": [
+   "Sami",
+   "colle",
+   "une image",
+   "dans son album"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-020",
+  "sentence": "Ce matin, nous ramassons des coquillages.",
+  "groups": [
+   "Ce matin",
+   "nous",
+   "ramassons",
+   "des coquillages"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-021",
+  "sentence": "Lina a un nouveau vélo depuis lundi.",
+  "groups": [
+   "Lina",
+   "a",
+   "un nouveau vélo",
+   "depuis lundi"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-022",
+  "sentence": "Les girafes ont un très long cou pour manger les feuilles.",
+  "groups": [
+   "Les girafes",
+   "ont",
+   "un très long cou",
+   "pour manger les feuilles"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-023",
+  "sentence": "Mon voisin a trois chats dans sa maison.",
+  "groups": [
+   "Mon voisin",
+   "a",
+   "trois chats",
+   "dans sa maison"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-024",
+  "sentence": "Nous avons une grande cabane au fond du jardin.",
+  "groups": [
+   "Nous",
+   "avons",
+   "une grande cabane",
+   "au fond du jardin"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-025",
+  "sentence": "Vous avez de la chance aujourd’hui.",
+  "groups": [
+   "Vous",
+   "avez",
+   "de la chance",
+   "aujourd’hui"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-026",
+  "sentence": "Tu as un joli sourire sur cette photo.",
+  "groups": [
+   "Tu",
+   "as",
+   "un joli sourire",
+   "sur cette photo"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-027",
+  "sentence": "Ce soir, les enfants ont faim.",
+  "groups": [
+   "Ce soir",
+   "les enfants",
+   "ont",
+   "faim"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-028",
+  "sentence": "En hiver, les arbres ont des branches nues.",
+  "groups": [
+   "En hiver",
+   "les arbres",
+   "ont",
+   "des branches nues"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-029",
+  "sentence": "Le pirate a une jambe de bois depuis longtemps.",
+  "groups": [
+   "Le pirate",
+   "a",
+   "une jambe de bois",
+   "depuis longtemps"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-030",
+  "sentence": "Elle a un chien à la maison.",
+  "groups": [
+   "Elle",
+   "a",
+   "un chien",
+   "à la maison"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-031",
+  "sentence": "Ma tante a une boutique près de la gare.",
+  "groups": [
+   "Ma tante",
+   "a",
+   "une boutique",
+   "près de la gare"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-032",
+  "sentence": "Au zoo, le lion a une crinière dorée.",
+  "groups": [
+   "Au zoo",
+   "le lion",
+   "a",
+   "une crinière dorée"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-033",
+  "sentence": "Les élèves ont une sortie vendredi.",
+  "groups": [
+   "Les élèves",
+   "ont",
+   "une sortie",
+   "vendredi"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-034",
+  "sentence": "Ils ont des bottes pour la promenade.",
+  "groups": [
+   "Ils",
+   "ont",
+   "des bottes",
+   "pour la promenade"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-035",
+  "sentence": "Mon frère a mal à la tête.",
+  "groups": [
+   "Mon frère",
+   "a",
+   "mal",
+   "à la tête"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-036",
+  "sentence": "Dans sa trousse, Hugo a deux crayons.",
+  "groups": [
+   "Dans sa trousse",
+   "Hugo",
+   "a",
+   "deux crayons"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-037",
+  "sentence": "La sorcière a un chapeau pointu sur la tête.",
+  "groups": [
+   "La sorcière",
+   "a",
+   "un chapeau pointu",
+   "sur la tête"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-038",
+  "sentence": "Le bébé a sommeil après le repas.",
+  "groups": [
+   "Le bébé",
+   "a",
+   "sommeil",
+   "après le repas"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 2
+ },
+ {
+  "id": "F67-039",
+  "sentence": "Le ciel est tout bleu ce matin.",
+  "groups": [
+   "Le ciel",
+   "est",
+   "tout bleu",
+   "ce matin"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-040",
+  "sentence": "Les cerises sont mûres en juin.",
+  "groups": [
+   "Les cerises",
+   "sont",
+   "mûres",
+   "en juin"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-041",
+  "sentence": "Ma maison est au bord de la rivière.",
+  "groups": [
+   "Ma maison",
+   "est",
+   "au bord",
+   "de la rivière"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-042",
+  "sentence": "Nous sommes en retard pour le bus.",
+  "groups": [
+   "Nous",
+   "sommes",
+   "en retard",
+   "pour le bus"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-043",
+  "sentence": "Vous êtes très gentils avec moi.",
+  "groups": [
+   "Vous",
+   "êtes",
+   "très gentils",
+   "avec moi"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-044",
+  "sentence": "Tu es le premier de la file.",
+  "groups": [
+   "Tu",
+   "es",
+   "le premier",
+   "de la file"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-045",
+  "sentence": "Il est dans le jardin avec son chien.",
+  "groups": [
+   "Il",
+   "est",
+   "dans le jardin",
+   "avec son chien"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-046",
+  "sentence": "Ce matin, la mer est très calme.",
+  "groups": [
+   "Ce matin",
+   "la mer",
+   "est",
+   "très calme"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-047",
+  "sentence": "Le samedi, la bibliothèque est fermée.",
+  "groups": [
+   "Le samedi",
+   "la bibliothèque",
+   "est",
+   "fermée"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-048",
+  "sentence": "Dans la cuisine, le gâteau est prêt.",
+  "groups": [
+   "Dans la cuisine",
+   "le gâteau",
+   "est",
+   "prêt"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-049",
+  "sentence": "Après le match, les joueurs sont fatigués.",
+  "groups": [
+   "Après le match",
+   "les joueurs",
+   "sont",
+   "fatigués"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-050",
+  "sentence": "Sous le pont, les canards sont à l’abri.",
+  "groups": [
+   "Sous le pont",
+   "les canards",
+   "sont",
+   "à l’abri"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-051",
+  "sentence": "Les fleurs du jardin sont très belles au printemps.",
+  "groups": [
+   "Les fleurs du jardin",
+   "sont",
+   "très belles",
+   "au printemps"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-052",
+  "sentence": "Le chien de Malik est sous la table de la cuisine.",
+  "groups": [
+   "Le chien de Malik",
+   "est",
+   "sous la table",
+   "de la cuisine"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-053",
+  "sentence": "Mes cousins sont à la plage cet été.",
+  "groups": [
+   "Mes cousins",
+   "sont",
+   "à la plage",
+   "cet été"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-054",
+  "sentence": "Cette histoire est très drôle pour les enfants.",
+  "groups": [
+   "Cette histoire",
+   "est",
+   "très drôle",
+   "pour les enfants"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 1,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-055",
+  "sentence": "Le soir, les étoiles sont brillantes.",
+  "groups": [
+   "Le soir",
+   "les étoiles",
+   "sont",
+   "brillantes"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 3
+ },
+ {
+  "id": "F67-056",
+  "sentence": "La petite fille aux nattes saute à la corde dans la cour.",
+  "groups": [
+   "La petite fille aux nattes",
+   "saute",
+   "à la corde",
+   "dans la cour"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-057",
+  "sentence": "Le chat de la voisine grimpe sur le toit chaque nuit.",
+  "groups": [
+   "Le chat de la voisine",
+   "grimpe",
+   "sur le toit",
+   "chaque nuit"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-058",
+  "sentence": "Au marché, maman achète des tomates.",
+  "groups": [
+   "Au marché",
+   "maman",
+   "achète",
+   "des tomates"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-059",
+  "sentence": "Ils écoutent de la musique dans leur chambre.",
+  "groups": [
+   "Ils",
+   "écoutent",
+   "de la musique",
+   "dans leur chambre"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-060",
+  "sentence": "Sur la plage, les mouettes crient très fort.",
+  "groups": [
+   "Sur la plage",
+   "les mouettes",
+   "crient",
+   "très fort"
+  ],
+  "subject": 1,
+  "verb": 2,
+  "subjectLevel": 3,
+  "verbLevel": 1
+ },
+ {
+  "id": "F67-061",
+  "sentence": "Les deux amies marchent jusqu’à l’école ensemble.",
+  "groups": [
+   "Les deux amies",
+   "marchent",
+   "jusqu’à l’école",
+   "ensemble"
+  ],
+  "subject": 0,
+  "verb": 1,
+  "subjectLevel": 2,
+  "verbLevel": 1
+ }
+]

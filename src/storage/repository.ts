@@ -5,7 +5,7 @@ import type { ReviewEntry, ReviewUpdate } from '../engine/spacedRepetition';
 import type { Level } from '../skills/types';
 import { MIGRATIONS } from './migrations';
 import { DEFAULT_SETTINGS, type Settings } from './settings';
-import { HISTORY_WINDOW, type AttemptInput, type SkillHistory, type Store } from './store';
+import { HISTORY_WINDOW, type AttemptInput, type FluencyResult, type SkillHistory, type Store } from './store';
 
 export type { AttemptInput, SkillHistory } from './store';
 
@@ -182,6 +182,20 @@ export class Repository implements Store {
       'INSERT INTO school_results (skill_id, correct, total, created_at) VALUES (?, ?, ?, ?)',
       skillId, correct, total, Date.now(),
     );
+  }
+
+  async saveFluencyResult(r: Omit<FluencyResult, 'createdAt'>): Promise<void> {
+    await this.db.runAsync(
+      'INSERT INTO fluency_results (text_id, words_read, errors, seconds, wcpm, created_at) VALUES (?, ?, ?, ?, ?, ?)',
+      r.textId, r.wordsRead, r.errors, r.seconds, r.wcpm, Date.now(),
+    );
+  }
+
+  async fluencyResults(): Promise<FluencyResult[]> {
+    const rows = await this.db.getAllAsync<{ text_id: string; words_read: number; errors: number; seconds: number; wcpm: number; created_at: number }>(
+      'SELECT * FROM fluency_results ORDER BY created_at',
+    );
+    return rows.map((r) => ({ textId: r.text_id, wordsRead: r.words_read, errors: r.errors, seconds: r.seconds, wcpm: r.wcpm, createdAt: r.created_at }));
   }
 
   async resetAll(): Promise<void> {

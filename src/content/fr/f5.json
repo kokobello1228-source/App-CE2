@@ -1,0 +1,722 @@
+[
+ {
+  "id": "F5-001",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Pour couper le pain, papa prend un …",
+  "answer": "couteau",
+  "distractors": [
+   "coussin",
+   "cadeau",
+   "château"
+  ]
+ },
+ {
+  "id": "F5-002",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le soir, je me brosse les … avant de dormir.",
+  "answer": "dents",
+  "distractors": [
+   "dames",
+   "gants",
+   "bancs"
+  ]
+ },
+ {
+  "id": "F5-003",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Il pleut : je prends mon … pour sortir.",
+  "answer": "parapluie",
+  "distractors": [
+   "oreiller",
+   "papillon",
+   "pinceau"
+  ]
+ },
+ {
+  "id": "F5-004",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le … miaule devant la porte.",
+  "answer": "chat",
+  "distractors": [
+   "char",
+   "chou",
+   "champ"
+  ]
+ },
+ {
+  "id": "F5-005",
+  "level": 1,
+  "kind": "n",
+  "sentence": "À la boulangerie, maman achète une …",
+  "answer": "baguette",
+  "distractors": [
+   "bague",
+   "raquette",
+   "baignoire"
+  ]
+ },
+ {
+  "id": "F5-006",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le pêcheur attrape un … dans la rivière.",
+  "answer": "poisson",
+  "distractors": [
+   "poison",
+   "poussin",
+   "buisson"
+  ]
+ },
+ {
+  "id": "F5-007",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Pour écrire, j’ai besoin d’un …",
+  "answer": "stylo",
+  "distractors": [
+   "sirop",
+   "seau",
+   "sapin"
+  ]
+ },
+ {
+  "id": "F5-008",
+  "level": 1,
+  "kind": "n",
+  "sentence": "L’oiseau construit son … dans l’arbre.",
+  "answer": "nid",
+  "distractors": [
+   "nez",
+   "lit",
+   "riz"
+  ]
+ },
+ {
+  "id": "F5-009",
+  "level": 1,
+  "kind": "n",
+  "sentence": "En hiver, je mets une … autour du cou.",
+  "answer": "écharpe",
+  "distractors": [
+   "échelle",
+   "épée",
+   "étoile"
+  ]
+ },
+ {
+  "id": "F5-010",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le jardinier arrose les …",
+  "answer": "fleurs",
+  "distractors": [
+   "fours",
+   "flèches",
+   "fêtes"
+  ]
+ },
+ {
+  "id": "F5-011",
+  "level": 1,
+  "kind": "n",
+  "sentence": "La nuit, on voit la … dans le ciel.",
+  "answer": "lune",
+  "distractors": [
+   "plume",
+   "prune",
+   "laine"
+  ]
+ },
+ {
+  "id": "F5-012",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le bébé boit son …",
+  "answer": "biberon",
+  "distractors": [
+   "bouton",
+   "bâton",
+   "ballon"
+  ]
+ },
+ {
+  "id": "F5-013",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Pour monter au grenier, je prends l’…",
+  "answer": "échelle",
+  "distractors": [
+   "écharpe",
+   "église",
+   "école"
+  ]
+ },
+ {
+  "id": "F5-014",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le cuisinier verse la soupe dans une …",
+  "answer": "casserole",
+  "distractors": [
+   "caserne",
+   "carotte",
+   "cassette"
+  ]
+ },
+ {
+  "id": "F5-015",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Les vaches mangent de l’… dans le pré.",
+  "answer": "herbe",
+  "distractors": [
+   "arbre",
+   "heure",
+   "aube"
+  ]
+ },
+ {
+  "id": "F5-016",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Je range mes vêtements dans l’…",
+  "answer": "armoire",
+  "distractors": [
+   "arrosoir",
+   "ardoise",
+   "histoire"
+  ]
+ },
+ {
+  "id": "F5-017",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le dentiste soigne une … abîmée.",
+  "answer": "dent",
+  "distractors": [
+   "dinde",
+   "danse",
+   "dune"
+  ]
+ },
+ {
+  "id": "F5-018",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Le chevalier porte une … pour se protéger.",
+  "answer": "armure",
+  "distractors": [
+   "allure",
+   "aventure",
+   "morsure"
+  ]
+ },
+ {
+  "id": "F5-019",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Sur la plage, je construis un château de …",
+  "answer": "sable",
+  "distractors": [
+   "table",
+   "câble",
+   "fable"
+  ]
+ },
+ {
+  "id": "F5-020",
+  "level": 1,
+  "kind": "n",
+  "sentence": "Pour savoir l’heure, je regarde ma …",
+  "answer": "montre",
+  "distractors": [
+   "montagne",
+   "monstre",
+   "moutarde"
+  ]
+ },
+ {
+  "id": "F5-021",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Les enfants … dans la piscine.",
+  "answer": "nagent",
+  "distractors": [
+   "nage",
+   "mangent",
+   "nageons"
+  ]
+ },
+ {
+  "id": "F5-022",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Demain, nous … au cinéma.",
+  "answer": "irons",
+  "distractors": [
+   "allions",
+   "iront",
+   "mangeons"
+  ]
+ },
+ {
+  "id": "F5-023",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Le boulanger … du pain tous les matins.",
+  "answer": "fait",
+  "distractors": [
+   "font",
+   "lit",
+   "faisons"
+  ]
+ },
+ {
+  "id": "F5-024",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Hier, Léa … une belle histoire.",
+  "answer": "a lu",
+  "distractors": [
+   "lira",
+   "lisons",
+   "a bu"
+  ]
+ },
+ {
+  "id": "F5-025",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Le chien … quand le facteur arrive.",
+  "answer": "aboie",
+  "distractors": [
+   "aboient",
+   "miaule",
+   "aboyons"
+  ]
+ },
+ {
+  "id": "F5-026",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Tu … tes dents avant de dormir.",
+  "answer": "brosses",
+  "distractors": [
+   "brosse",
+   "brossent",
+   "peins"
+  ]
+ },
+ {
+  "id": "F5-027",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Les oiseaux … vers le sud en automne.",
+  "answer": "s’envolent",
+  "distractors": [
+   "s’envole",
+   "nagent",
+   "roulent"
+  ]
+ },
+ {
+  "id": "F5-028",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Maman … la porte avec sa clé.",
+  "answer": "ouvre",
+  "distractors": [
+   "ouvrent",
+   "mange",
+   "ouvrons"
+  ]
+ },
+ {
+  "id": "F5-029",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Vous … très bien du piano.",
+  "answer": "jouez",
+  "distractors": [
+   "jouons",
+   "joue",
+   "mangez"
+  ]
+ },
+ {
+  "id": "F5-030",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Le bébé … dans son berceau.",
+  "answer": "dort",
+  "distractors": [
+   "dorment",
+   "court",
+   "dormons"
+  ]
+ },
+ {
+  "id": "F5-031",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Ce matin, les élèves … une poésie.",
+  "answer": "ont récité",
+  "distractors": [
+   "a récité",
+   "ont mangé",
+   "récitait"
+  ]
+ },
+ {
+  "id": "F5-032",
+  "level": 2,
+  "kind": "v",
+  "sentence": "La neige … sur les toits.",
+  "answer": "tombe",
+  "distractors": [
+   "tombent",
+   "pousse",
+   "nage"
+  ]
+ },
+ {
+  "id": "F5-033",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Nous … nos cahiers dans le cartable.",
+  "answer": "rangeons",
+  "distractors": [
+   "range",
+   "rangent",
+   "buvons"
+  ]
+ },
+ {
+  "id": "F5-034",
+  "level": 2,
+  "kind": "v",
+  "sentence": "L’année prochaine, je … en CM1.",
+  "answer": "serai",
+  "distractors": [
+   "étais",
+   "sera",
+   "mangerai"
+  ]
+ },
+ {
+  "id": "F5-035",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Le soleil … dans le ciel bleu.",
+  "answer": "brille",
+  "distractors": [
+   "brillent",
+   "aboie",
+   "brillons"
+  ]
+ },
+ {
+  "id": "F5-036",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Les pompiers … le feu.",
+  "answer": "éteignent",
+  "distractors": [
+   "éteint",
+   "allument",
+   "éteignons"
+  ]
+ },
+ {
+  "id": "F5-037",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Pendant la récréation, Hugo … à la marelle.",
+  "answer": "joue",
+  "distractors": [
+   "jouent",
+   "lit",
+   "jouons"
+  ]
+ },
+ {
+  "id": "F5-038",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Mes parents … une maison à la campagne.",
+  "answer": "ont",
+  "distractors": [
+   "a",
+   "sont",
+   "avons"
+  ]
+ },
+ {
+  "id": "F5-039",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Le magicien … un lapin de son chapeau.",
+  "answer": "sort",
+  "distractors": [
+   "sortent",
+   "mange",
+   "sortons"
+  ]
+ },
+ {
+  "id": "F5-040",
+  "level": 2,
+  "kind": "v",
+  "sentence": "Quand il fait très froid, l’eau du lac …",
+  "answer": "gèle",
+  "distractors": [
+   "gèlent",
+   "brûle",
+   "gelons"
+  ]
+ },
+ {
+  "id": "F5-041",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Ma grand-mère porte une robe …",
+  "answer": "fleurie",
+  "distractors": [
+   "fleuri",
+   "fleuris",
+   "salée"
+  ]
+ },
+ {
+  "id": "F5-042",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Les enfants sont … après la course.",
+  "answer": "fatigués",
+  "distractors": [
+   "fatigué",
+   "fatiguée",
+   "pointus"
+  ]
+ },
+ {
+  "id": "F5-043",
+  "level": 3,
+  "kind": "a",
+  "sentence": "J’ai acheté des pommes … au marché.",
+  "answer": "rouges",
+  "distractors": [
+   "rouge",
+   "bavardes",
+   "rapides"
+  ]
+ },
+ {
+  "id": "F5-044",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Le lion est un animal …",
+  "answer": "sauvage",
+  "distractors": [
+   "sauvages",
+   "sucré",
+   "carrée"
+  ]
+ },
+ {
+  "id": "F5-045",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Ces fleurs sont très …",
+  "answer": "belles",
+  "distractors": [
+   "belle",
+   "beaux",
+   "bavardes"
+  ]
+ },
+ {
+  "id": "F5-046",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Au goûter, je bois un chocolat …",
+  "answer": "chaud",
+  "distractors": [
+   "chaude",
+   "chauds",
+   "pointu"
+  ]
+ },
+ {
+  "id": "F5-047",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Les murs de ma chambre sont …",
+  "answer": "bleus",
+  "distractors": [
+   "bleu",
+   "bleue",
+   "sucrés"
+  ]
+ },
+ {
+  "id": "F5-048",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Nora chante d’une voix …",
+  "answer": "douce",
+  "distractors": [
+   "doux",
+   "douces",
+   "carrée"
+  ]
+ },
+ {
+  "id": "F5-049",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Le ciel est … : il va pleuvoir.",
+  "answer": "gris",
+  "distractors": [
+   "grise",
+   "ensoleillé",
+   "grises"
+  ]
+ },
+ {
+  "id": "F5-050",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Nous avons mangé une tarte …",
+  "answer": "délicieuse",
+  "distractors": [
+   "délicieux",
+   "délicieuses",
+   "bavarde"
+  ]
+ },
+ {
+  "id": "F5-051",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Les chats … dorment au soleil.",
+  "answer": "noirs",
+  "distractors": [
+   "noir",
+   "noires",
+   "carrés"
+  ]
+ },
+ {
+  "id": "F5-052",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Mon frère a les cheveux …",
+  "answer": "courts",
+  "distractors": [
+   "court",
+   "courte",
+   "sucrés"
+  ]
+ },
+ {
+  "id": "F5-053",
+  "level": 3,
+  "kind": "a",
+  "sentence": "La mer est … aujourd’hui : il n’y a pas de vagues.",
+  "answer": "calme",
+  "distractors": [
+   "calmes",
+   "agitée",
+   "bavarde"
+  ]
+ },
+ {
+  "id": "F5-054",
+  "level": 3,
+  "kind": "a",
+  "sentence": "J’ai mis mes bottes … pour sauter dans les flaques.",
+  "answer": "vertes",
+  "distractors": [
+   "vert",
+   "verts",
+   "salées"
+  ]
+ },
+ {
+  "id": "F5-055",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Cette valise est trop … pour moi.",
+  "answer": "lourde",
+  "distractors": [
+   "lourd",
+   "lourdes",
+   "gourmande"
+  ]
+ },
+ {
+  "id": "F5-056",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Les élèves … écoutent la maîtresse.",
+  "answer": "attentifs",
+  "distractors": [
+   "attentif",
+   "attentive",
+   "salés"
+  ]
+ },
+ {
+  "id": "F5-057",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Une … tortue traverse le jardin.",
+  "answer": "petite",
+  "distractors": [
+   "petit",
+   "petites",
+   "bruyant"
+  ]
+ },
+ {
+  "id": "F5-058",
+  "level": 3,
+  "kind": "a",
+  "sentence": "En automne, les feuilles … tombent des arbres.",
+  "answer": "mortes",
+  "distractors": [
+   "morte",
+   "morts",
+   "sucrées"
+  ]
+ },
+ {
+  "id": "F5-059",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Ce gâteau est trop … : je ne peux pas le finir.",
+  "answer": "sucré",
+  "distractors": [
+   "sucrée",
+   "sucrés",
+   "sage"
+  ]
+ },
+ {
+  "id": "F5-060",
+  "level": 3,
+  "kind": "a",
+  "sentence": "Le chemin est … : il faut bien regarder où l’on marche.",
+  "answer": "glissant",
+  "distractors": [
+   "glissante",
+   "glissants",
+   "joyeux"
+  ]
+ }
+]

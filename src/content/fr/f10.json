@@ -1,0 +1,551 @@
+[
+ {
+  "id": "F10-001",
+  "level": 1,
+  "sentence": "Le petit chat est **minuscule** à côté du chien.",
+  "answer": "tout petit",
+  "opposite": "énorme",
+  "lookalike": "musclé",
+  "other": "mignon"
+ },
+ {
+  "id": "F10-002",
+  "level": 1,
+  "sentence": "Après la course, Léo est **épuisé** : il s’assoit par terre.",
+  "answer": "très fatigué",
+  "opposite": "en pleine forme",
+  "lookalike": "épicé",
+  "other": "pressé"
+ },
+ {
+  "id": "F10-003",
+  "level": 1,
+  "sentence": "Le clown est **hilarant** : tout le monde rit.",
+  "answer": "très drôle",
+  "opposite": "très triste",
+  "lookalike": "hésitant",
+  "other": "illuminé"
+ },
+ {
+  "id": "F10-004",
+  "level": 1,
+  "sentence": "Ce gâteau est **savoureux** : j’en reprends !",
+  "answer": "très bon",
+  "opposite": "dégoûtant",
+  "lookalike": "savonneux",
+  "other": "sauvage"
+ },
+ {
+  "id": "F10-005",
+  "level": 1,
+  "sentence": "La maison est **immense** : elle a vingt chambres.",
+  "answer": "très grande",
+  "opposite": "minuscule",
+  "lookalike": "immobile",
+  "other": "ancienne"
+ },
+ {
+  "id": "F10-006",
+  "level": 1,
+  "sentence": "Inès est **ravie** de son cadeau.",
+  "answer": "très contente",
+  "opposite": "déçue",
+  "lookalike": "ravissante",
+  "other": "pressée"
+ },
+ {
+  "id": "F10-007",
+  "level": 1,
+  "sentence": "Il fait un froid **glacial** ce matin : mets ton bonnet.",
+  "answer": "très froid",
+  "opposite": "très chaud",
+  "lookalike": "glissant",
+  "other": "gluant"
+ },
+ {
+  "id": "F10-008",
+  "level": 1,
+  "sentence": "Le chien **dévore** sa gamelle en une minute.",
+  "answer": "mange très vite",
+  "opposite": "refuse",
+  "lookalike": "décore",
+  "other": "renverse"
+ },
+ {
+  "id": "F10-009",
+  "level": 1,
+  "sentence": "Les enfants **chuchotent** pour ne pas réveiller le bébé.",
+  "answer": "parlent tout bas",
+  "opposite": "crient",
+  "lookalike": "chatouillent",
+  "other": "chutent"
+ },
+ {
+  "id": "F10-010",
+  "level": 1,
+  "sentence": "Ma chambre est **impeccable** : tout est rangé.",
+  "answer": "très propre",
+  "opposite": "en désordre",
+  "lookalike": "impossible",
+  "other": "imperméable"
+ },
+ {
+  "id": "F10-011",
+  "level": 1,
+  "sentence": "Le bébé est **effrayé** par l’orage.",
+  "answer": "a très peur",
+  "opposite": "est calme",
+  "lookalike": "est effacé",
+  "other": "est enrhumé"
+ },
+ {
+  "id": "F10-012",
+  "level": 1,
+  "sentence": "Sami **escalade** le mur du jardin.",
+  "answer": "monte sur",
+  "opposite": "descend de",
+  "lookalike": "dessine",
+  "other": "mesure"
+ },
+ {
+  "id": "F10-013",
+  "level": 1,
+  "sentence": "Ce film est **ennuyeux** : je m’endors.",
+  "answer": "pas intéressant",
+  "opposite": "passionnant",
+  "lookalike": "nuageux",
+  "other": "effrayant"
+ },
+ {
+  "id": "F10-014",
+  "level": 1,
+  "sentence": "Le gâteau est **gigantesque** : il y en a pour vingt personnes.",
+  "answer": "très grand",
+  "opposite": "tout petit",
+  "lookalike": "gigotant",
+  "other": "glacé"
+ },
+ {
+  "id": "F10-015",
+  "level": 1,
+  "sentence": "Léa a **égaré** ses lunettes : elle les cherche partout.",
+  "answer": "perdu",
+  "opposite": "retrouvé",
+  "lookalike": "égratigné",
+  "other": "rangé"
+ },
+ {
+  "id": "F10-016",
+  "level": 1,
+  "sentence": "Le chiot est **craintif** : il se cache derrière sa maman.",
+  "answer": "qui a peur",
+  "opposite": "courageux",
+  "lookalike": "croustillant",
+  "other": "joueur"
+ },
+ {
+  "id": "F10-017",
+  "level": 1,
+  "sentence": "Il **sanglote** dans sa chambre.",
+  "answer": "pleure",
+  "opposite": "rit",
+  "lookalike": "sautille",
+  "other": "siffle"
+ },
+ {
+  "id": "F10-018",
+  "level": 1,
+  "sentence": "La nuit, les rues sont **désertes**.",
+  "answer": "vides",
+  "opposite": "pleines de monde",
+  "lookalike": "dessinées",
+  "other": "mouillées"
+ },
+ {
+  "id": "F10-019",
+  "level": 1,
+  "sentence": "Papa est **furieux** : le chien a mangé sa chaussure.",
+  "answer": "très en colère",
+  "opposite": "très content",
+  "lookalike": "curieux",
+  "other": "fatigué"
+ },
+ {
+  "id": "F10-020",
+  "level": 1,
+  "sentence": "La soupe est **brûlante** : attends un peu !",
+  "answer": "très chaude",
+  "opposite": "glacée",
+  "lookalike": "brillante",
+  "other": "salée"
+ },
+ {
+  "id": "F10-021",
+  "level": 2,
+  "sentence": "Le chevalier, **intrépide**, avance vers le dragon.",
+  "answer": "courageux",
+  "opposite": "peureux",
+  "lookalike": "intelligent",
+  "other": "intéressé"
+ },
+ {
+  "id": "F10-022",
+  "level": 2,
+  "sentence": "Le vieux château est **délabré** : les murs tombent en morceaux.",
+  "answer": "en très mauvais état",
+  "opposite": "tout neuf",
+  "lookalike": "délavé",
+  "other": "délicieux"
+ },
+ {
+  "id": "F10-023",
+  "level": 2,
+  "sentence": "La marchande **dissimule** le cadeau sous la table.",
+  "answer": "cache",
+  "opposite": "montre",
+  "lookalike": "dessine",
+  "other": "dispute"
+ },
+ {
+  "id": "F10-024",
+  "level": 2,
+  "sentence": "Le renard **rôde** autour du poulailler.",
+  "answer": "tourne en cherchant",
+  "opposite": "dort",
+  "lookalike": "roule",
+  "other": "rougit"
+ },
+ {
+  "id": "F10-025",
+  "level": 2,
+  "sentence": "Après l’orage, le ciel est **limpide**.",
+  "answer": "très clair",
+  "opposite": "très sombre",
+  "lookalike": "limité",
+  "other": "liquide"
+ },
+ {
+  "id": "F10-026",
+  "level": 2,
+  "sentence": "Le magicien a **ébloui** les enfants avec son spectacle.",
+  "answer": "émerveillé",
+  "opposite": "ennuyé",
+  "lookalike": "ébouriffé",
+  "other": "endormi"
+ },
+ {
+  "id": "F10-027",
+  "level": 2,
+  "sentence": "Le petit garçon **contemple** les étoiles.",
+  "answer": "regarde longtemps",
+  "opposite": "compte",
+  "lookalike": "cache",
+  "other": "contourne"
+ },
+ {
+  "id": "F10-028",
+  "level": 2,
+  "sentence": "La route est **sinueuse** : elle tourne sans arrêt.",
+  "answer": "pleine de virages",
+  "opposite": "toute droite",
+  "lookalike": "silencieuse",
+  "other": "sableuse"
+ },
+ {
+  "id": "F10-029",
+  "level": 2,
+  "sentence": "Cette tarte est **immangeable** : elle est toute brûlée.",
+  "answer": "qu’on ne peut pas manger",
+  "opposite": "délicieuse",
+  "lookalike": "immense",
+  "other": "imaginaire"
+ },
+ {
+  "id": "F10-030",
+  "level": 2,
+  "sentence": "Le coureur **accélère** dans la dernière ligne droite.",
+  "answer": "va plus vite",
+  "opposite": "ralentit",
+  "lookalike": "accroche",
+  "other": "acclame"
+ },
+ {
+  "id": "F10-031",
+  "level": 2,
+  "sentence": "Les campeurs **dressent** leur tente au bord du lac.",
+  "answer": "montent",
+  "opposite": "plient",
+  "lookalike": "dessinent",
+  "other": "peignent"
+ },
+ {
+  "id": "F10-032",
+  "level": 2,
+  "sentence": "La princesse est **vêtue** d’une robe dorée.",
+  "answer": "habillée",
+  "opposite": "déshabillée",
+  "lookalike": "vexée",
+  "other": "vieille"
+ },
+ {
+  "id": "F10-033",
+  "level": 2,
+  "sentence": "Le marin **scrute** l’horizon avec sa longue-vue.",
+  "answer": "observe attentivement",
+  "opposite": "ignore",
+  "lookalike": "écrit",
+  "other": "scie"
+ },
+ {
+  "id": "F10-034",
+  "level": 2,
+  "sentence": "Il a **dégusté** une glace à la fraise.",
+  "answer": "mangé en savourant",
+  "opposite": "jeté",
+  "lookalike": "dégoûté",
+  "other": "déguisé"
+ },
+ {
+  "id": "F10-035",
+  "level": 2,
+  "sentence": "La tempête **ravage** la forêt.",
+  "answer": "détruit",
+  "opposite": "plante",
+  "lookalike": "ravit",
+  "other": "range"
+ },
+ {
+  "id": "F10-036",
+  "level": 2,
+  "sentence": "Nos voisins sont très **aimables**.",
+  "answer": "gentils",
+  "opposite": "méchants",
+  "lookalike": "aimantés",
+  "other": "amusants"
+ },
+ {
+  "id": "F10-037",
+  "level": 2,
+  "sentence": "Le chat **guette** la souris derrière le placard.",
+  "answer": "attend en surveillant",
+  "opposite": "oublie",
+  "lookalike": "guérit",
+  "other": "gratte"
+ },
+ {
+  "id": "F10-038",
+  "level": 2,
+  "sentence": "Le spectacle était **fabuleux** !",
+  "answer": "extraordinaire",
+  "opposite": "nul",
+  "lookalike": "fabriqué",
+  "other": "fatigant"
+ },
+ {
+  "id": "F10-039",
+  "level": 2,
+  "sentence": "La grotte est **obscure** : on n’y voit rien.",
+  "answer": "noire",
+  "opposite": "lumineuse",
+  "lookalike": "obstinée",
+  "other": "oubliée"
+ },
+ {
+  "id": "F10-040",
+  "level": 2,
+  "sentence": "Le vieux pont est **fragile** : on ne peut plus passer dessus.",
+  "answer": "qui peut casser",
+  "opposite": "très solide",
+  "lookalike": "fraîche",
+  "other": "frisé"
+ },
+ {
+  "id": "F10-041",
+  "level": 3,
+  "sentence": "Mon oncle est **taciturne** : à table, on l’entend à peine.",
+  "answer": "silencieux",
+  "opposite": "bavard",
+  "lookalike": "tactile",
+  "other": "tardif"
+ },
+ {
+  "id": "F10-042",
+  "level": 3,
+  "sentence": "Malgré la pluie, les supporters restent **impassibles**.",
+  "answer": "calmes",
+  "opposite": "agités",
+  "lookalike": "impossibles",
+  "other": "imperméables"
+ },
+ {
+  "id": "F10-043",
+  "level": 3,
+  "sentence": "Le vieil homme, **perplexe**, regarde la carte sans savoir où aller.",
+  "answer": "qui hésite",
+  "opposite": "sûr de lui",
+  "lookalike": "perché",
+  "other": "pressé"
+ },
+ {
+  "id": "F10-044",
+  "level": 3,
+  "sentence": "Comme il avait **bâclé** son dessin, la maîtresse lui a demandé de recommencer.",
+  "answer": "fait trop vite",
+  "opposite": "soigné",
+  "lookalike": "bouclé",
+  "other": "collé"
+ },
+ {
+  "id": "F10-045",
+  "level": 3,
+  "sentence": "Le loup, **affamé**, sortit du bois.",
+  "answer": "qui a très faim",
+  "opposite": "rassasié",
+  "lookalike": "affolé",
+  "other": "assoiffé"
+ },
+ {
+  "id": "F10-046",
+  "level": 3,
+  "sentence": "La fillette **s’éclipsa** avant la fin de la fête.",
+  "answer": "partit discrètement",
+  "opposite": "arriva",
+  "lookalike": "éclata de rire",
+  "other": "s’endormit"
+ },
+ {
+  "id": "F10-047",
+  "level": 3,
+  "sentence": "Ce chemin est **escarpé** : il faut grimper en s’aidant des mains.",
+  "answer": "très en pente",
+  "opposite": "tout plat",
+  "lookalike": "écarté",
+  "other": "caché"
+ },
+ {
+  "id": "F10-048",
+  "level": 3,
+  "sentence": "Les explorateurs étaient **exténués** après des jours de marche.",
+  "answer": "épuisés",
+  "opposite": "en forme",
+  "lookalike": "étonnés",
+  "other": "exclus"
+ },
+ {
+  "id": "F10-049",
+  "level": 3,
+  "sentence": "L’enfant **rechigne** à ranger sa chambre.",
+  "answer": "n’a pas envie de",
+  "opposite": "adore",
+  "lookalike": "réussit à",
+  "other": "recommence à"
+ },
+ {
+  "id": "F10-050",
+  "level": 3,
+  "sentence": "Le roi, **magnanime**, pardonna au voleur.",
+  "answer": "généreux",
+  "opposite": "cruel",
+  "lookalike": "magnifique",
+  "other": "malade"
+ },
+ {
+  "id": "F10-051",
+  "level": 3,
+  "sentence": "La sorcière lui jeta un regard **narquois**.",
+  "answer": "moqueur",
+  "opposite": "gentil",
+  "lookalike": "noir",
+  "other": "nerveux"
+ },
+ {
+  "id": "F10-052",
+  "level": 3,
+  "sentence": "Le cheval **s’ébroue** en sortant de la rivière.",
+  "answer": "se secoue",
+  "opposite": "se noie",
+  "lookalike": "s’écroule",
+  "other": "s’éloigne"
+ },
+ {
+  "id": "F10-053",
+  "level": 3,
+  "sentence": "Il faisait une chaleur **accablante** : personne ne sortait.",
+  "answer": "écrasante",
+  "opposite": "agréable",
+  "lookalike": "accueillante",
+  "other": "aimable"
+ },
+ {
+  "id": "F10-054",
+  "level": 3,
+  "sentence": "Le pirate **convoite** le trésor du capitaine.",
+  "answer": "désire très fort",
+  "opposite": "déteste",
+  "lookalike": "convoque",
+  "other": "construit"
+ },
+ {
+  "id": "F10-055",
+  "level": 3,
+  "sentence": "Le bruit **incessant** des travaux empêche Nora de dormir.",
+  "answer": "qui ne s’arrête pas",
+  "opposite": "très court",
+  "lookalike": "insensé",
+  "other": "incendié"
+ },
+ {
+  "id": "F10-056",
+  "level": 3,
+  "sentence": "Le héros **brandit** son épée vers le ciel.",
+  "answer": "lève en l’air",
+  "opposite": "cache",
+  "lookalike": "casse",
+  "other": "range"
+ },
+ {
+  "id": "F10-057",
+  "level": 3,
+  "sentence": "Les feuilles **chatoyantes** de l’automne brillent au soleil.",
+  "answer": "aux couleurs changeantes",
+  "opposite": "ternes",
+  "lookalike": "chatouilleuses",
+  "other": "chaudes"
+ },
+ {
+  "id": "F10-058",
+  "level": 3,
+  "sentence": "Quand il vit le gâteau, son visage **s’illumina**.",
+  "answer": "devint joyeux",
+  "opposite": "devint triste",
+  "lookalike": "s’alluma",
+  "other": "s’imagina"
+ },
+ {
+  "id": "F10-059",
+  "level": 3,
+  "sentence": "Le paysan **besogne** du matin au soir dans ses champs.",
+  "answer": "travaille dur",
+  "opposite": "se repose",
+  "lookalike": "bavarde",
+  "other": "chante"
+ },
+ {
+  "id": "F10-060",
+  "level": 3,
+  "sentence": "La grand-mère **dorlote** son petit-fils.",
+  "answer": "câline",
+  "opposite": "gronde",
+  "lookalike": "dore",
+  "other": "dort"
+ },
+ {
+  "id": "F10-061",
+  "level": 3,
+  "sentence": "Le prince **arpente** la salle en attendant la réponse.",
+  "answer": "marche de long en large",
+  "opposite": "dort",
+  "lookalike": "arrose",
+  "other": "peint"
+ }
+]

@@ -5,6 +5,14 @@ import { normalizeText } from '../skills/common';
 import { F2_BANK } from '../skills/f2/logic';
 import { F8_BANK, splitSentence } from '../skills/f8/logic';
 import { SKILL_LOGIC } from '../skills/registry';
+import { F1_BANK } from '../skills/f1/logic';
+import { F3_BANK } from '../skills/f3/logic';
+import { F5_BANK } from '../skills/f5/logic';
+import { F67_BANK } from '../skills/f6/logic';
+import { F10_BANK } from '../skills/f10/logic';
+import { F11_BANK } from '../skills/f11/logic';
+import { F14_TEXTS, wordCount } from '../skills/f14/fluency';
+import type { TextEntry } from '../skills/textQuestions';
 import { LEVELS, type AnySkillLogic } from '../skills/types';
 
 const SAMPLES_PER_LEVEL = 300;
@@ -82,6 +90,48 @@ export function validateF2Bank(): string[] {
   return problems;
 }
 
+function distinct(values: string[]): boolean {
+  return new Set(values).size === values.length;
+}
+
+/** French banks written by hand: structure and minimum volumes. */
+export function validateFrenchBanks(): string[] {
+  const problems: string[] = [];
+  const minimum = (name: string, count: number, min: number) => {
+    if (count < min) problems.push(`${name}: ${count} items, ${min} required`);
+  };
+  minimum('F5', F5_BANK.length, 60);
+  minimum('F6/F7', F67_BANK.length, 60);
+  minimum('F10', F10_BANK.length, 60);
+  minimum('F11', F11_BANK.length, 60);
+  minimum('F1', F1_BANK.length, 12);
+  minimum('F3', F3_BANK.length, 12);
+  minimum('F14', F14_TEXTS.length, 15);
+  for (const e of F5_BANK) if (!distinct([e.answer, ...e.distractors])) problems.push(`${e.id}: duplicate choices`);
+  for (const e of F10_BANK) if (!distinct([e.answer, e.opposite, e.lookalike, e.other])) problems.push(`${e.id}: duplicate choices`);
+  for (const e of F11_BANK) if (!distinct([...e.family, e.intruder])) problems.push(`${e.id}: duplicate choices`);
+  for (const e of F67_BANK) {
+    if (!distinct(e.groups)) problems.push(`${e.id}: duplicate groups`);
+    for (const g of e.groups) if (!e.sentence.includes(g)) problems.push(`${e.id}: group "${g}" not in sentence`);
+    if (e.subject === e.verb) problems.push(`${e.id}: subject and verb are the same group`);
+  }
+  const texts = (name: string, bank: TextEntry[], questions: number, minWords: number, maxWords: number) => {
+    for (const t of bank) {
+      if (t.questions.length !== questions) problems.push(`${t.id}: ${t.questions.length} questions, ${questions} expected`);
+      if (t.words < minWords || t.words > maxWords) problems.push(`${t.id}: ${t.words} words (${minWords}-${maxWords})`);
+      for (const q of t.questions) if (!distinct([q.answer, ...q.distractors])) problems.push(`${t.id}: duplicate choices in "${q.question}"`);
+    }
+    for (const level of [1, 2, 3]) if (!bank.some((t) => t.level === level)) problems.push(`${name}: no text at level ${level}`);
+  };
+  texts('F1', F1_BANK, 8, 200, 280);
+  texts('F3', F3_BANK, 6, 160, 230);
+  for (const t of F14_TEXTS) {
+    const n = wordCount(t.text);
+    if (n < 130 || n > 150) problems.push(`${t.id}: ${n} words (130-150)`);
+  }
+  return problems;
+}
+
 export function validateAll(): string[] {
   const problems: string[] = [];
   for (const logic of Object.values(SKILL_LOGIC)) {
@@ -89,6 +139,6 @@ export function validateAll(): string[] {
     if (!SKILLS[logic.id]) problems.push(`${logic.id}: missing from skills.config.ts`);
     problems.push(...validateSkill(logic));
   }
-  problems.push(...validateF8Bank(), ...validateF2Bank());
+  problems.push(...validateF8Bank(), ...validateF2Bank(), ...validateFrenchBanks());
   return problems;
 }

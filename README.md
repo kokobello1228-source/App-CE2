@@ -3,20 +3,15 @@
 Application d'entraînement aux évaluations nationales « Repères CE2 » pour un enfant de CE2.
 100 % hors ligne : pas de compte, pas de serveur, pas de publicité, aucune donnée collectée.
 
-## État actuel : étape 2 (toutes les mathématiques)
+## État actuel : les 25 compétences sont disponibles
 
-| Compétence | Contenu |
+| Domaine | Compétences |
 |---|---|
-| M1 – Écrire des nombres | Nombre dicté 2 fois (en toutes lettres pour la voix), 70-99 et zéros intercalés au niveau 3 |
-| M2 – Problèmes | 12 types d'énoncés originaux (parties-tout, transformations, 2 étapes, multiplication, partage), 6 réponses, brouillon au doigt |
-| M3 – Ligne graduée | Format officiel : bornes encadrées, 2 à 10 graduations, étiquette vide fléchée |
-| M4 / M5 – Opérations posées | Additions (avec ou sans retenue, 2 ou 3 termes) et soustractions sans retenue, saisie de droite à gauche, cases de retenue |
-| M6 – Unités de numération | Décompositions lues, ordre mélangé, unité absente, plus de 9 dans une unité |
-| M7 / M8 – Fractions | Lire (piège numérateur / dénominateur) et représenter (disques et bandes, parts inégales) |
-| M9 – Dénombrer | Plaques, barres et cubes, rangés ou dispersés, plus de 9 barres ou cubes |
-| M10 / M11 – Calcul mental | Faits numériques (1 min) et procédures : + 9, + 19, dizaines, compléments (3 min) |
-| F2 – Mots dictés | 150 mots fréquents en 3 niveaux |
-| F8 – Temps du verbe | 60 phrases originales lues à voix haute avec les 4 propositions |
+| Français – lecture | F1 texte lu (12 récits originaux, 8 questions chacun), F5 phrases à trou (60), F14 lecture à voix haute à deux (15 textes, courbe de progrès) |
+| Français – oral | F3 texte entendu (12 documentaires lus deux fois), F4 phrases entendues (images générées : négation, sur/sous/à côté, passif, « qui ») |
+| Français – vocabulaire | F10 synonymes en contexte (61), F11 familles de mots avec intrus piège (61) |
+| Français – grammaire | F2 dictée (150 mots), F6/F7 sujet et verbe (61 phrases), F8/F9 temps des verbes (60 phrases + générateur), F12 accords (générateur), F13 classes de mots (générateur) |
+| Mathématiques | M1 à M11 (générateurs, voir le détail ci-dessous) |
 
 Pour chaque compétence : 3 niveaux calqués sur la « caractérisation des groupes » du guide des
 scores, mauvaises réponses construites à partir des erreurs types, explication d'une phrase,

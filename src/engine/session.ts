@@ -29,6 +29,10 @@ export function buildItems(params: {
   mixedLevels?: boolean;
 }): { items: ItemBase[]; reviewKeys: string[] } {
   const { logic, count, level, rng, reviews = [], mixedLevels = false } = params;
+  if (logic.generateBlock) {
+    // Text-based skills: one text and its questions, in order.
+    return { items: logic.generateBlock(mixedLevels ? 2 : level, rng, count), reviewKeys: [] };
+  }
   const items: ItemBase[] = [];
   const seen = new Set<string>();
   const reviewKeys: string[] = [];

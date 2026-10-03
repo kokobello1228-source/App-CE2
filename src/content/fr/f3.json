@@ -1,0 +1,830 @@
+[
+ {
+  "id": "F3-01",
+  "level": 1,
+  "title": "Les abeilles",
+  "text": "Les abeilles vivent ensemble dans une ruche. Une ruche peut abriter jusqu’à cinquante mille abeilles ! Chacune a un travail bien précis.\n\nLa reine est la plus grande abeille de la ruche. Elle ne fait qu’une seule chose : pondre des œufs, parfois plus de mille par jour. Les ouvrières, elles, font tout le reste. Elles nettoient la ruche, nourrissent les bébés et fabriquent des petites cases en cire, les alvéoles.\n\nCertaines ouvrières sortent de la ruche pour butiner les fleurs. Elles récoltent le nectar, un liquide sucré, et le pollen, une poudre jaune. De retour à la ruche, elles transforment le nectar en miel. Le miel sert de nourriture pendant l’hiver, quand il n’y a plus de fleurs.\n\nPour indiquer aux autres où se trouvent les fleurs, une abeille exécute une danse ! Selon la façon dont elle danse, ses sœurs savent dans quelle direction voler.\n\nLes abeilles sont très utiles. En passant de fleur en fleur, elles transportent le pollen, ce qui permet aux plantes de donner des fruits. Sans les abeilles, il y aurait beaucoup moins de pommes, de cerises et de fraises.",
+  "words": 183,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Où vivent les abeilles ?",
+    "answer": "dans une ruche",
+    "distractors": [
+     "dans un terrier",
+     "dans une fleur",
+     "dans un nid d’oiseau"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Quel est le travail de la reine ?",
+    "answer": "pondre des œufs",
+    "distractors": [
+     "fabriquer le miel",
+     "butiner les fleurs",
+     "nettoyer la ruche"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Qu’est-ce que le pollen ?",
+    "answer": "une poudre jaune",
+    "distractors": [
+     "un liquide sucré",
+     "une case en cire",
+     "une sorte de miel"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "À quoi sert le miel ?",
+    "answer": "à nourrir les abeilles pendant l’hiver",
+    "distractors": [
+     "à construire la ruche",
+     "à attirer les oiseaux",
+     "à faire danser les abeilles"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment une abeille montre-t-elle où sont les fleurs ?",
+    "answer": "Elle danse.",
+    "distractors": [
+     "Elle chante.",
+     "Elle laisse des traces de miel.",
+     "Elle crie très fort."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Pourquoi les abeilles sont-elles utiles aux plantes ?",
+    "answer": "Elles transportent le pollen et aident les fruits à pousser.",
+    "distractors": [
+     "Elles mangent les mauvaises herbes.",
+     "Elles arrosent les fleurs.",
+     "Elles chassent les insectes nuisibles."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-02",
+  "level": 1,
+  "title": "Le manchot empereur",
+  "text": "Le manchot empereur est le plus grand des manchots. Il mesure plus d’un mètre et vit en Antarctique, la région la plus froide de la Terre, au pôle Sud.\n\nLe manchot est un oiseau, mais il ne sait pas voler. Ses ailes lui servent de nageoires. Dans l’eau glacée, c’est un excellent nageur : il peut plonger très profondément pour attraper des poissons et des calmars.\n\nPour résister au froid, le manchot possède une épaisse couche de graisse sous la peau et des plumes très serrées. Quand le vent souffle trop fort, les manchots se serrent les uns contre les autres. Chacun passe à tour de rôle au milieu du groupe, là où il fait plus chaud.\n\nAu début de l’hiver, la femelle pond un seul œuf. Elle le confie au père, puis elle part manger dans la mer. Pendant deux mois, le père garde l’œuf posé sur ses pattes, bien au chaud sous un repli de son ventre. Il ne mange rien pendant tout ce temps !\n\nQuand le poussin sort de l’œuf, la mère revient avec de la nourriture. Le père, très affaibli, peut enfin partir pêcher à son tour.",
+  "words": 190,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Où vit le manchot empereur ?",
+    "answer": "en Antarctique, au pôle Sud",
+    "distractors": [
+     "en Afrique",
+     "au pôle Nord",
+     "dans les forêts"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "À quoi servent les ailes du manchot ?",
+    "answer": "à nager",
+    "distractors": [
+     "à voler",
+     "à creuser",
+     "à se cacher"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que font les manchots quand le vent est trop fort ?",
+    "answer": "Ils se serrent les uns contre les autres.",
+    "distractors": [
+     "Ils s’envolent.",
+     "Ils plongent dans la mer.",
+     "Ils creusent un trou."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Qui garde l’œuf pendant l’hiver ?",
+    "answer": "le père",
+    "distractors": [
+     "la mère",
+     "les deux parents ensemble",
+     "un autre manchot"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi le père est-il affaibli à la fin ?",
+    "answer": "Il n’a rien mangé pendant deux mois.",
+    "distractors": [
+     "Il a trop nagé.",
+     "Il a eu très chaud.",
+     "Il s’est battu."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "De quoi parle surtout ce texte ?",
+    "answer": "De la vie du manchot empereur dans le froid.",
+    "distractors": [
+     "De la pêche en Antarctique.",
+     "Des oiseaux qui volent haut.",
+     "Des poissons du pôle Nord."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-03",
+  "level": 1,
+  "title": "Du blé au pain",
+  "text": "Le pain que l’on mange chaque jour commence sa vie dans un champ. Au printemps, l’agriculteur sème des graines de blé. Elles germent, et de petites tiges vertes poussent. En été, les tiges deviennent hautes et dorées : le blé est mûr.\n\nL’agriculteur fait alors la moisson. Une grosse machine, la moissonneuse-batteuse, coupe les tiges et sépare les grains de la paille. Les grains de blé sont ensuite transportés au moulin.\n\nAu moulin, le meunier écrase les grains entre de lourdes meules pour obtenir une poudre blanche : la farine.\n\nLe boulanger achète cette farine. Très tôt le matin, souvent vers quatre heures, il la mélange avec de l’eau, du sel et de la levure. Il pétrit cette pâte longtemps, puis il la laisse reposer. Grâce à la levure, la pâte gonfle.\n\nEnfin, le boulanger façonne des baguettes et des boules, et les fait cuire dans un four très chaud. Quand les clients arrivent, le pain est croustillant et doré, prêt à être dégusté. Il a fallu presque un an, depuis la graine, pour obtenir une baguette !",
+  "words": 175,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Que sème l’agriculteur au printemps ?",
+    "answer": "des graines de blé",
+    "distractors": [
+     "des pommes de terre",
+     "de la farine",
+     "des fleurs"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment s’appelle la machine qui coupe le blé ?",
+    "answer": "la moissonneuse-batteuse",
+    "distractors": [
+     "le tracteur",
+     "la meule",
+     "le four"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que fabrique le meunier ?",
+    "answer": "de la farine",
+    "distractors": [
+     "du pain",
+     "de la levure",
+     "des graines"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Pourquoi la pâte gonfle-t-elle ?",
+    "answer": "grâce à la levure",
+    "distractors": [
+     "grâce au sel",
+     "parce qu’elle est froide",
+     "grâce à l’eau chaude"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Vers quelle heure le boulanger commence-t-il son travail ?",
+    "answer": "vers quatre heures du matin",
+    "distractors": [
+     "à midi",
+     "le soir",
+     "vers dix heures"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel est le sujet du texte ?",
+    "answer": "Les étapes pour fabriquer le pain.",
+    "distractors": [
+     "La vie d’un meunier célèbre.",
+     "Comment cuisiner un gâteau.",
+     "Les machines agricoles."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-04",
+  "level": 1,
+  "title": "La girafe",
+  "text": "La girafe est l’animal le plus grand du monde. Un adulte peut mesurer plus de cinq mètres, c’est-à-dire la hauteur de deux étages d’une maison ! Elle vit en Afrique, dans la savane, où les herbes sont hautes et les arbres sont rares.\n\nGrâce à son long cou, la girafe peut manger les feuilles tout en haut des arbres, là où les autres animaux ne peuvent pas aller. Elle préfère les feuilles d’acacia, un arbre plein d’épines. Pour les attraper, elle utilise sa langue, qui est très longue et de couleur violette foncée.\n\nLe pelage de la girafe est couvert de taches brunes. Ces taches sont différentes pour chaque girafe, comme nos empreintes digitales.\n\nLa girafe dort très peu, souvent moins de deux heures par jour, et parfois debout. Pour boire, elle doit écarter ses pattes avant et baisser la tête jusqu’au sol. Dans cette position, elle est en danger, car un lion pourrait l’attaquer.\n\nÀ sa naissance, le girafon tombe de presque deux mètres de haut ! Moins d’une heure après, il est déjà capable de se tenir debout.",
+  "words": 178,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Où vit la girafe ?",
+    "answer": "dans la savane africaine",
+    "distractors": [
+     "dans la forêt",
+     "au pôle Nord",
+     "dans les montagnes"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Pourquoi la girafe peut-elle manger les feuilles en haut des arbres ?",
+    "answer": "grâce à son long cou",
+    "distractors": [
+     "parce qu’elle grimpe",
+     "parce qu’elle saute très haut",
+     "grâce à sa queue"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "De quelle couleur est sa langue ?",
+    "answer": "violette foncée",
+    "distractors": [
+     "rose",
+     "rouge",
+     "verte"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Combien de temps dort la girafe ?",
+    "answer": "moins de deux heures par jour",
+    "distractors": [
+     "toute la nuit",
+     "toute la journée",
+     "dix heures"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la girafe est-elle en danger quand elle boit ?",
+    "answer": "Elle a la tête en bas et ne voit pas venir le lion.",
+    "distractors": [
+     "L’eau est trop froide.",
+     "Elle peut tomber dans la rivière.",
+     "Elle boit trop vite."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel titre conviendrait à ce texte ?",
+    "answer": "Tout savoir sur la girafe",
+    "distractors": [
+     "Les animaux de la forêt",
+     "Le roi de la savane",
+     "Comment dorment les lions"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-05",
+  "level": 2,
+  "title": "Le castor, ingénieur des rivières",
+  "text": "Le castor est un gros rongeur qui vit au bord des rivières, en Europe et en Amérique du Nord. Il peut peser jusqu’à trente kilos. Ses dents de devant, de couleur orange, ne s’arrêtent jamais de pousser. Elles s’usent quand il ronge le bois.\n\nLe castor est un véritable constructeur. Avec ses dents, il abat des arbres entiers. Puis il transporte les branches dans l’eau et les entasse en travers de la rivière, en les collant avec de la boue et des cailloux. C’est ce qu’on appelle un barrage. Derrière le barrage, l’eau monte et forme un petit lac.\n\nAu milieu de ce lac, le castor construit sa maison, la hutte. L’entrée se trouve sous l’eau, ce qui le protège des loups et des renards. À l’intérieur, la pièce principale reste au sec, au-dessus du niveau de l’eau.\n\nSa queue large et plate, couverte d’écailles, lui sert de gouvernail pour nager. En cas de danger, il frappe l’eau avec elle pour prévenir sa famille.\n\nLes barrages des castors sont utiles à la nature : ils créent des zones humides où vivent de nombreux poissons, grenouilles et oiseaux.",
+  "words": 186,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "De quelle couleur sont les dents du castor ?",
+    "answer": "orange",
+    "distractors": [
+     "blanches",
+     "noires",
+     "jaunes"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Avec quoi le castor colle-t-il les branches de son barrage ?",
+    "answer": "avec de la boue et des cailloux",
+    "distractors": [
+     "avec de la résine",
+     "avec ses poils",
+     "avec du miel"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment s’appelle la maison du castor ?",
+    "answer": "la hutte",
+    "distractors": [
+     "le terrier",
+     "le nid",
+     "la tanière"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi l’entrée de la hutte est-elle sous l’eau ?",
+    "answer": "Pour que les loups et les renards ne puissent pas entrer.",
+    "distractors": [
+     "Pour avoir plus de lumière.",
+     "Parce que le castor ne sait pas marcher.",
+     "Pour garder la hutte au chaud."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "À quoi sert la queue du castor ?",
+    "answer": "à nager et à prévenir du danger",
+    "distractors": [
+     "à ronger le bois",
+     "à grimper aux arbres",
+     "à porter ses petits"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Pourquoi dit-on que le castor est un « ingénieur » ?",
+    "answer": "Parce qu’il construit des barrages et des huttes.",
+    "distractors": [
+     "Parce qu’il est très intelligent à l’école.",
+     "Parce qu’il vit en ville.",
+     "Parce qu’il répare les voitures."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-06",
+  "level": 2,
+  "title": "Les chauves-souris",
+  "text": "La chauve-souris est le seul mammifère capable de voler vraiment. Ses ailes sont faites d’une fine peau tendue entre ses doigts, très longs. Il existe plus de mille espèces de chauves-souris dans le monde.\n\nEn France, toutes les chauves-souris mangent des insectes. Une seule chauve-souris peut avaler plusieurs milliers de moustiques en une nuit ! C’est pour cela qu’elles sont très utiles aux jardiniers et aux agriculteurs.\n\nLa chauve-souris chasse la nuit, dans l’obscurité. Pour se diriger, elle pousse des cris très aigus, que nos oreilles ne peuvent pas entendre. Ces cris rebondissent sur les obstacles et sur les insectes, puis reviennent vers ses oreilles. Elle sait ainsi exactement où se trouve sa proie : c’est l’écholocation.\n\nLe jour, les chauves-souris dorment la tête en bas, accrochées par les pattes au plafond d’une grotte, d’un grenier ou d’un vieux clocher. En hiver, quand les insectes disparaissent, elles hibernent pendant plusieurs mois.\n\nAujourd’hui, beaucoup de chauves-souris sont en danger, car elles trouvent de moins en moins d’endroits calmes pour dormir. En France, il est interdit de les déranger.",
+  "words": 175,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "De quoi sont faites les ailes de la chauve-souris ?",
+    "answer": "d’une fine peau tendue entre ses doigts",
+    "distractors": [
+     "de plumes",
+     "d’écailles",
+     "de poils durs"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que mangent les chauves-souris en France ?",
+    "answer": "des insectes",
+    "distractors": [
+     "des fruits",
+     "du sang",
+     "des graines"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment la chauve-souris se dirige-t-elle dans le noir ?",
+    "answer": "grâce à des cris qui rebondissent",
+    "distractors": [
+     "grâce à ses grands yeux",
+     "en suivant la lumière de la lune",
+     "grâce à son odorat"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment dort la chauve-souris ?",
+    "answer": "la tête en bas",
+    "distractors": [
+     "couchée sur le dos",
+     "dans un nid",
+     "debout sur une branche"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi les chauves-souris hibernent-elles en hiver ?",
+    "answer": "Parce qu’il n’y a plus d’insectes à manger.",
+    "distractors": [
+     "Parce qu’elles ont peur de la neige.",
+     "Parce que les grottes sont fermées.",
+     "Parce qu’elles sont malades."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Que veut nous faire comprendre ce texte ?",
+    "answer": "Les chauves-souris sont utiles et il faut les protéger.",
+    "distractors": [
+     "Les chauves-souris sont dangereuses.",
+     "Il faut chasser les chauves-souris.",
+     "Les chauves-souris sont des oiseaux."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-07",
+  "level": 2,
+  "title": "Les volcans",
+  "text": "Sous nos pieds, très profondément, la Terre est si chaude que les roches fondent. Elles forment une pâte brûlante qu’on appelle le magma.\n\nParfois, le magma remonte vers la surface par une fissure. Quand il sort de terre, il prend le nom de lave. C’est une éruption volcanique. La lave peut atteindre mille degrés : elle brûle tout sur son passage. En refroidissant, elle durcit et devient de la roche noire.\n\nÀ chaque éruption, la lave, les cendres et les pierres s’accumulent autour de l’ouverture. Peu à peu, elles forment une montagne en forme de cône : le volcan. Le trou au sommet s’appelle le cratère.\n\nIl existe des volcans endormis, qui n’ont pas fait d’éruption depuis très longtemps, et des volcans actifs. En France, la Réunion, une île de l’océan Indien, possède un volcan très actif : le piton de la Fournaise.\n\nLes scientifiques qui étudient les volcans s’appellent des volcanologues. Ils surveillent les volcans avec des instruments très précis pour prévenir les habitants avant une éruption.\n\nLes volcans ne sont pas seulement dangereux : la terre autour d’eux, faite de cendres, est très fertile. C’est pourquoi on y cultive des vignes et des fruits.",
+  "words": 192,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Comment s’appelle la roche fondue sous la terre ?",
+    "answer": "le magma",
+    "distractors": [
+     "la lave",
+     "le cratère",
+     "la cendre"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que devient la lave en refroidissant ?",
+    "answer": "de la roche noire",
+    "distractors": [
+     "de l’eau",
+     "du sable blanc",
+     "de la fumée"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment s’appelle le trou au sommet du volcan ?",
+    "answer": "le cratère",
+    "distractors": [
+     "la fissure",
+     "le cône",
+     "le piton"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Où se trouve le piton de la Fournaise ?",
+    "answer": "à la Réunion",
+    "distractors": [
+     "en Auvergne",
+     "à Paris",
+     "en Bretagne"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que font les volcanologues ?",
+    "answer": "Ils surveillent les volcans pour prévenir les habitants.",
+    "distractors": [
+     "Ils éteignent les volcans.",
+     "Ils fabriquent de la lave.",
+     "Ils construisent des montagnes."
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi cultive-t-on des vignes près des volcans ?",
+    "answer": "Parce que la terre faite de cendres est très fertile.",
+    "distractors": [
+     "Parce qu’il y fait toujours froid.",
+     "Parce que la lave arrose les plantes.",
+     "Parce qu’il n’y a pas d’habitants."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-08",
+  "level": 2,
+  "title": "La tortue marine",
+  "text": "Les tortues marines vivent dans les océans depuis plus de cent millions d’années : elles existaient déjà au temps des dinosaures ! Contrairement aux tortues de jardin, elles ne peuvent pas rentrer leur tête dans leur carapace. Leurs pattes sont transformées en nageoires.\n\nLa tortue marine passe presque toute sa vie dans l’eau. Elle peut parcourir des milliers de kilomètres pour trouver sa nourriture : des méduses, des algues ou des crabes, selon les espèces.\n\nUne fois tous les deux ou trois ans, la femelle revient sur la plage où elle est née. La nuit, elle sort de l’eau, creuse un trou dans le sable avec ses nageoires arrière et y pond une centaine d’œufs. Puis elle les recouvre et retourne à la mer.\n\nDeux mois plus tard, les bébés tortues sortent des œufs. Ils doivent rejoindre la mer le plus vite possible, en se dirigeant vers la lumière de l’horizon. Sur le chemin, beaucoup sont mangés par des oiseaux ou des crabes.\n\nAujourd’hui, les tortues marines sont menacées. Elles avalent parfois des sacs en plastique, qu’elles confondent avec des méduses. C’est une bonne raison de ne jamais jeter de déchets sur la plage !",
+  "words": 191,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Que ne peut pas faire la tortue marine, contrairement à la tortue de jardin ?",
+    "answer": "rentrer sa tête dans sa carapace",
+    "distractors": [
+     "nager",
+     "manger des algues",
+     "pondre des œufs"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Où la femelle pond-elle ses œufs ?",
+    "answer": "sur la plage où elle est née",
+    "distractors": [
+     "au fond de la mer",
+     "dans un arbre",
+     "dans un rocher"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Combien d’œufs pond-elle environ ?",
+    "answer": "une centaine",
+    "distractors": [
+     "un seul",
+     "dix",
+     "un millier"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Vers quoi se dirigent les bébés tortues ?",
+    "answer": "vers la lumière de l’horizon",
+    "distractors": [
+     "vers la forêt",
+     "vers leur mère",
+     "vers les rochers"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi les tortues avalent-elles des sacs en plastique ?",
+    "answer": "Elles les confondent avec des méduses.",
+    "distractors": [
+     "Elles aiment le goût du plastique.",
+     "Elles veulent nettoyer la mer.",
+     "Elles n’ont plus de dents."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quel conseil donne le texte ?",
+    "answer": "Ne pas jeter de déchets sur la plage.",
+    "distractors": [
+     "Ne pas se baigner dans la mer.",
+     "Adopter une tortue marine.",
+     "Manger des méduses."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-09",
+  "level": 3,
+  "title": "Pourquoi dormons-nous ?",
+  "text": "Nous passons environ un tiers de notre vie à dormir. Un enfant de huit ans a besoin de dormir entre neuf et onze heures par nuit. Mais à quoi sert le sommeil ?\n\nPendant la nuit, notre corps se repose et se répare. Les muscles se détendent, et c’est aussi pendant le sommeil que les enfants grandissent le plus. Le cerveau, lui, ne s’arrête pas : il trie tout ce que nous avons appris dans la journée et le range dans notre mémoire. C’est pour cela qu’une leçon apprise le soir est souvent mieux connue le lendemain matin.\n\nUne nuit est faite de plusieurs cycles d’environ une heure et demie. Chaque cycle commence par un sommeil léger, pendant lequel on se réveille facilement, puis vient un sommeil profond. À la fin du cycle arrive le sommeil paradoxal : c’est le moment où l’on rêve le plus. Les yeux bougent alors très vite sous les paupières.\n\nQuand on ne dort pas assez, on a du mal à se concentrer, on est de mauvaise humeur et on tombe plus souvent malade.\n\nPour bien dormir, il vaut mieux se coucher à heure régulière et éviter les écrans avant d’aller au lit, car leur lumière trompe le cerveau, qui croit qu’il fait encore jour.",
+  "words": 207,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Combien d’heures un enfant de huit ans doit-il dormir ?",
+    "answer": "entre neuf et onze heures",
+    "distractors": [
+     "entre deux et trois heures",
+     "exactement six heures",
+     "plus de quinze heures"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que fait le cerveau pendant le sommeil ?",
+    "answer": "Il range ce que nous avons appris dans la mémoire.",
+    "distractors": [
+     "Il s’arrête complètement.",
+     "Il oublie tout.",
+     "Il fait grandir les muscles."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Pendant quelle phase rêve-t-on le plus ?",
+    "answer": "pendant le sommeil paradoxal",
+    "distractors": [
+     "pendant le sommeil léger",
+     "au moment de s’endormir",
+     "pendant le sommeil profond"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi une leçon apprise le soir est-elle mieux connue le matin ?",
+    "answer": "Le cerveau l’a rangée dans la mémoire pendant la nuit.",
+    "distractors": [
+     "Parce qu’on la relit au petit déjeuner.",
+     "Parce qu’on a rêvé de la maîtresse.",
+     "Parce que le matin on est plus grand."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Pourquoi faut-il éviter les écrans avant de dormir ?",
+    "answer": "Leur lumière fait croire au cerveau qu’il fait jour.",
+    "distractors": [
+     "Parce qu’ils font trop de bruit.",
+     "Parce qu’ils donnent faim.",
+     "Parce qu’ils sont trop chauds."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle est l’idée principale du texte ?",
+    "answer": "Le sommeil est indispensable au corps et au cerveau.",
+    "distractors": [
+     "Les rêves font peur.",
+     "Il faut dormir le moins possible.",
+     "Les adultes dorment plus que les enfants."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-10",
+  "level": 3,
+  "title": "La baleine bleue",
+  "text": "La baleine bleue est le plus grand animal qui ait jamais vécu sur Terre, plus grand encore que les plus gros dinosaures. Elle peut mesurer trente mètres de long, soit la longueur de trois autobus, et peser autant que trente éléphants. Son cœur, à lui seul, a la taille d’une petite voiture.\n\nPourtant, cet animal géant se nourrit de minuscules crevettes appelées krill. La baleine bleue n’a pas de dents. À la place, elle possède des fanons : de longues lamelles qui pendent de sa mâchoire, comme un énorme peigne. Elle avale une grande gorgée d’eau, puis la recrache à travers ses fanons, qui retiennent le krill. Elle peut en manger quatre tonnes par jour !\n\nComme tous les cétacés, la baleine est un mammifère : elle respire de l’air. Elle remonte régulièrement à la surface et rejette l’air par deux trous situés sur sa tête, les évents. On voit alors un jet de vapeur qui peut monter à neuf mètres de haut.\n\nLes baleines bleues communiquent par des chants très graves, que d’autres baleines peuvent entendre à des centaines de kilomètres.\n\nAutrefois, elles ont été tellement chassées qu’elles ont failli disparaître. Aujourd’hui, elles sont protégées, mais il en reste encore peu.",
+  "words": 199,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "À quoi est comparée la longueur de la baleine bleue ?",
+    "answer": "à trois autobus",
+    "distractors": [
+     "à une petite voiture",
+     "à trente éléphants",
+     "à un immeuble"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Que mange la baleine bleue ?",
+    "answer": "de petites crevettes appelées krill",
+    "distractors": [
+     "des requins",
+     "des algues",
+     "des phoques"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "À quoi servent les fanons ?",
+    "answer": "à retenir le krill comme un peigne",
+    "distractors": [
+     "à mâcher la nourriture",
+     "à respirer",
+     "à chanter"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la baleine remonte-t-elle à la surface ?",
+    "answer": "Pour respirer de l’air, car c’est un mammifère.",
+    "distractors": [
+     "Pour regarder les bateaux.",
+     "Pour se réchauffer au soleil.",
+     "Pour attraper des oiseaux."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment les baleines bleues communiquent-elles ?",
+    "answer": "par des chants très graves",
+    "distractors": [
+     "avec des gestes",
+     "en sautant hors de l’eau",
+     "en changeant de couleur"
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Pourquoi reste-t-il peu de baleines bleues aujourd’hui ?",
+    "answer": "Elles ont été beaucoup chassées autrefois.",
+    "distractors": [
+     "Elles mangent trop de krill.",
+     "Elles sont trop grandes pour nager.",
+     "Elles vivent seulement dix ans."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-11",
+  "level": 3,
+  "title": "Les fourmis",
+  "text": "Les fourmis vivent sur Terre depuis plus de cent millions d’années. On en compte des milliers d’espèces, et pour chaque être humain, il existerait plus d’un million de fourmis !\n\nComme les abeilles, les fourmis vivent en colonies très organisées, dans une maison appelée fourmilière. Certaines fourmilières, construites sous terre, comptent des centaines de galeries et de salles : une salle pour les œufs, une pour les réserves de nourriture, une autre pour la reine.\n\nLes fourmis ne voient pas très bien. Pour communiquer, elles utilisent surtout des odeurs. Lorsqu’une fourmi trouve de la nourriture, elle laisse derrière elle une trace odorante en rentrant à la fourmilière. Les autres fourmis suivent cette piste, ce qui explique qu’on les voit souvent marcher en file indienne.\n\nLes fourmis sont d’une force étonnante : elles peuvent porter des objets qui pèsent jusqu’à cinquante fois leur propre poids. Pour un enfant, ce serait comme soulever une voiture !\n\nCertaines espèces sont même de véritables éleveuses : elles protègent des pucerons et récoltent le liquide sucré qu’ils produisent, un peu comme des fermiers qui traient leurs vaches.\n\nDans la nature, les fourmis jouent un rôle important : elles aèrent la terre et nettoient le sol des insectes morts.",
+  "words": 197,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "Comment s’appelle la maison des fourmis ?",
+    "answer": "la fourmilière",
+    "distractors": [
+     "la ruche",
+     "le terrier",
+     "la colonie"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment les fourmis communiquent-elles surtout ?",
+    "answer": "grâce à des odeurs",
+    "distractors": [
+     "en chantant",
+     "avec leurs yeux",
+     "en dansant"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi voit-on souvent les fourmis marcher en file ?",
+    "answer": "Elles suivent la trace odorante laissée par une autre fourmi.",
+    "distractors": [
+     "Elles ont peur de se perdre dans le noir.",
+     "C’est un jeu entre elles.",
+     "La reine leur montre le chemin."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Combien de fois leur poids les fourmis peuvent-elles porter ?",
+    "answer": "jusqu’à cinquante fois",
+    "distractors": [
+     "deux fois",
+     "mille fois",
+     "cinq fois"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi compare-t-on certaines fourmis à des fermiers ?",
+    "answer": "Elles élèvent des pucerons pour récolter leur liquide sucré.",
+    "distractors": [
+     "Elles cultivent des fleurs.",
+     "Elles conduisent des tracteurs.",
+     "Elles mangent des vaches."
+    ]
+   },
+   {
+    "type": "global",
+    "question": "Quelle est l’idée principale du texte ?",
+    "answer": "Les fourmis sont des insectes organisés, forts et utiles.",
+    "distractors": [
+     "Les fourmis sont dangereuses pour l’homme.",
+     "Les fourmis vivent seules.",
+     "Il faut détruire les fourmilières."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F3-12",
+  "level": 3,
+  "title": "La Lune",
+  "text": "La Lune est le satellite de la Terre : elle tourne autour de notre planète en un peu moins d’un mois. Elle est environ quatre fois plus petite que la Terre et se trouve à près de quatre cent mille kilomètres de nous.\n\nLa Lune ne produit pas de lumière. Si nous la voyons briller la nuit, c’est parce qu’elle est éclairée par le Soleil, comme une balle sous une lampe. Selon sa position, nous en voyons une partie plus ou moins grande : c’est pourquoi elle change d’aspect. Tantôt pleine et ronde, tantôt en forme de croissant, elle peut aussi devenir invisible : on parle alors de nouvelle lune.\n\nSur la Lune, il n’y a ni air ni eau liquide. Aucun être vivant ne peut y vivre sans combinaison spéciale. Le sol est couvert de poussière grise et de trous, les cratères, creusés par des météorites.\n\nEn 1969, deux astronautes américains ont marché sur la Lune pour la première fois. Comme il n’y a pas de vent, les traces de leurs pas sont toujours là !\n\nLa Lune a aussi un effet sur la Terre : elle attire l’eau des océans, ce qui provoque les marées. Deux fois par jour, la mer monte puis redescend sur les plages.",
+  "words": 204,
+  "questions": [
+   {
+    "type": "explicite",
+    "question": "En combien de temps la Lune tourne-t-elle autour de la Terre ?",
+    "answer": "en un peu moins d’un mois",
+    "distractors": [
+     "en un jour",
+     "en une heure",
+     "en un an"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi la Lune brille-t-elle la nuit ?",
+    "answer": "Elle est éclairée par le Soleil.",
+    "distractors": [
+     "Elle produit sa propre lumière.",
+     "Elle est en feu.",
+     "Elle reflète les lumières des villes."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Comment appelle-t-on la Lune quand on ne la voit pas ?",
+    "answer": "la nouvelle lune",
+    "distractors": [
+     "la pleine lune",
+     "le croissant",
+     "l’éclipse"
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Qu’est-ce qu’un cratère ?",
+    "answer": "un trou creusé par une météorite",
+    "distractors": [
+     "une montagne de glace",
+     "une étoile",
+     "une mer d’eau"
+    ]
+   },
+   {
+    "type": "inference",
+    "question": "Pourquoi les traces de pas des astronautes sont-elles encore là ?",
+    "answer": "Il n’y a pas de vent sur la Lune pour les effacer.",
+    "distractors": [
+     "Les astronautes les ont repeintes.",
+     "Il pleut beaucoup sur la Lune.",
+     "Elles sont protégées par une vitre."
+    ]
+   },
+   {
+    "type": "explicite",
+    "question": "Quel effet la Lune a-t-elle sur la Terre ?",
+    "answer": "Elle provoque les marées.",
+    "distractors": [
+     "Elle fait tomber la pluie.",
+     "Elle réchauffe les océans.",
+     "Elle fait pousser les plantes."
+    ]
+   }
+  ]
+ }
+]

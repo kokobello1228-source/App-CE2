@@ -5,7 +5,7 @@ import { SKILL_ORDER, SKILLS, type Domain, type SkillId } from '../../../skills.
 import { Screen } from '../../components/Screen';
 import { Stars } from '../../components/Stars';
 import { Text } from '../../components/Text';
-import { isAvailable } from '../../skills/registry';
+import { isAvailable, SPECIAL_ROUTES } from '../../skills/registry';
 import type { Level } from '../../skills/types';
 import { useApp } from '../../state/AppContext';
 import { colors, font, fonts, radius, shadow, space } from '../../theme';
@@ -29,7 +29,8 @@ export default function Universe() {
       <Text style={[styles.title, { color: tint }]}>{domain === 'math' ? 'Mathématiques' : 'Français'}</Text>
       <Text style={styles.subtitle}>Choisis un exercice. Les étoiles montrent ton niveau.</Text>
       {skills.map((id) => {
-        const available = isAvailable(id);
+        const special = SPECIAL_ROUTES[id];
+        const available = isAvailable(id) || special !== undefined;
         return (
           <Pressable
             key={id}
@@ -37,7 +38,7 @@ export default function Universe() {
             accessibilityRole="button"
             accessibilityState={{ disabled: !available }}
             accessibilityLabel={`${SKILLS[id].title}${available ? `, niveau ${levels[id] ?? 1}` : ', bientôt disponible'}`}
-            onPress={() => router.push(`/skill/${id}`)}
+            onPress={() => router.push((special ?? `/skill/${id}`) as '/fluency')}
             style={({ pressed }) => [styles.card, available && shadow(1), !available && styles.unavailable, pressed && styles.pressed]}
           >
             <View style={[styles.iconTile, { backgroundColor: available ? colors.domainSoft[domain] : colors.background }]}>
@@ -49,7 +50,7 @@ export default function Universe() {
                 {available ? SKILLS[id].format : 'Bientôt disponible'}
               </Text>
             </View>
-            {available && <Stars count={levels[id] ?? 1} size={font.small} />}
+            {available && !special && <Stars count={levels[id] ?? 1} size={font.small} />}
           </Pressable>
         );
       })}

@@ -48,6 +48,11 @@ export interface SkillLogic<I extends ItemBase = ItemBase> {
   errorTags: Record<string, ErrorTagInfo>;
   /** What the speech synthesis reads for this item (null: nothing is read). */
   speech(item: I): string | null;
+  /**
+   * Skills built around a text (F1, F3): returns the questions of one text, in order,
+   * instead of independent items.
+   */
+  generateBlock?(level: Level, rng: Rng, count: number): I[];
   /** Choices for multiple-choice skills. */
   choices?(item: I): Choice[];
 }
