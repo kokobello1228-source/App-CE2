@@ -1,5 +1,6 @@
-import { Pressable, StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
-import { colors, font, fonts, radius, shadow, space, TOUCH } from '../theme';
+import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
+import { colors, font, fonts, radius, space, TOUCH } from '../theme';
+import { Chunky } from './Chunky';
 import { Text } from './Text';
 
 interface Props {
@@ -12,40 +13,30 @@ interface Props {
   accessibilityHint?: string;
 }
 
-/** Large pill button. Primary is filled; secondary is outlined. */
+/** Big chunky pill button that sinks under the finger. */
 export function BigButton({ label, onPress, variant = 'primary', color, disabled, style, accessibilityHint }: Props) {
-  const tint = color ?? colors.primary;
+  const tint = disabled ? colors.disabled : color ?? colors.primary;
   const primary = variant === 'primary';
   return (
-    <Pressable
+    <Chunky
+      onPress={onPress}
+      disabled={disabled}
+      face={primary ? tint : colors.surface}
+      edge={primary ? undefined : tint}
+      radius={radius.pill}
+      style={style}
+      contentStyle={[styles.face, !primary && { borderWidth: 2.5, borderColor: tint }]}
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled }}
-      disabled={disabled}
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.button,
-        primary ? { backgroundColor: disabled ? colors.disabled : tint } : { backgroundColor: colors.surface, borderColor: disabled ? colors.disabled : tint, borderWidth: 2.5 },
-        !disabled && shadow(1),
-        pressed && styles.pressed,
-        style,
-      ]}
     >
-      <Text style={[styles.label, { color: primary ? colors.primaryText : disabled ? colors.disabled : tint }]}>{label}</Text>
-    </Pressable>
+      <Text style={[styles.label, { color: primary ? colors.primaryText : tint }]}>{label}</Text>
+    </Chunky>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    minHeight: TOUCH,
-    borderRadius: radius.pill,
-    paddingHorizontal: space.l,
-    paddingVertical: space.m,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  pressed: { transform: [{ scale: 0.97 }], opacity: 0.92 },
-  label: { fontSize: font.large - 2, fontFamily: fonts.display, textAlign: 'center' },
+  face: { minHeight: TOUCH, paddingHorizontal: space.l, paddingVertical: space.s + 2, alignItems: 'center', justifyContent: 'center' },
+  label: { fontSize: font.large, fontFamily: fonts.display, textAlign: 'center', lineHeight: 32 },
 });

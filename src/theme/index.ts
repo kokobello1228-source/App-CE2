@@ -2,39 +2,59 @@ import { Platform } from 'react-native';
 import type { Domain } from '../../skills.config';
 
 /**
- * Visual identity: a French school notebook. Ink blue from the logo, Seyès
- * paper for exercises, round "gommette" stickers for rewards. No red for mistakes:
- * red only appears as the notebook margin line.
+ * Visual identity for an 8-year-old: a bright sky world guided by Plume the owl.
+ * One ink blue from the logo, a sunny yellow for rewards, one colour per universe.
+ * No red for mistakes: coral is only decorative.
  */
 export const colors = {
-  background: '#F2F6FC',
+  background: '#E8F4FF',
   surface: '#FFFFFF',
-  paper: '#FFFDF8',
-  text: '#14213D',
-  textMuted: '#55607A',
-  border: '#D5DEEC',
-  primary: '#1663D6',
-  primaryDark: '#0E4AA8',
+  paper: '#FFFDF7',
+  text: '#1D2A4D',
+  textMuted: '#5A6788',
+  border: '#D6E2F3',
+  primary: '#2F7BEA',
+  primaryDark: '#1F5FC2',
   primaryText: '#FFFFFF',
-  selected: '#E3EDFF',
-  success: '#12805C',
-  successBg: '#E4F6EE',
-  retry: '#1663D6',
-  retryBg: '#EAF1FD',
-  star: '#FFB81C',
-  disabled: '#B9C3D3',
+  selected: '#E2EEFF',
+  success: '#14A06F',
+  successDark: '#0E7D56',
+  successBg: '#E3F8EF',
+  retry: '#2F7BEA',
+  retryBg: '#EAF2FF',
+  star: '#FFC531',
+  starDark: '#E5A400',
+  coral: '#FF7A59',
+  disabled: '#BCC8DB',
+  disabledDark: '#9FAEC6',
   seyes: '#CAD7F0',
   seyesStrong: '#A9BCE6',
-  margin: '#E5484D',
-  domain: { fr: '#7C4DDB', math: '#0E9F7A' } satisfies Record<Domain, string>,
-  domainSoft: { fr: '#F1EBFC', math: '#E2F6F0' } satisfies Record<Domain, string>,
+  margin: '#FF7A7A',
+  domain: { fr: '#8C61FF', math: '#16B89A' } satisfies Record<Domain, string>,
+  domainDark: { fr: '#6B42DB', math: '#0E8E76' } satisfies Record<Domain, string>,
+  domainSoft: { fr: '#F1EBFF', math: '#DFF7F1' } satisfies Record<Domain, string>,
   band: { besoins: '#B54708', fragile: '#9A6B00', satisfaisant: '#12805C' },
 };
 
-/** Font families loaded in the root layout. */
+/** Darker shade used for the "3D" bottom edge of chunky buttons. */
+export function shade(color: string): string {
+  const map: Record<string, string> = {
+    [colors.primary]: colors.primaryDark,
+    [colors.success]: colors.successDark,
+    [colors.star]: colors.starDark,
+    [colors.domain.fr]: colors.domainDark.fr,
+    [colors.domain.math]: colors.domainDark.math,
+    [colors.disabled]: colors.disabledDark,
+    [colors.surface]: colors.border,
+  };
+  return map[color] ?? colors.primaryDark;
+}
+
+/** Font families loaded in the root layout: Baloo 2 (round, playful) and Lexend (easy reading). */
 export const fonts = {
-  display: 'Fredoka_600SemiBold',
-  displayBold: 'Fredoka_700Bold',
+  display: 'Baloo2_700Bold',
+  displayBold: 'Baloo2_800ExtraBold',
+  displayMedium: 'Baloo2_600SemiBold',
   body: 'Lexend_400Regular',
   bold: 'Lexend_600SemiBold',
 };
@@ -49,7 +69,7 @@ export const font = {
 
 export const space = { xs: 4, s: 8, m: 16, l: 24, xl: 32 };
 
-export const radius = { s: 10, m: 16, l: 24, pill: 999 };
+export const radius = { s: 10, m: 18, l: 26, pill: 999 };
 
 /** Minimum touch target, generous for a child. */
 export const TOUCH = 64;

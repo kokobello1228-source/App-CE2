@@ -4,21 +4,24 @@ import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SKILL_ORDER, SKILLS, type Domain } from '../../skills.config';
 import { BigButton } from '../components/BigButton';
+import { Chunky } from '../components/Chunky';
+import { Mascot } from '../components/Mascot';
 import { Screen } from '../components/Screen';
-import { SeyesPaper } from '../components/SeyesPaper';
+import { SpeechBubble } from '../components/SpeechBubble';
 import { Text } from '../components/Text';
+import { HELLO, homeGreeting } from '../content/phrases';
 import { computeStreak, toDayString } from '../engine/session';
 import { speak } from '../services/speech';
 import { isAvailable, SPECIAL_ROUTES } from '../skills/registry';
 import { useApp } from '../state/AppContext';
-import { colors, font, fonts, radius, shadow, space } from '../theme';
+import { colors, font, fonts, radius, space } from '../theme';
 
-const UNIVERSES: { domain: Domain; title: string; emoji: string }[] = [
-  { domain: 'fr', title: 'Français', emoji: '📖' },
-  { domain: 'math', title: 'Maths', emoji: '🔢' },
+const UNIVERSES: { domain: Domain; title: string; emoji: string; tagline: string }[] = [
+  { domain: 'fr', title: 'Français', emoji: '📚', tagline: 'Lire, écouter, écrire' },
+  { domain: 'math', title: 'Maths', emoji: '🧮', tagline: 'Compter, calculer, chercher' },
 ];
 
-/** First launch: ask the child's first name (kept on the device only). */
+/** First launch: Plume introduces itself and asks the child's first name (kept on the device only). */
 function Welcome() {
   const { updateSettings } = useApp();
   const [name, setName] = useState('');
@@ -28,22 +31,24 @@ function Welcome() {
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <Screen>
-        <View style={{ height: space.xl }} />
-        <SeyesPaper>
-          <Text style={styles.welcomeTitle}>Bienvenue !</Text>
-          <Text style={styles.welcomeText}>Comment t’appelles-tu ?</Text>
-          <TextInput
-            value={name}
-            onChangeText={setName}
-            onSubmitEditing={save}
-            autoCorrect={false}
-            autoFocus
-            placeholder="Ton prénom"
-            placeholderTextColor={colors.disabled}
-            accessibilityLabel="Ton prénom"
-            style={styles.nameInput}
-          />
-        </SeyesPaper>
+        <View style={styles.welcomeTop}>
+          <Mascot mood="happy" size={150} />
+          <SpeechBubble style={{ flex: 0, alignSelf: 'stretch' }} tail="top">
+            <Text style={styles.bubbleTitle}>Coucou, moi c’est Plume !</Text>
+            <Text style={styles.bubbleText}>Je vais t’aider à t’entraîner. Et toi, comment t’appelles-tu ?</Text>
+          </SpeechBubble>
+        </View>
+        <TextInput
+          value={name}
+          onChangeText={setName}
+          onSubmitEditing={save}
+          autoCorrect={false}
+          autoFocus
+          placeholder="Ton prénom"
+          placeholderTextColor={colors.disabled}
+          accessibilityLabel="Ton prénom"
+          style={styles.nameInput}
+        />
         <BigButton label="C’est parti !" onPress={save} disabled={!name.trim()} />
       </Screen>
     </SafeAreaView>
@@ -53,18 +58,6 @@ function Welcome() {
 export default function Home() {
   const { settings } = useApp();
   return settings.childName ? <HomeScreen /> : <Welcome />;
-}
-
-function Chip({ icon, value, label }: { icon: string; value: string; label: string }) {
-  return (
-    <View style={[styles.chip, shadow(1)]} accessible accessibilityLabel={`${value} ${label}`}>
-      <Text style={styles.chipIcon}>{icon}</Text>
-      <View>
-        <Text style={styles.chipValue}>{value}</Text>
-        <Text style={styles.chipLabel}>{label}</Text>
-      </View>
-    </View>
-  );
 }
 
 function HomeScreen() {
@@ -79,64 +72,77 @@ function HomeScreen() {
     })();
   }, [repo, dataVersion]);
 
-  const greeting = `Bonjour ${settings.childName} !`;
-  const count = (domain: Domain) => SKILL_ORDER.filter((id) => SKILLS[id].domain === domain && (isAvailable(id) || SPECIAL_ROUTES[id] !== undefined)).length;
+  const count = (domain: Domain) =>
+    SKILL_ORDER.filter((id) => SKILLS[id].domain === domain && (isAvailable(id) || SPECIAL_ROUTES[id] !== undefined)).length;
+  const greeting = homeGreeting(streak);
+
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <Screen>
-        <View style={styles.top}>
-          <Pressable onPress={() => void speak(`${greeting} Que veux-tu faire aujourd’hui ?`)} accessibilityRole="header" style={{ flex: 1 }}>
-            <Text style={styles.hello}>{greeting}</Text>
-            <Text style={styles.subtitle}>On s’entraîne aujourd’hui ?</Text>
+        <View style={styles.topBar}>
+          <View style={styles.counter} accessible accessibilityLabel={`${stars} étoiles`}>
+            <Text style={styles.counterIcon}>⭐</Text>
+            <Text style={styles.counterValue}>{stars}</Text>
+          </View>
+          <View style={styles.counter} accessible accessibilityLabel={`${streak} jours de suite`}>
+            <Text style={styles.counterIcon}>🔥</Text>
+            <Text style={styles.counterValue}>{streak}</Text>
+          </View>
+          <View style={{ flex: 1 }} />
+          <Pressable onPress={() => router.push('/parent')} accessibilityRole="button" accessibilityLabel="Espace parent" style={styles.parentButton}>
+            <Text style={styles.parentIcon}>🔒</Text>
           </Pressable>
         </View>
 
-        <View style={styles.chips}>
-          <Chip icon="⭐" value={String(stars)} label="étoiles" />
-          <Chip icon="🔥" value={String(streak)} label={streak > 1 ? 'jours de suite' : 'jour de suite'} />
-        </View>
+        <Pressable style={styles.hero} onPress={() => void speak(`${HELLO} ${greeting}`)} accessibilityRole="button" accessibilityLabel="Plume te dit bonjour">
+          <Mascot mood="happy" size={118} />
+          <SpeechBubble>
+            <Text style={styles.bubbleTitle}>Bonjour {settings.childName} !</Text>
+            <Text style={styles.bubbleText}>{greeting}</Text>
+          </SpeechBubble>
+        </Pressable>
 
-        <Pressable
+        <Chunky
+          onPress={() => router.push({ pathname: '/session', params: { mode: 'daily' } })}
+          face={colors.star}
+          radius={radius.l}
+          depth={8}
+          contentStyle={styles.mission}
           accessibilityRole="button"
           accessibilityLabel="Séance du jour"
-          onPress={() => router.push({ pathname: '/session', params: { mode: 'daily' } })}
-          style={({ pressed }) => [styles.hero, shadow(2), pressed && styles.pressed]}
         >
-          <View style={styles.heroDots} pointerEvents="none">
-            {Array.from({ length: 5 }, (_, i) => (
-              <View key={i} style={[styles.heroLine, { top: 22 + i * 26 }]} />
-            ))}
+          <Text style={styles.missionEmoji}>🎯</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.missionEyebrow}>Mission du jour</Text>
+            <Text style={styles.missionTitle}>{settings.dailyMinutes} minutes d’exercices</Text>
           </View>
-          <Text style={styles.heroEyebrow}>☀️ Séance du jour</Text>
-          <Text style={styles.heroTitle}>{settings.dailyMinutes} minutes, rien que pour toi</Text>
-          <Text style={styles.heroText}>Des exercices choisis selon tes progrès.</Text>
-          <View style={styles.heroButton}>
-            <Text style={styles.heroButtonText}>Commencer  ▸</Text>
+          <View style={styles.play}>
+            <Text style={styles.playText}>▶</Text>
           </View>
-        </Pressable>
+        </Chunky>
 
-        <View style={styles.universes}>
+        <View style={styles.worlds}>
           {UNIVERSES.map((u) => (
-            <Pressable
+            <Chunky
               key={u.domain}
+              onPress={() => router.push(`/universe/${u.domain}`)}
+              face={colors.domain[u.domain]}
+              radius={radius.l}
+              depth={8}
+              style={{ flex: 1 }}
+              contentStyle={styles.world}
               accessibilityRole="button"
               accessibilityLabel={u.title === 'Maths' ? 'Mathématiques' : u.title}
-              onPress={() => router.push(`/universe/${u.domain}`)}
-              style={({ pressed }) => [styles.universe, shadow(1), pressed && styles.pressed]}
             >
-              <View style={[styles.universeIcon, { backgroundColor: colors.domainSoft[u.domain] }]}>
-                <Text style={styles.universeEmoji}>{u.emoji}</Text>
+              <View style={styles.worldBlob}>
+                <Text style={styles.worldEmoji}>{u.emoji}</Text>
               </View>
-              <Text style={[styles.universeTitle, { color: colors.domain[u.domain] }]}>{u.title}</Text>
-              <Text style={styles.universeCount}>{count(u.domain)} exercices</Text>
-            </Pressable>
+              <Text style={styles.worldTitle}>{u.title}</Text>
+              <Text style={styles.worldTagline}>{u.tagline}</Text>
+              <Text style={styles.worldCount}>{count(u.domain)} exercices</Text>
+            </Chunky>
           ))}
         </View>
-
-        <View style={{ flexGrow: 1 }} />
-        <Pressable onPress={() => router.push('/parent')} accessibilityRole="button" style={styles.parentLink}>
-          <Text style={styles.parentText}>🔒 Espace parent</Text>
-        </Pressable>
       </Screen>
     </SafeAreaView>
   );
@@ -144,43 +150,40 @@ function HomeScreen() {
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.background },
-  top: { flexDirection: 'row', alignItems: 'center', marginTop: space.m },
-  hello: { fontSize: font.title + 2, fontFamily: fonts.display, color: colors.text },
-  subtitle: { fontSize: font.body, color: colors.textMuted, marginTop: 2 },
-  chips: { flexDirection: 'row', gap: space.s + 2 },
-  chip: {
-    flex: 1, flexDirection: 'row', alignItems: 'center', gap: space.s,
-    backgroundColor: colors.surface, borderRadius: radius.m, paddingVertical: space.s + 2, paddingHorizontal: space.m,
+  topBar: { flexDirection: 'row', alignItems: 'center', gap: space.s, marginTop: space.s },
+  counter: {
+    flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: colors.surface,
+    paddingHorizontal: space.m, paddingVertical: 4, borderRadius: radius.pill, borderWidth: 2, borderColor: colors.border,
   },
-  chipIcon: { fontSize: 28 },
-  chipValue: { fontSize: font.large, fontFamily: fonts.display, color: colors.text, lineHeight: 28 },
-  chipLabel: { fontSize: font.small - 2, color: colors.textMuted },
-  hero: {
-    backgroundColor: colors.primary, borderRadius: radius.l, padding: space.l, gap: space.s, overflow: 'hidden',
+  counterIcon: { fontSize: 20, lineHeight: 26 },
+  counterValue: { fontSize: font.body + 2, fontFamily: fonts.display, color: colors.text, lineHeight: 28 },
+  parentButton: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface },
+  parentIcon: { fontSize: 18 },
+  hero: { flexDirection: 'row', alignItems: 'center', gap: space.s, marginTop: space.s },
+  bubbleTitle: { fontSize: font.large, fontFamily: fonts.display, color: colors.primary, lineHeight: 30 },
+  bubbleText: { fontSize: font.body - 1, color: colors.text, lineHeight: 26 },
+  mission: { flexDirection: 'row', alignItems: 'center', gap: space.m, padding: space.m + 4 },
+  missionEmoji: { fontSize: 42, lineHeight: 50 },
+  missionEyebrow: { fontSize: font.small, fontFamily: fonts.bold, color: '#7A5600' },
+  missionTitle: { fontSize: font.large, fontFamily: fonts.display, color: colors.text, lineHeight: 30 },
+  play: { width: 52, height: 52, borderRadius: 26, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
+  playText: { fontSize: 22, color: colors.starDark, marginLeft: 3 },
+  worlds: { flexDirection: 'row', gap: space.m },
+  world: { padding: space.m, paddingVertical: space.l, alignItems: 'flex-start', gap: 2, minHeight: 200 },
+  worldBlob: {
+    width: 64, height: 64, borderRadius: 22, backgroundColor: 'rgba(255,255,255,0.25)',
+    alignItems: 'center', justifyContent: 'center', marginBottom: space.s, transform: [{ rotate: '-6deg' }],
   },
-  heroDots: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
-  heroLine: { position: 'absolute', left: 0, right: 0, height: 1, backgroundColor: 'rgba(255,255,255,0.12)' },
-  heroEyebrow: { fontSize: font.body - 2, fontFamily: fonts.display, color: '#CFE0FF' },
-  heroTitle: { fontSize: font.large + 2, fontFamily: fonts.display, color: colors.primaryText, lineHeight: 32 },
-  heroText: { fontSize: font.small + 1, color: '#DCE8FF' },
-  heroButton: {
-    alignSelf: 'flex-start', marginTop: space.s, backgroundColor: colors.star,
-    paddingHorizontal: space.l, paddingVertical: space.s + 4, borderRadius: radius.pill,
+  worldEmoji: { fontSize: 36, lineHeight: 44 },
+  worldTitle: { fontSize: font.title, fontFamily: fonts.display, color: colors.primaryText, lineHeight: 36 },
+  worldTagline: { fontSize: font.small - 1, color: 'rgba(255,255,255,0.92)', lineHeight: 20 },
+  worldCount: {
+    marginTop: space.s, fontSize: font.small - 2, fontFamily: fonts.bold, color: colors.text,
+    backgroundColor: 'rgba(255,255,255,0.85)', paddingHorizontal: 10, paddingVertical: 3, borderRadius: radius.pill, overflow: 'hidden',
   },
-  heroButtonText: { fontSize: font.body, fontFamily: fonts.display, color: colors.text },
-  pressed: { transform: [{ scale: 0.98 }] },
-  universes: { flexDirection: 'row', gap: space.m },
-  universe: { flex: 1, backgroundColor: colors.surface, borderRadius: radius.l, padding: space.m, gap: space.xs },
-  universeIcon: { width: 56, height: 56, borderRadius: radius.m, alignItems: 'center', justifyContent: 'center', marginBottom: space.xs },
-  universeEmoji: { fontSize: 30 },
-  universeTitle: { fontSize: font.large - 1, fontFamily: fonts.display },
-  universeCount: { fontSize: font.small - 1, color: colors.textMuted },
-  parentLink: { alignSelf: 'center', padding: space.m },
-  parentText: { fontSize: font.small, color: colors.textMuted },
-  welcomeTitle: { fontSize: font.title + 4, fontFamily: fonts.display, color: colors.primary, lineHeight: 44 },
-  welcomeText: { fontSize: font.large, color: colors.text, lineHeight: 32, marginBottom: space.m },
+  welcomeTop: { alignItems: 'center', gap: space.m, marginTop: space.l },
   nameInput: {
-    minHeight: 68, borderWidth: 2.5, borderColor: colors.primary, borderRadius: radius.m, backgroundColor: colors.surface,
-    fontSize: font.title, paddingHorizontal: space.m, color: colors.text, fontFamily: fonts.display,
+    minHeight: 68, borderWidth: 3, borderColor: colors.primary, borderRadius: radius.l, backgroundColor: colors.surface,
+    fontSize: font.title, paddingHorizontal: space.m, color: colors.text, fontFamily: fonts.display, textAlign: 'center',
   },
 });

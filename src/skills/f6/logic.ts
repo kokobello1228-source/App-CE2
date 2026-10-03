@@ -35,7 +35,10 @@ function stemWith(entry: F67Entry): string {
 }
 
 export function generateF6(level: Level, rng: Rng): QcmItem {
-  const e = pick(level, rng, 'subjectLevel');
+  return itemF6(pick(level, rng, 'subjectLevel'), level, rng);
+}
+
+export function itemF6(e: F67Entry, level: Level, rng: Rng): QcmItem {
   const subject = e.groups[e.subject];
   const verb = e.groups[e.verb];
   return {
@@ -53,7 +56,10 @@ export function generateF6(level: Level, rng: Rng): QcmItem {
 }
 
 export function generateF7(level: Level, rng: Rng): QcmItem {
-  const e = pick(level, rng, 'verbLevel');
+  return itemF7(pick(level, rng, 'verbLevel'), level, rng);
+}
+
+export function itemF7(e: F67Entry, level: Level, rng: Rng): QcmItem {
   const verb = e.groups[e.verb];
   const lemma = e.verbLevel === 2 ? 'avoir' : e.verbLevel === 3 ? 'être' : null;
   return {

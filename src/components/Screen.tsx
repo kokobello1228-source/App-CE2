@@ -2,12 +2,14 @@ import type { ReactNode } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, space } from '../theme';
+import { SkyDecor } from './SkyDecor';
 
 /** Page wrapper: safe area, background, centered column (comfortable on tablets). */
 export function Screen({ children, scroll = true }: { children: ReactNode; scroll?: boolean }) {
   const content = <View style={styles.column}>{children}</View>;
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
+      <SkyDecor />
       {scroll ? (
         <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           {content}

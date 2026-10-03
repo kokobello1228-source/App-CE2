@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Chunky } from './Chunky';
 import { colors, font, fonts, radius, shadow, space, TOUCH } from '../theme';
 import { Text } from './Text';
 
@@ -37,25 +38,22 @@ export function NumPad({ value, onChange, onSubmit, maxLength = 4, disabled, dir
           const isErase = key === 'erase';
           const isDisabled = disabled || (isOk && value === '');
           return (
-            <Pressable
+            <Chunky
               key={key}
               accessibilityRole="button"
               accessibilityLabel={isErase ? 'Effacer' : isOk ? 'Valider' : key}
               disabled={isDisabled}
               onPress={() => press(key)}
-              style={({ pressed }) => [
-                styles.key,
-                !isOk && shadow(1),
-                isOk && styles.okKey,
-                isOk && isDisabled && styles.okDisabled,
-                isErase && styles.eraseKey,
-                pressed && styles.pressed,
-              ]}
+              face={isOk ? (isDisabled ? colors.disabled : colors.success) : isErase ? '#F3F6FB' : colors.surface}
+              edge={isOk ? undefined : colors.border}
+              depth={5}
+              style={styles.keyBox}
+              contentStyle={styles.key}
             >
               <Text style={[styles.keyText, isOk && styles.okText, isErase && styles.eraseText]}>
                 {isErase ? '⌫' : isOk ? 'Valider' : key}
               </Text>
-            </Pressable>
+            </Chunky>
           );
         })}
       </View>
@@ -74,22 +72,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  displayText: { fontSize: font.huge - 6, fontFamily: fonts.display, color: colors.text, letterSpacing: 4 },
+  displayText: { fontSize: font.huge - 4, fontFamily: fonts.display, color: colors.text, letterSpacing: 4, lineHeight: 56 },
   placeholder: { color: colors.border },
   grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: space.s + 2 },
-  key: {
-    width: '31.5%',
-    minHeight: TOUCH,
-    borderRadius: radius.m,
-    backgroundColor: colors.surface,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  pressed: { transform: [{ scale: 0.94 }], backgroundColor: colors.selected },
-  keyText: { fontSize: font.title, fontFamily: fonts.display, color: colors.text },
-  eraseKey: { backgroundColor: '#F6F8FC' },
+  keyBox: { width: '31.5%' },
+  key: { minHeight: TOUCH - 4, alignItems: 'center', justifyContent: 'center' },
+  keyText: { fontSize: font.title + 2, fontFamily: fonts.display, color: colors.text, lineHeight: 42 },
   eraseText: { color: colors.textMuted },
-  okKey: { backgroundColor: colors.primary, ...shadow(1) },
-  okDisabled: { backgroundColor: colors.disabled },
-  okText: { fontSize: font.body, color: colors.primaryText },
+  okText: { fontSize: font.body + 1, color: colors.primaryText, lineHeight: 28 },
 });

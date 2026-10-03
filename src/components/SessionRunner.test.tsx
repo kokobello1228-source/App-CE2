@@ -3,6 +3,13 @@ import type { AnswerRecord, Block } from '../engine/session';
 import type { M10Item } from '../skills/m10/logic';
 import { SessionRunner } from './SessionRunner';
 
+jest.mock('./Mascot', () => ({ Mascot: () => null }));
+jest.mock('./ProgressBar', () => ({ ProgressBar: () => null }));
+jest.mock('./Chunky', () => {
+  const { Pressable } = require('react-native');
+  return { Chunky: ({ children, contentStyle: _c, face: _f, edge: _e, ...props }: { children: unknown; contentStyle?: unknown; face?: unknown; edge?: unknown }) => <Pressable {...props}>{children}</Pressable> };
+});
+jest.mock('../services/feedback', () => ({ playSuccess: jest.fn(), playPop: jest.fn(), playFanfare: jest.fn(), tap: jest.fn() }));
 jest.mock('../services/speech', () => ({
   speak: jest.fn(() => Promise.resolve()),
   stopSpeaking: jest.fn(),

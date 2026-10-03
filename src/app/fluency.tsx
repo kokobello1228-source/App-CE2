@@ -8,6 +8,7 @@ import { SeyesPaper } from '../components/SeyesPaper';
 import { SpeakButton } from '../components/SpeakButton';
 import { Text } from '../components/Text';
 import { TimerBar } from '../components/TimerBar';
+import { FLUENCY_INSTRUCTION } from '../content/phrases';
 import { BAND_LABELS, fluencyBand } from '../engine/scoring';
 import { fluencyScore, nextText, READING_SECONDS, tokenize, F14_TEXTS } from '../skills/f14/fluency';
 import type { FluencyResult } from '../storage/store';
@@ -16,8 +17,7 @@ import { colors, font, fonts, radius, shadow, space } from '../theme';
 
 type Phase = 'choose' | 'reading' | 'last' | 'result';
 
-const CHILD_INSTRUCTION =
-  'Tu vas lire un texte à voix haute. Lis aussi bien et aussi vite que tu peux. Tu as une minute. Si tu bloques sur un mot, passe au suivant.';
+const CHILD_INSTRUCTION = FLUENCY_INSTRUCTION;
 
 export default function Fluency() {
   const { repo, notifyDataChanged } = useApp();

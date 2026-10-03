@@ -34,7 +34,10 @@ const EXPLAIN: Record<F5Entry['kind'], string> = {
 };
 
 export function generateF5(level: Level, rng: Rng): QcmItem {
-  const e = pickFromBank(F5_BANK, level, rng);
+  return itemF5(pickFromBank(F5_BANK, level, rng), level, rng);
+}
+
+export function itemF5(e: F5Entry, level: Level, rng: Rng): QcmItem {
   return {
     key: `F5:${e.id}`,
     level,

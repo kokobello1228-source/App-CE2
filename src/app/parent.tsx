@@ -141,11 +141,15 @@ function ParentArea() {
 
       <Text style={styles.label}>Voix</Text>
       <Text style={styles.muted}>
-        Touchez une voix pour l’écouter et la choisir. Pour des voix plus naturelles sur iPhone : Réglages → Accessibilité →
-        Contenu énoncé → Voix → Français, puis téléchargez une voix « améliorée » (par exemple Audrey, Thomas ou Aurélie) et
-        revenez ici.
+        Plume, la voix naturelle, lit les consignes, les dictées, les textes et les corrections enregistrés. Pour les phrases
+        calculées à la volée (problèmes, calculs), l’application utilise une voix de l’iPhone : téléchargez une voix
+        « améliorée » dans Réglages → Accessibilité → Contenu énoncé → Voix → Français pour qu’elle soit plus agréable.
       </Text>
-      <VoicePicker value={settings.voiceId} onChange={(id) => void updateSettings({ voiceId: id })} />
+      <VoicePicker
+        value={settings.voiceId}
+        natural={settings.naturalVoice}
+        onChange={(c) => void updateSettings({ naturalVoice: c.natural, voiceId: c.voiceId })}
+      />
 
       <Text style={styles.label}>Vitesse de la voix</Text>
       <Segmented
@@ -159,6 +163,15 @@ function ParentArea() {
       />
 
       <View style={styles.switchRow}>
+        <Text style={[styles.label, { flex: 1 }]}>Petits sons de réussite</Text>
+        <Switch
+          value={settings.sounds}
+          onValueChange={(v) => void updateSettings({ sounds: v })}
+          accessibilityLabel="Petits sons de réussite"
+        />
+      </View>
+
+      <View style={styles.switchRow}>
         <Text style={[styles.label, { flex: 1 }]}>Chronomètre en entraînement libre</Text>
         <Switch
           value={settings.timerInPractice}
@@ -169,7 +182,8 @@ function ParentArea() {
 
       <BigButton label="Effacer la progression" variant="secondary" onPress={reset} />
       <Text style={styles.muted}>
-        Aucune donnée ne quitte ce téléphone : pas de compte, pas de publicité, pas de statistiques envoyées.
+        Aucune donnée ne quitte ce téléphone : pas de compte, pas de publicité, pas de statistiques envoyées. Voix naturelle :
+        modèle « Siwis » de Piper (licence CC-BY 4.0, Université d’Édimbourg).
       </Text>
     </Screen>
   );

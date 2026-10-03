@@ -1,9 +1,12 @@
-import { Fredoka_600SemiBold, Fredoka_700Bold } from '@expo-google-fonts/fredoka';
+import { Baloo2_600SemiBold, Baloo2_700Bold, Baloo2_800ExtraBold } from '@expo-google-fonts/baloo-2';
 import { Lexend_400Regular, Lexend_600SemiBold } from '@expo-google-fonts/lexend';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, View } from 'react-native';
+import { useEffect } from 'react';
+import { ActivityIndicator, Platform, View } from 'react-native';
+import { unlockAudio } from '../services/feedback';
+import { unlockClips } from '../services/speech';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppProvider } from '../state/AppContext';
 import { colors, font, fonts } from '../theme';
@@ -17,8 +20,18 @@ function Loading() {
 }
 
 export default function RootLayout() {
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+    // Safari only allows sound after a first touch.
+    const unlock = () => {
+      unlockAudio();
+      unlockClips();
+    };
+    document.addEventListener('touchend', unlock, { once: true });
+    document.addEventListener('click', unlock, { once: true });
+  }, []);
   const [fontsLoaded, fontError] = useFonts({
-    Fredoka_600SemiBold, Fredoka_700Bold, Lexend_400Regular, Lexend_600SemiBold,
+    Baloo2_600SemiBold, Baloo2_700Bold, Baloo2_800ExtraBold, Lexend_400Regular, Lexend_600SemiBold,
   });
   if (!fontsLoaded && !fontError) return <Loading />;
   return (
@@ -30,7 +43,7 @@ export default function RootLayout() {
             headerStyle: { backgroundColor: colors.background },
             headerShadowVisible: false,
             headerTintColor: colors.primary,
-            headerTitleStyle: { fontSize: font.body, fontFamily: fonts.display, color: colors.text },
+            headerTitleStyle: { fontSize: font.large - 2, fontFamily: fonts.display, color: colors.text },
             headerBackTitle: 'Retour',
             contentStyle: { backgroundColor: colors.background },
           }}

@@ -17,6 +17,11 @@ Pour chaque compétence : 3 niveaux calqués sur la « caractérisation des grou
 scores, mauvaises réponses construites à partir des erreurs types, explication d'une phrase,
 erreurs types et conseils pour le parent. Aucun item officiel n'est réutilisé (contrôle automatique).
 
+Interface : Plume la chouette accompagne l'enfant (consignes, encouragements), boutons « 3D », confettis et petits sons de réussite.
+Voix : voix naturelle pré-enregistrée (Piper, voix « Siwis », CC-BY 4.0) pour les consignes, dictées, textes et corrections ;
+voix de l'appareil pour les phrases calculées à la volée. Régénérer après une modification de contenu :
+`npm run voice:collect > texts.json && python3 scripts/voice/synthesize.py texts.json <dossier piper>`.
+
 Fonctionnalités : séance du jour, entraînement libre, « Comme à l'école » (durées officielles),
 synthèse vocale, difficulté adaptative, répétition espacée des erreurs, étoiles et série de jours,
 espace parent provisoire. Référence officielle résumée dans `docs/reference-officielle-2026.md`.

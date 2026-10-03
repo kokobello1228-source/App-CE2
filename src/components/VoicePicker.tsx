@@ -1,46 +1,66 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
-import { listFrenchVoices, setVoice, speak, type FrenchVoice } from '../services/speech';
+import { VOICE_SAMPLE } from '../content/phrases';
+import { listFrenchVoices, setNaturalVoice, setVoice, speak, type FrenchVoice } from '../services/speech';
 import { colors, font, fonts, radius, space } from '../theme';
 import { Text } from './Text';
 
-const SAMPLE = 'Bonjour ! Écoute bien : le chat dort sur le tapis. Combien font trois plus quatre ?';
+const SAMPLE = VOICE_SAMPLE;
 
 interface Props {
   value: string;
-  onChange(identifier: string): void;
+  natural: boolean;
+  onChange(choice: { natural: boolean; voiceId: string }): void;
 }
 
 /** List of the French voices of the device, each with a preview button. */
-export function VoicePicker({ value, onChange }: Props) {
+export function VoicePicker({ value, natural, onChange }: Props) {
   const [voices, setVoices] = useState<FrenchVoice[] | null>(null);
 
   useEffect(() => {
     void listFrenchVoices().then(setVoices);
   }, []);
 
-  const preview = (identifier: string) => {
+  const preview = (identifier: string, useNatural = false) => {
+    setNaturalVoice(useNatural);
     setVoice(identifier);
     void speak(SAMPLE);
   };
 
   if (voices === null) return <ActivityIndicator color={colors.primary} />;
-  if (voices.length === 0) {
-    return <Text style={styles.muted}>Aucune voix française n’a été trouvée sur cet appareil.</Text>;
-  }
   const options: (FrenchVoice | null)[] = [null, ...voices];
   return (
     <View style={styles.list} accessibilityRole="radiogroup">
+      <Pressable
+        accessibilityRole="radio"
+        accessibilityState={{ selected: natural }}
+        onPress={() => {
+          onChange({ natural: true, voiceId: value });
+          preview(value, true);
+        }}
+        style={[styles.row, natural && styles.selected]}
+      >
+        <View style={[styles.radio, natural && styles.radioOn]} />
+        <View style={{ flex: 1 }}>
+          <Text style={styles.name}>🦉 Plume – voix naturelle</Text>
+          <Text style={styles.detail}>Recommandée. Les phrases calculées à la volée utilisent la voix choisie dessous.</Text>
+        </View>
+        <Pressable accessibilityRole="button" accessibilityLabel="Écouter Plume" onPress={() => preview(value, true)} style={styles.play}>
+          <Text style={styles.playText}>▶</Text>
+        </Pressable>
+      </Pressable>
+      <Text style={styles.muted}>Voix de l’appareil :</Text>
+      {voices.length === 0 && <Text style={styles.muted}>Aucune voix française n’a été trouvée sur cet appareil.</Text>}
       {options.map((voice) => {
         const id = voice?.identifier ?? '';
-        const selected = id === value;
+        const selected = id === value && !natural;
         return (
           <Pressable
             key={id || 'auto'}
             accessibilityRole="radio"
             accessibilityState={{ selected }}
             onPress={() => {
-              onChange(id);
+              onChange({ natural: false, voiceId: id });
               preview(id);
             }}
             style={[styles.row, selected && styles.selected]}

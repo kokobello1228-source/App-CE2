@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { setSpeechRate, setVoice } from '../services/speech';
+import { setSoundsEnabled } from '../services/feedback';
+import { setNaturalVoice, setSpeechRate, setVoice } from '../services/speech';
 import { Repository } from '../storage/repository';
 import { DEFAULT_SETTINGS, type Settings } from '../storage/settings';
 
@@ -27,6 +28,8 @@ export function AppProvider({ children, fallback }: { children: ReactNode; fallb
       if (cancelled) return;
       setSpeechRate(stored.voiceRate);
       setVoice(stored.voiceId);
+      setSoundsEnabled(stored.sounds);
+      setNaturalVoice(stored.naturalVoice);
       setSettings(stored);
       setRepo(opened);
     })();
@@ -43,6 +46,8 @@ export function AppProvider({ children, fallback }: { children: ReactNode; fallb
         const next = { ...previous, ...patch };
         setSpeechRate(next.voiceRate);
         setVoice(next.voiceId);
+        setSoundsEnabled(next.sounds);
+        setNaturalVoice(next.naturalVoice);
         return next;
       });
     },

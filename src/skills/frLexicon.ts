@@ -138,8 +138,8 @@ export function adjectiveForm(adj: Adjective, gender: Gender, plural: boolean): 
   return adj.forms[(gender === 'f' ? 1 : 0) + (plural ? 2 : 0)];
 }
 
-const DETERMINERS: Record<Gender, string[]> = { m: ['le', 'un', 'mon', 'ce'], f: ['la', 'une', 'ma', 'cette'] };
-const PLURAL_DETERMINERS = ['les', 'des', 'mes', 'ces'];
+export const DETERMINERS: Record<Gender, string[]> = { m: ['le', 'un', 'mon', 'ce'], f: ['la', 'une', 'ma', 'cette'] };
+export const PLURAL_DETERMINERS = ['les', 'des', 'mes', 'ces'];
 
 export function determiner(gender: Gender, plural: boolean, pick: <T>(items: readonly T[]) => T): string {
   return pick(plural ? PLURAL_DETERMINERS : DETERMINERS[gender]);

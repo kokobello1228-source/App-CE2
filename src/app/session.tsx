@@ -7,6 +7,10 @@ import { BigButton } from '../components/BigButton';
 import { Screen } from '../components/Screen';
 import { SessionRunner } from '../components/SessionRunner';
 import { Stars } from '../components/Stars';
+import { Confetti } from '../components/Confetti';
+import { Mascot } from '../components/Mascot';
+import { playFanfare } from '../services/feedback';
+import { summarySpeech } from '../content/phrases';
 import type { AnswerRecord, Mode } from '../engine/session';
 import { speak } from '../services/speech';
 import { getLogic, isAvailable } from '../skills/registry';
@@ -41,7 +45,7 @@ export default function SessionScreen() {
   if (state.kind === 'loading') {
     return (
       <View style={styles.center}>
-        <ActivityIndicator size="large" color={colors.primary} />
+        <Mascot mood="think" size={110} />
       </View>
     );
   }
@@ -77,22 +81,24 @@ function Summary({
   const mistakes = records.filter((r) => !r.correct);
   const message = `Bravo${childName ? ` ${childName}` : ''} ! Tu as réussi ${summary.correct} question${summary.correct > 1 ? 's' : ''} sur ${summary.total}.`;
   useEffect(() => {
-    void speak(message);
-  }, [message]);
+    playFanfare();
+    void speak(summarySpeech(summary.correct, summary.total));
+  }, [summary.correct, summary.total]);
 
   return (
     <Screen>
-      <SeyesPaper style={{ marginTop: space.l }}>
-        <View style={styles.summaryInner}>
-          <Text style={styles.summaryEmoji}>{summary.stars >= 3 ? '🏆' : summary.stars === 2 ? '🎉' : '👏'}</Text>
-          <Text style={styles.summaryTitle}>Séance terminée !</Text>
-          <Stars count={summary.stars} size={44} />
+      <View style={styles.celebration}>
+        <Mascot mood="cheer" size={140} />
+        <Text style={styles.summaryTitle}>Séance terminée !</Text>
+        <Stars count={summary.stars} size={46} animate />
+        <View style={[styles.scoreCard, shadow(1)]}>
           <Text style={styles.summaryText}>{message}</Text>
           {school && records.length < summary.total && (
             <Text style={styles.muted}>Le temps était écoulé avant la fin : ce n’est pas grave, on s’entraîne pour aller plus vite.</Text>
           )}
         </View>
-      </SeyesPaper>
+        <Confetti burst={1} count={40} height={700} />
+      </View>
 
       {school && mistakes.length > 0 && (
         <>
@@ -127,9 +133,9 @@ function Summary({
 
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background },
-  summaryInner: { alignItems: 'center', gap: space.m, paddingVertical: space.s },
-  summaryEmoji: { fontSize: 56 },
-  summaryTitle: { fontSize: font.title, fontFamily: fonts.display, color: colors.primary },
+  celebration: { alignItems: 'center', gap: space.m, paddingTop: space.m },
+  scoreCard: { backgroundColor: colors.surface, borderRadius: radius.l, padding: space.l, alignSelf: 'stretch', gap: space.s },
+  summaryTitle: { fontSize: font.title + 6, fontFamily: fonts.display, color: colors.primary, lineHeight: 44 },
   summaryText: { fontSize: font.large - 2, color: colors.text, textAlign: 'center', lineHeight: 32 },
   muted: { fontSize: font.body - 2, color: colors.textMuted, textAlign: 'center' },
   sectionTitle: { fontSize: font.large, fontFamily: fonts.display, color: colors.text, marginTop: space.m },

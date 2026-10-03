@@ -21,7 +21,10 @@ export type F11Entry = z.infer<typeof f11BankSchema>[number];
 export const F11_BANK: F11Entry[] = f11BankSchema.parse(bankJson);
 
 export function generateF11(level: Level, rng: Rng): QcmItem {
-  const e = pickFromBank(F11_BANK, level, rng);
+  return itemF11(pickFromBank(F11_BANK, level, rng), level, rng);
+}
+
+export function itemF11(e: F11Entry, level: Level, rng: Rng): QcmItem {
   const word = e.word.replace(/ \(.*\)$/, '');
   return {
     key: `F11:${e.id}`,

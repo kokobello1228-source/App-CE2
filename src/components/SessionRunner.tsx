@@ -8,7 +8,9 @@ import { getLogic } from '../skills/registry';
 import { SKILL_VIEWS } from '../skills/views';
 import { colors, font, fonts, radius, shadow, space } from '../theme';
 import { SKILL_ICONS } from '../theme/skillIcons';
+import { Mascot } from './Mascot';
 import { ProgressBar } from './ProgressBar';
+import { SpeechBubble } from './SpeechBubble';
 import { BigButton } from './BigButton';
 import { FeedbackPanel } from './FeedbackPanel';
 import { SpeakButton } from './SpeakButton';
@@ -151,21 +153,32 @@ export function SessionRunner({ blocks, onAnswer, onFinish }: Props) {
           </View>
         )}
         <View style={[styles.introCard, shadow(2)]}>
-          <View style={[styles.iconTile, { backgroundColor: colors.domainSoft[config.domain] }]}>
-            <Text style={styles.icon}>{SKILL_ICONS[block.skillId]}</Text>
+          <View style={styles.introHead}>
+            <View style={[styles.iconTile, { backgroundColor: colors.domainSoft[config.domain] }]}>
+              <Text style={styles.icon}>{SKILL_ICONS[block.skillId]}</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              {blocks.length > 1 && (
+                <Text style={styles.eyebrow}>
+                  Exercice {blockIndex + 1} sur {blocks.length}
+                </Text>
+              )}
+              <Text style={[styles.skillTitle, { color: tint }]}>{config.title}</Text>
+            </View>
           </View>
-          {blocks.length > 1 && (
-            <Text style={styles.eyebrow}>
-              Exercice {blockIndex + 1} sur {blocks.length}
-            </Text>
-          )}
-          <Text style={[styles.skillTitle, { color: tint }]}>{config.title}</Text>
-          <Text style={styles.instruction}>{logic.instruction}</Text>
           <View style={styles.chips}>
-            <Text style={styles.chip}>{block.items.length} questions</Text>
+            <Text style={styles.chip}>📝 {block.items.length} questions</Text>
             <Text style={styles.chip}>⏱ {timingText}</Text>
           </View>
-          <SpeakButton text={logic.instruction} label="Écouter la consigne" />
+        </View>
+        <View style={styles.coach}>
+          <Mascot mood="happy" size={96} />
+          <SpeechBubble>
+            <Text style={styles.instruction}>{logic.instruction}</Text>
+            <View style={{ marginTop: space.s }}>
+              <SpeakButton text={logic.instruction} label="Réécouter" />
+            </View>
+          </SpeechBubble>
         </View>
         <BigButton label="C’est parti !" onPress={start} color={tint} />
       </View>
@@ -216,19 +229,21 @@ const styles = StyleSheet.create({
   steps: { flexDirection: 'row', gap: 6 },
   step: { flex: 1, height: 6, borderRadius: radius.pill },
   introCard: { backgroundColor: colors.surface, borderRadius: radius.l, padding: space.l, gap: space.m },
-  iconTile: { width: 72, height: 72, borderRadius: radius.m, alignItems: 'center', justifyContent: 'center' },
-  icon: { fontSize: 40 },
+  introHead: { flexDirection: 'row', alignItems: 'center', gap: space.m },
+  coach: { flexDirection: 'row', alignItems: 'center', gap: space.s },
+  iconTile: { width: 68, height: 68, borderRadius: radius.m, alignItems: 'center', justifyContent: 'center' },
+  icon: { fontSize: 38, lineHeight: 46 },
   eyebrow: { fontSize: font.small, color: colors.textMuted, fontFamily: fonts.bold, textTransform: 'uppercase', letterSpacing: 1 },
-  skillTitle: { fontSize: font.title, fontFamily: fonts.display, lineHeight: 38 },
-  instruction: { fontSize: font.large - 2, lineHeight: 33, color: colors.text },
+  skillTitle: { fontSize: font.title - 2, fontFamily: fonts.display, lineHeight: 34 },
+  instruction: { fontSize: font.body, lineHeight: 28, color: colors.text },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.s },
   chip: {
-    fontSize: font.small, color: colors.textMuted, backgroundColor: colors.background,
-    paddingHorizontal: space.m, paddingVertical: 6, borderRadius: radius.pill, overflow: 'hidden',
+    fontSize: font.small - 2, color: colors.textMuted, backgroundColor: colors.background,
+    paddingHorizontal: 10, paddingVertical: 5, borderRadius: radius.pill, overflow: 'hidden',
   },
   question: { gap: space.m },
   header: { flexDirection: 'row', alignItems: 'center', gap: space.m },
-  progress: { fontSize: font.body, fontFamily: fonts.display, color: colors.textMuted, minWidth: 48, textAlign: 'right' },
+  progress: { fontSize: font.body + 2, fontFamily: fonts.display, color: colors.textMuted, minWidth: 52, textAlign: 'right', lineHeight: 28 },
   subHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: space.s },
-  smallTitle: { fontSize: font.body - 2, fontFamily: fonts.display, flexShrink: 1 },
+  smallTitle: { fontSize: font.body - 1, fontFamily: fonts.display, flexShrink: 1, lineHeight: 24 },
 });

@@ -24,7 +24,10 @@ export function targetWord(sentence: string): string {
 }
 
 export function generateF10(level: Level, rng: Rng): QcmItem {
-  const e = pickFromBank(F10_BANK, level, rng);
+  return itemF10(pickFromBank(F10_BANK, level, rng), level, rng);
+}
+
+export function itemF10(e: F10Entry, level: Level, rng: Rng): QcmItem {
   const word = targetWord(e.sentence);
   return {
     key: `F10:${e.id}`,

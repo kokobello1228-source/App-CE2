@@ -1,5 +1,7 @@
 import * as Speech from 'expo-speech';
 import { Platform } from 'react-native';
+import manifest from '../content/voiceManifest.json';
+import { clipKey, segments } from './voiceClips';
 
 /**
  * Single entry point for speech synthesis (French voice).
@@ -9,6 +11,59 @@ let voiceId: string | undefined;
 let voiceResolved = false;
 /** Voice chosen in the parent area; empty means automatic. */
 let chosenVoice = '';
+let useNatural = true;
+const CLIPS = new Set<string>(manifest as string[]);
+let player: HTMLAudioElement | null = null;
+/** A tiny silent MP3, played on the first touch to unlock audio in Safari. */
+const SILENCE = 'data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABgAAAowAZmZmZmZmZmZmZmZmZmZmZoWFhYWFhYWFhYWFhYWFhYWFo6Ojo6Ojo6Ojo6Ojo6Ojo8LCwsLCwsLCwsLCwsLCwsLC4eHh4eHh4eHh4eHh4eHh4eH/////////////////////AAAAAExhdmM2MC4zMQAAAAAAAAAAAAAAACQCowAAAAAAAAKMPp3BgAAAAAAAAAAAAAAAAAD/8zDEAAAAA0gAAAAATEFNRVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/8zLEQQAAA0gAAAAAVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MwxIMAAANIAAAAAFVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MyxL0AAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zMMS+AAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zMMS+AAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==';
+
+function base(): string {
+  if (typeof location === 'undefined') return '';
+  return location.pathname.startsWith('/App-CE2') ? '/App-CE2' : '';
+}
+
+function audioElement(): HTMLAudioElement | null {
+  if (!isWebPlatform() || typeof Audio === 'undefined') return null;
+  player ??= new Audio();
+  return player;
+}
+
+function isWebPlatform(): boolean {
+  return Platform.OS === 'web';
+}
+
+/** Unlocks clip playback in Safari: must be called during a user touch. */
+export function unlockClips(): void {
+  const audio = audioElement();
+  if (!audio) return;
+  audio.src = SILENCE;
+  void audio.play().catch(() => undefined);
+}
+
+export function setNaturalVoice(value: boolean): void {
+  useNatural = value;
+}
+
+/** Clip keys for a text, or null if one segment has no recording. */
+export function clipsFor(text: string): string[] | null {
+  const keys = segments(text).map(clipKey);
+  return keys.length > 0 && keys.every((k) => CLIPS.has(k)) ? keys : null;
+}
+
+function playClip(audio: HTMLAudioElement, key: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const done = (ok: boolean) => {
+      audio.onended = null;
+      audio.onerror = null;
+      resolve(ok);
+    };
+    audio.onended = () => done(true);
+    audio.onerror = () => done(false);
+    audio.src = `${base()}/voice/${key}.mp3`;
+    audio.playbackRate = Math.max(0.7, Math.min(1.3, rate / 0.9));
+    void audio.play().catch(() => done(false));
+  });
+}
 let rate = 0.9;
 let generation = 0;
 
@@ -103,6 +158,21 @@ export async function listFrenchVoices(): Promise<FrenchVoice[]> {
 /** Reads a text aloud. Resolves when finished, stopped or failed. */
 export async function speak(text: string): Promise<void> {
   const current = ++generation;
+  player?.pause();
+  const keys = useNatural ? clipsFor(text) : null;
+  const audio = keys ? audioElement() : null;
+  if (keys && audio) {
+    await Speech.stop();
+    for (const key of keys) {
+      if (current !== generation) return;
+      const ok = await playClip(audio, key);
+      if (!ok) break; // offline or blocked: fall back to the device voice below
+      if (current !== generation) return;
+      if (key === keys[keys.length - 1]) return;
+      await wait(110);
+    }
+    if (current !== generation) return;
+  }
   await Speech.stop();
   // Safari drops an utterance spoken right after a cancel.
   if (isWeb) await wait(60);
@@ -122,5 +192,6 @@ export async function speak(text: string): Promise<void> {
 
 export function stopSpeaking(): void {
   generation++;
+  player?.pause();
   void Speech.stop();
 }
