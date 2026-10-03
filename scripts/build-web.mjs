@@ -15,13 +15,15 @@ const DIST = 'dist';
 
 execSync(`npx expo export --platform web --output-dir ${DIST} --clear`, { stdio: 'inherit' });
 
+// Icon version in the URL so that the iPhone does not keep an old icon in its cache.
+const iconVersion = createHash('sha256').update(readFileSync('public/icons/icon-180.png')).digest('hex').slice(0, 8);
 const head = `
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Repères CE2" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" content="#1F4E9C" />
-    <link rel="apple-touch-icon" href="${BASE}/icons/icon-180.png" />
+    <link rel="apple-touch-icon" href="${BASE}/icons/icon-180.png?v=${iconVersion}" />
     <link rel="manifest" href="${BASE}/manifest.webmanifest" />`;
 const register = `
     <script>
