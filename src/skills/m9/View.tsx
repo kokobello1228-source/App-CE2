@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '../../components/Text';
 import Svg from 'react-native-svg';
 import { Bar, Base10Blocks, Cube, Plate } from '../../components/Base10Blocks';
 import { NumPad } from '../../components/NumPad';

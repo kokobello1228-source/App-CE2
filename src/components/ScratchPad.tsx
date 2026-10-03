@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { PanResponder, Pressable, StyleSheet, Text, View } from 'react-native';
+import { PanResponder, Pressable, StyleSheet, View } from 'react-native';
+import { Text } from './Text';
 import Svg, { Path } from 'react-native-svg';
 import { colors, font, radius, space } from '../theme';
 

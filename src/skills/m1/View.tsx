@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Text } from '../../components/Text';
 import { NumPad } from '../../components/NumPad';
 import { colors, font } from '../../theme';
 import type { SkillViewProps } from '../views';

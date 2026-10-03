@@ -9,7 +9,7 @@ export function Screen({ children, scroll = true }: { children: ReactNode; scrol
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
       {scroll ? (
-        <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+        <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           {content}
         </ScrollView>
       ) : (
@@ -21,6 +21,6 @@ export function Screen({ children, scroll = true }: { children: ReactNode; scrol
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.background },
-  scroll: { flexGrow: 1, padding: space.m, alignItems: 'center' },
-  column: { width: '100%', maxWidth: 640, flexGrow: 1, gap: space.m },
+  scroll: { flexGrow: 1, padding: space.m, paddingBottom: space.xl, alignItems: 'center' },
+  column: { width: '100%', maxWidth: 620, flexGrow: 1, gap: space.m },
 });

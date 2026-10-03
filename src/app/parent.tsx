@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Alert, Pressable, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Switch, TextInput, View } from 'react-native';
+import { Text } from '../components/Text';
 import { SKILLS, type Band, type SkillId } from '../../skills.config';
 import { BigButton } from '../components/BigButton';
 import { Screen } from '../components/Screen';
 import { Stars } from '../components/Stars';
+import { VoicePicker } from '../components/VoicePicker';
 import { BAND_LABELS, estimateSkillBand } from '../engine/scoring';
 import { speak } from '../services/speech';
 import { availableSkills, getLogic } from '../skills/registry';
 import type { ErrorTagInfo, Level } from '../skills/types';
 import { useApp } from '../state/AppContext';
-import { colors, font, radius, space, TOUCH } from '../theme';
+import { colors, font, fonts, radius, shadow, space, TOUCH } from '../theme';
 
 /** Small multiplication a CE2 child does not know yet, as a parental gate. */
 function useGate() {
@@ -137,6 +139,14 @@ function ParentArea() {
         onChange={(v) => void updateSettings({ dailyMinutes: v })}
       />
 
+      <Text style={styles.label}>Voix</Text>
+      <Text style={styles.muted}>
+        Touchez une voix pour l’écouter et la choisir. Pour des voix plus naturelles sur iPhone : Réglages → Accessibilité →
+        Contenu énoncé → Voix → Français, puis téléchargez une voix « améliorée » (par exemple Audrey, Thomas ou Aurélie) et
+        revenez ici.
+      </Text>
+      <VoicePicker value={settings.voiceId} onChange={(id) => void updateSettings({ voiceId: id })} />
+
       <Text style={styles.label}>Vitesse de la voix</Text>
       <Segmented
         options={[
@@ -189,15 +199,15 @@ function Segmented<T extends number>({
 }
 
 const styles = StyleSheet.create({
-  h1: { fontSize: font.large, fontWeight: '800', color: colors.text, marginTop: space.m },
+  h1: { fontSize: font.large + 2, fontFamily: fonts.display, color: colors.text, marginTop: space.m },
   body: { fontSize: font.body, color: colors.text, lineHeight: 28 },
   muted: { fontSize: font.small, color: colors.textMuted, lineHeight: 22 },
-  label: { fontSize: font.body, fontWeight: '700', color: colors.text },
+  label: { fontSize: font.body, fontFamily: fonts.display, color: colors.text, marginTop: space.s },
   input: {
     minHeight: TOUCH - 8, borderWidth: 2, borderColor: colors.border, borderRadius: radius.m,
     backgroundColor: colors.surface, fontSize: font.large, paddingHorizontal: space.m, color: colors.text,
   },
-  card: { backgroundColor: colors.surface, borderRadius: radius.m, padding: space.m, gap: space.xs },
+  card: { backgroundColor: colors.surface, borderRadius: radius.l, padding: space.m, gap: space.xs, ...shadow(1) },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: space.s },
   cardTitle: { fontSize: font.body, fontWeight: '700', color: colors.text, flex: 1 },
   band: { fontSize: font.body, fontWeight: '700' },
@@ -205,7 +215,7 @@ const styles = StyleSheet.create({
   switchRow: { flexDirection: 'row', alignItems: 'center', gap: space.m },
   segmented: { flexDirection: 'row', gap: space.s },
   segment: {
-    flex: 1, minHeight: TOUCH - 12, borderRadius: radius.m, borderWidth: 2, borderColor: colors.primary,
+    flex: 1, minHeight: TOUCH - 12, borderRadius: radius.pill, borderWidth: 2, borderColor: colors.primary,
     alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface,
   },
   segmentSelected: { backgroundColor: colors.primary },

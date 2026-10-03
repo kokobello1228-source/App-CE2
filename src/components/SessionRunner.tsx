@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from './Text';
 import { SKILLS } from '../../skills.config';
 import type { AnswerRecord, Block } from '../engine/session';
 import { speak, stopSpeaking } from '../services/speech';
 import { getLogic } from '../skills/registry';
 import { SKILL_VIEWS } from '../skills/views';
-import { colors, font, space } from '../theme';
+import { colors, font, fonts, radius, shadow, space } from '../theme';
+import { SKILL_ICONS } from '../theme/skillIcons';
+import { ProgressBar } from './ProgressBar';
 import { BigButton } from './BigButton';
 import { FeedbackPanel } from './FeedbackPanel';
 import { SpeakButton } from './SpeakButton';
@@ -130,42 +133,62 @@ export function SessionRunner({ blocks, onAnswer, onFinish }: Props) {
     }
   };
 
+  const tint = colors.domain[config.domain];
+
   if (phase === 'intro') {
     const timingText = timing
       ? timing.kind === 'perItem'
-        ? `Tu as ${timing.seconds} secondes par question.`
-        : `Tu as ${formatDuration(timing.seconds)} en tout.`
-      : 'Prends ton temps.';
+        ? `${timing.seconds} s par question`
+        : `${formatDuration(timing.seconds)} en tout`
+      : 'À ton rythme';
     return (
       <View style={styles.intro}>
-        <Text style={[styles.skillTitle, { color: colors.domain[config.domain] }]}>{config.title}</Text>
         {blocks.length > 1 && (
-          <Text style={styles.muted}>
-            Exercice {blockIndex + 1} sur {blocks.length}
-          </Text>
+          <View style={styles.steps}>
+            {blocks.map((b, i) => (
+              <View key={i} style={[styles.step, { backgroundColor: i <= blockIndex ? tint : colors.border }]} />
+            ))}
+          </View>
         )}
-        <Text style={styles.instruction}>{logic.instruction}</Text>
-        <Text style={styles.muted}>
-          {block.items.length} questions. {timingText}
-        </Text>
-        <SpeakButton text={logic.instruction} label="Réécouter la consigne" />
-        <BigButton label="C’est parti !" onPress={start} color={colors.domain[config.domain]} />
+        <View style={[styles.introCard, shadow(2)]}>
+          <View style={[styles.iconTile, { backgroundColor: colors.domainSoft[config.domain] }]}>
+            <Text style={styles.icon}>{SKILL_ICONS[block.skillId]}</Text>
+          </View>
+          {blocks.length > 1 && (
+            <Text style={styles.eyebrow}>
+              Exercice {blockIndex + 1} sur {blocks.length}
+            </Text>
+          )}
+          <Text style={[styles.skillTitle, { color: tint }]}>{config.title}</Text>
+          <Text style={styles.instruction}>{logic.instruction}</Text>
+          <View style={styles.chips}>
+            <Text style={styles.chip}>{block.items.length} questions</Text>
+            <Text style={styles.chip}>⏱ {timingText}</Text>
+          </View>
+          <SpeakButton text={logic.instruction} label="Écouter la consigne" />
+        </View>
+        <BigButton label="C’est parti !" onPress={start} color={tint} />
       </View>
     );
   }
 
   const speechText = logic.speech(item);
+  const done = itemIndex + (phase === 'feedback' ? 1 : 0);
   return (
     <View style={styles.question}>
       <View style={styles.header}>
+        <ProgressBar value={done} total={block.items.length} color={tint} />
         <Text style={styles.progress}>
-          {itemIndex + 1} / {block.items.length}
+          {itemIndex + 1}/{block.items.length}
+        </Text>
+      </View>
+      <View style={styles.subHeader}>
+        <Text style={[styles.smallTitle, { color: tint }]}>
+          {SKILL_ICONS[block.skillId]} {config.title}
         </Text>
         {speechText ? <SpeakButton text={speechText} /> : <SpeakButton text={logic.instruction} label="Consigne" />}
       </View>
-      {timing && remaining !== null && (
-        <TimerBar remaining={remaining} total={timing.seconds} />
-      )}
+      {timing && remaining !== null && <TimerBar remaining={remaining} total={timing.seconds} />}
       {phase === 'question' && View_ && (
         <View_ key={`${blockIndex}-${itemIndex}`} item={item} onSubmit={submit} disabled={false} />
       )}
@@ -189,11 +212,23 @@ export function formatDuration(seconds: number): string {
 }
 
 const styles = StyleSheet.create({
-  intro: { gap: space.l, paddingTop: space.l },
-  skillTitle: { fontSize: font.title, fontWeight: '800' },
-  instruction: { fontSize: font.large, lineHeight: 36, color: colors.text },
-  muted: { fontSize: font.body, color: colors.textMuted },
+  intro: { gap: space.l, paddingTop: space.s },
+  steps: { flexDirection: 'row', gap: 6 },
+  step: { flex: 1, height: 6, borderRadius: radius.pill },
+  introCard: { backgroundColor: colors.surface, borderRadius: radius.l, padding: space.l, gap: space.m },
+  iconTile: { width: 72, height: 72, borderRadius: radius.m, alignItems: 'center', justifyContent: 'center' },
+  icon: { fontSize: 40 },
+  eyebrow: { fontSize: font.small, color: colors.textMuted, fontFamily: fonts.bold, textTransform: 'uppercase', letterSpacing: 1 },
+  skillTitle: { fontSize: font.title, fontFamily: fonts.display, lineHeight: 38 },
+  instruction: { fontSize: font.large - 2, lineHeight: 33, color: colors.text },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.s },
+  chip: {
+    fontSize: font.small, color: colors.textMuted, backgroundColor: colors.background,
+    paddingHorizontal: space.m, paddingVertical: 6, borderRadius: radius.pill, overflow: 'hidden',
+  },
   question: { gap: space.m },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  progress: { fontSize: font.large, fontWeight: '700', color: colors.textMuted },
+  header: { flexDirection: 'row', alignItems: 'center', gap: space.m },
+  progress: { fontSize: font.body, fontFamily: fonts.display, color: colors.textMuted, minWidth: 48, textAlign: 'right' },
+  subHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: space.s },
+  smallTitle: { fontSize: font.body - 2, fontFamily: fonts.display, flexShrink: 1 },
 });

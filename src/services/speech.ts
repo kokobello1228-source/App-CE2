@@ -7,6 +7,8 @@ import { Platform } from 'react-native';
  */
 let voiceId: string | undefined;
 let voiceResolved = false;
+/** Voice chosen in the parent area; empty means automatic. */
+let chosenVoice = '';
 let rate = 0.9;
 let generation = 0;
 
@@ -41,7 +43,8 @@ async function resolveVoice(): Promise<void> {
     // Browsers load their voices late: try again next time if the list is still empty.
     voiceResolved = voices.length > 0;
     const french = voices.filter((v) => v.language.replace('_', '-').toLowerCase().startsWith('fr-fr'));
-    const best = french.find((v) => v.quality === Speech.VoiceQuality.Enhanced) ?? french[0];
+    const chosen = chosenVoice ? voices.find((v) => v.identifier === chosenVoice) : undefined;
+    const best = chosen ?? french.find((v) => v.quality === Speech.VoiceQuality.Enhanced) ?? french[0];
     voiceId = best?.identifier;
   } catch {
     voiceId = undefined;
@@ -50,6 +53,51 @@ async function resolveVoice(): Promise<void> {
 
 export function setSpeechRate(value: number): void {
   rate = value;
+}
+
+export function setVoice(identifier: string): void {
+  if (identifier === chosenVoice) return;
+  chosenVoice = identifier;
+  voiceResolved = false;
+}
+
+export interface FrenchVoice {
+  identifier: string;
+  name: string;
+  /** "fr-FR", "fr-CA"… */
+  language: string;
+  enhanced: boolean;
+}
+
+/** Novelty voices shipped by Apple that are not suitable for school reading. */
+const NOVELTY = /^(eddy|flo|grandma|grandpa|grand-mère|grand-père|reed|rocky|sandy|shelley|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|kathy|ralph)\b/i;
+
+/** French voices available on this device, best first (France before other French). */
+export async function listFrenchVoices(): Promise<FrenchVoice[]> {
+  let voices: Speech.Voice[] = [];
+  // Browsers load their voices late: try a few times.
+  for (let attempt = 0; attempt < 6 && voices.length === 0; attempt++) {
+    try {
+      voices = await Speech.getAvailableVoicesAsync();
+    } catch {
+      voices = [];
+    }
+    if (voices.length === 0) await wait(300);
+  }
+  const unique = new Map<string, FrenchVoice>();
+  for (const v of voices) {
+    const language = v.language.replace('_', '-');
+    if (!language.toLowerCase().startsWith('fr')) continue;
+    unique.set(v.identifier, {
+      identifier: v.identifier,
+      name: v.name,
+      language,
+      enhanced: v.quality === Speech.VoiceQuality.Enhanced || /premium|enhanced|améliorée|siri/i.test(`${v.name} ${v.identifier}`),
+    });
+  }
+  const score = (v: FrenchVoice) =>
+    (v.language.toLowerCase() === 'fr-fr' ? 0 : 2) + (v.enhanced ? 0 : 1) + (NOVELTY.test(v.name) ? 10 : 0);
+  return [...unique.values()].sort((a, b) => score(a) - score(b) || a.name.localeCompare(b.name));
 }
 
 /** Reads a text aloud. Resolves when finished, stopped or failed. */

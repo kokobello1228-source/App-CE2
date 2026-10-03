@@ -1,6 +1,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { Text } from '../components/Text';
 import { SKILLS, type SkillId } from '../../skills.config';
 import { BigButton } from '../components/BigButton';
 import { Screen } from '../components/Screen';
@@ -13,7 +14,9 @@ import { useApp } from '../state/AppContext';
 import {
   finishSession, prepareSession, saveAnswer, type PreparedSession, type SessionSummary,
 } from '../state/sessionController';
-import { colors, font, radius, space } from '../theme';
+import { SeyesPaper } from '../components/SeyesPaper';
+import { colors, font, fonts, radius, shadow, space } from '../theme';
+import { SKILL_ICONS } from '../theme/skillIcons';
 
 type State =
   | { kind: 'loading' }
@@ -79,14 +82,17 @@ function Summary({
 
   return (
     <Screen>
-      <View style={styles.summaryCard}>
-        <Text style={styles.summaryTitle}>Séance terminée !</Text>
-        <Stars count={summary.stars} size={56} />
-        <Text style={styles.summaryText}>{message}</Text>
-        {school && records.length < summary.total && (
-          <Text style={styles.muted}>Le temps était écoulé avant la fin : ce n’est pas grave, on s’entraîne pour aller plus vite.</Text>
-        )}
-      </View>
+      <SeyesPaper style={{ marginTop: space.l }}>
+        <View style={styles.summaryInner}>
+          <Text style={styles.summaryEmoji}>{summary.stars >= 3 ? '🏆' : summary.stars === 2 ? '🎉' : '👏'}</Text>
+          <Text style={styles.summaryTitle}>Séance terminée !</Text>
+          <Stars count={summary.stars} size={44} />
+          <Text style={styles.summaryText}>{message}</Text>
+          {school && records.length < summary.total && (
+            <Text style={styles.muted}>Le temps était écoulé avant la fin : ce n’est pas grave, on s’entraîne pour aller plus vite.</Text>
+          )}
+        </View>
+      </SeyesPaper>
 
       {school && mistakes.length > 0 && (
         <>
@@ -94,9 +100,9 @@ function Summary({
           {mistakes.map((r, i) => {
             const logic = getLogic(r.skillId);
             return (
-              <View key={`${r.item.key}-${i}`} style={styles.mistake}>
+              <View key={`${r.item.key}-${i}`} style={[styles.mistake, shadow(1)]}>
                 <Text style={styles.mistakeAnswer}>
-                  Bonne réponse : <Text style={{ fontWeight: '800' }}>{logic.correctAnswerLabel(r.item)}</Text>
+                  {SKILL_ICONS[r.skillId]} Bonne réponse : <Text style={{ fontWeight: '800' }}>{logic.correctAnswerLabel(r.item)}</Text>
                 </Text>
                 <Text style={styles.mistakeText}>{logic.explain(r.item, r.answer)}</Text>
               </View>
@@ -106,9 +112,13 @@ function Summary({
       )}
 
       {!school && (
-        <Text style={styles.muted}>
-          {session.blocks.map((b) => SKILLS[b.skillId].title).join(' · ')}
-        </Text>
+        <View style={styles.skillChips}>
+          {session.blocks.map((b) => (
+            <Text key={b.skillId} style={styles.skillChip}>
+              {SKILL_ICONS[b.skillId]} {SKILLS[b.skillId].title}
+            </Text>
+          ))}
+        </View>
       )}
       <BigButton label="Retour à l’accueil" onPress={() => router.dismissTo('/')} />
     </Screen>
@@ -117,14 +127,18 @@ function Summary({
 
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background },
-  summaryCard: {
-    backgroundColor: colors.surface, borderRadius: radius.l, padding: space.l, alignItems: 'center', gap: space.m, marginTop: space.l,
-  },
-  summaryTitle: { fontSize: font.title, fontWeight: '800', color: colors.text },
-  summaryText: { fontSize: font.large, color: colors.text, textAlign: 'center', lineHeight: 34 },
-  muted: { fontSize: font.body, color: colors.textMuted, textAlign: 'center' },
-  sectionTitle: { fontSize: font.large, fontWeight: '800', color: colors.text, marginTop: space.m },
-  mistake: { backgroundColor: colors.retryBg, borderRadius: radius.m, padding: space.m, gap: space.xs },
+  summaryInner: { alignItems: 'center', gap: space.m, paddingVertical: space.s },
+  summaryEmoji: { fontSize: 56 },
+  summaryTitle: { fontSize: font.title, fontFamily: fonts.display, color: colors.primary },
+  summaryText: { fontSize: font.large - 2, color: colors.text, textAlign: 'center', lineHeight: 32 },
+  muted: { fontSize: font.body - 2, color: colors.textMuted, textAlign: 'center' },
+  sectionTitle: { fontSize: font.large, fontFamily: fonts.display, color: colors.text, marginTop: space.m },
+  mistake: { backgroundColor: colors.surface, borderRadius: radius.m, padding: space.m, gap: space.xs, borderLeftWidth: 5, borderLeftColor: colors.primary },
   mistakeAnswer: { fontSize: font.body, color: colors.text },
-  mistakeText: { fontSize: font.body, color: colors.text, lineHeight: 28 },
+  mistakeText: { fontSize: font.body - 1, color: colors.text, lineHeight: 27 },
+  skillChips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.s, justifyContent: 'center' },
+  skillChip: {
+    fontSize: font.small, color: colors.textMuted, backgroundColor: colors.surface,
+    paddingHorizontal: space.m, paddingVertical: 6, borderRadius: radius.pill, overflow: 'hidden',
+  },
 });

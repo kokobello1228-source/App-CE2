@@ -1,16 +1,19 @@
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { SKILL_ORDER, SKILLS, type Domain, type SkillId } from '../../../skills.config';
 import { Screen } from '../../components/Screen';
 import { Stars } from '../../components/Stars';
+import { Text } from '../../components/Text';
 import { isAvailable } from '../../skills/registry';
 import type { Level } from '../../skills/types';
 import { useApp } from '../../state/AppContext';
-import { colors, font, radius, space, TOUCH } from '../../theme';
+import { colors, font, fonts, radius, shadow, space } from '../../theme';
+import { SKILL_ICONS } from '../../theme/skillIcons';
 
 export default function Universe() {
-  const { domain } = useLocalSearchParams<{ domain: Domain }>();
+  const { domain: param } = useLocalSearchParams<{ domain: Domain }>();
+  const domain: Domain = param === 'math' ? 'math' : 'fr';
   const { repo, dataVersion } = useApp();
   const [levels, setLevels] = useState<Partial<Record<SkillId, Level>>>({});
 
@@ -19,10 +22,12 @@ export default function Universe() {
   }, [repo, dataVersion]);
 
   const skills = SKILL_ORDER.filter((id) => SKILLS[id].domain === domain);
-  const color = colors.domain[domain === 'math' ? 'math' : 'fr'];
+  const tint = colors.domain[domain];
   return (
     <Screen>
       <Stack.Screen options={{ title: domain === 'math' ? 'Mathématiques' : 'Français' }} />
+      <Text style={[styles.title, { color: tint }]}>{domain === 'math' ? 'Mathématiques' : 'Français'}</Text>
+      <Text style={styles.subtitle}>Choisis un exercice. Les étoiles montrent ton niveau.</Text>
       {skills.map((id) => {
         const available = isAvailable(id);
         return (
@@ -33,18 +38,18 @@ export default function Universe() {
             accessibilityState={{ disabled: !available }}
             accessibilityLabel={`${SKILLS[id].title}${available ? `, niveau ${levels[id] ?? 1}` : ', bientôt disponible'}`}
             onPress={() => router.push(`/skill/${id}`)}
-            style={({ pressed }) => [
-              styles.card,
-              { borderColor: available ? color : colors.border },
-              !available && styles.unavailable,
-              pressed && { opacity: 0.85 },
-            ]}
+            style={({ pressed }) => [styles.card, available && shadow(1), !available && styles.unavailable, pressed && styles.pressed]}
           >
-            <View style={{ flex: 1 }}>
-              <Text style={[styles.title, !available && { color: colors.textMuted }]}>{SKILLS[id].title}</Text>
-              {!available && <Text style={styles.soon}>Bientôt</Text>}
+            <View style={[styles.iconTile, { backgroundColor: available ? colors.domainSoft[domain] : colors.background }]}>
+              <Text style={styles.icon}>{SKILL_ICONS[id]}</Text>
             </View>
-            {available && <Stars count={levels[id] ?? 1} />}
+            <View style={{ flex: 1, gap: 2 }}>
+              <Text style={[styles.cardTitle, !available && { color: colors.textMuted }]}>{SKILLS[id].title}</Text>
+              <Text style={styles.format} numberOfLines={2}>
+                {available ? SKILLS[id].format : 'Bientôt disponible'}
+              </Text>
+            </View>
+            {available && <Stars count={levels[id] ?? 1} size={font.small} />}
           </Pressable>
         );
       })}
@@ -53,17 +58,16 @@ export default function Universe() {
 }
 
 const styles = StyleSheet.create({
+  title: { fontSize: font.title, fontFamily: fonts.display },
+  subtitle: { fontSize: font.small + 1, color: colors.textMuted, marginTop: -space.s },
   card: {
-    minHeight: TOUCH + 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.m,
-    padding: space.m,
-    borderRadius: radius.m,
-    borderWidth: 3,
-    backgroundColor: colors.surface,
+    flexDirection: 'row', alignItems: 'center', gap: space.m,
+    padding: space.m, borderRadius: radius.l, backgroundColor: colors.surface,
   },
-  unavailable: { backgroundColor: colors.background, borderStyle: 'dashed' },
-  title: { fontSize: font.body + 2, fontWeight: '700', color: colors.text },
-  soon: { fontSize: font.small, color: colors.textMuted, marginTop: 2 },
+  unavailable: { opacity: 0.6, borderWidth: 2, borderStyle: 'dashed', borderColor: colors.border, backgroundColor: 'transparent' },
+  pressed: { transform: [{ scale: 0.98 }] },
+  iconTile: { width: 52, height: 52, borderRadius: radius.m, alignItems: 'center', justifyContent: 'center' },
+  icon: { fontSize: 28 },
+  cardTitle: { fontSize: font.body, fontFamily: fonts.display, color: colors.text },
+  format: { fontSize: font.small - 1, color: colors.textMuted, lineHeight: 20 },
 });

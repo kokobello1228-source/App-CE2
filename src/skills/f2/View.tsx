@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
+import { Text } from '../../components/Text';
 import { BigButton } from '../../components/BigButton';
 import { colors, font, radius, space, TOUCH } from '../../theme';
 import type { SkillViewProps } from '../views';

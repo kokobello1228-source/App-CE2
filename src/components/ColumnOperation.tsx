@@ -1,6 +1,8 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
+import { Text } from './Text';
 import { digitCount, resultOf, type ColumnOpItem } from '../skills/columnOps';
-import { colors, font, radius, space } from '../theme';
+import { colors, font, fonts, radius, space } from '../theme';
+import { SeyesPaper } from './SeyesPaper';
 
 interface Props {
   item: ColumnOpItem;
@@ -21,7 +23,8 @@ export function ColumnOperation({ item, answer, carries = [], onToggleCarry }: P
   const digitsOf = (n: number) => String(n).padStart(width, ' ').split('');
   const answerDigits = answer.padStart(width, ' ').split('');
   return (
-    <View style={styles.card} accessible accessibilityLabel={`${item.terms.join(item.op === '+' ? ' plus ' : ' moins ')}. Ta réponse : ${answer || 'vide'}`}>
+    <SeyesPaper margin={false} style={styles.card}>
+      <View accessible accessibilityLabel={`${item.terms.join(item.op === '+' ? ' plus ' : ' moins ')}. Ta réponse : ${answer || 'vide'}`}>
       {item.op === '+' && onToggleCarry && (
         <View style={styles.row}>
           <View style={styles.signCell} />
@@ -58,22 +61,17 @@ export function ColumnOperation({ item, answer, carries = [], onToggleCarry }: P
           </View>
         ))}
       </View>
-    </View>
+      </View>
+    </SeyesPaper>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    alignSelf: 'center',
-    backgroundColor: colors.surface,
-    borderRadius: radius.l,
-    paddingVertical: space.m,
-    paddingHorizontal: space.l,
-  },
+  card: { alignSelf: 'center', minWidth: 220 },
   row: { flexDirection: 'row', justifyContent: 'flex-end' },
   signCell: { width: CELL, textAlign: 'center' },
   cell: { width: CELL, height: CELL, alignItems: 'center', justifyContent: 'center', textAlign: 'center' },
-  digit: { fontSize: font.title + 4, color: colors.text, fontWeight: '600', lineHeight: CELL },
+  digit: { fontSize: font.title + 6, color: colors.text, fontFamily: fonts.display, lineHeight: CELL },
   carryCell: {
     width: CELL - 8,
     height: 30,
@@ -88,6 +86,6 @@ const styles = StyleSheet.create({
   hidden: { opacity: 0 },
   carryText: { fontSize: font.body, color: colors.primary, fontWeight: '700' },
   line: { height: 3, backgroundColor: colors.text, marginVertical: space.xs, marginLeft: CELL },
-  answerCell: { borderBottomWidth: 2, borderColor: colors.border, marginHorizontal: 1, width: CELL - 2 },
-  answerDigit: { color: colors.primary, fontWeight: '800' },
+  answerCell: { borderBottomWidth: 2, borderColor: colors.seyesStrong, marginHorizontal: 1, width: CELL - 2, backgroundColor: 'rgba(255,255,255,0.7)', borderRadius: radius.s },
+  answerDigit: { color: colors.primary },
 });

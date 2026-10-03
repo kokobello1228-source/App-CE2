@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from './Text';
 import { colors, font } from '../theme';
 
 /** Fraction written as in a school book: numerator above a bar, denominator below. */
