@@ -7,23 +7,29 @@ interface Props {
   onSubmit(): void;
   maxLength?: number;
   disabled?: boolean;
+  /** 'rtl' fills from the right, units first, like a column operation on paper. */
+  direction?: 'ltr' | 'rtl';
+  showDisplay?: boolean;
 }
 
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'erase', '0', 'ok'] as const;
 
 /** On-screen number pad: big keys, usable with one thumb. */
-export function NumPad({ value, onChange, onSubmit, maxLength = 4, disabled }: Props) {
+export function NumPad({ value, onChange, onSubmit, maxLength = 4, disabled, direction = 'ltr', showDisplay = true }: Props) {
+  const rtl = direction === 'rtl';
   const press = (key: (typeof KEYS)[number]) => {
-    if (key === 'erase') onChange(value.slice(0, -1));
+    if (key === 'erase') onChange(rtl ? value.slice(1) : value.slice(0, -1));
     else if (key === 'ok') {
       if (value !== '') onSubmit();
-    } else if (value.length < maxLength) onChange(value + key);
+    } else if (value.length < maxLength) onChange(rtl ? key + value : value + key);
   };
   return (
     <View style={styles.pad}>
-      <View style={styles.display} accessibilityLiveRegion="polite" accessibilityLabel={`Ta réponse : ${value || 'vide'}`}>
-        <Text style={styles.displayText}>{value || ' '}</Text>
-      </View>
+      {showDisplay && (
+        <View style={styles.display} accessibilityLiveRegion="polite" accessibilityLabel={`Ta réponse : ${value || 'vide'}`}>
+          <Text style={styles.displayText}>{value || ' '}</Text>
+        </View>
+      )}
       <View style={styles.grid}>
         {KEYS.map((key) => {
           const label = key === 'erase' ? '⌫' : key === 'ok' ? 'Valider' : key;

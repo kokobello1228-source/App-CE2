@@ -22,6 +22,13 @@ export function validateSkill(logic: AnySkillLogic): string[] {
       if (!logic.check(item, logic.expectedAnswer(item))) problems.push(`${where}: expected answer is rejected`);
       if (logic.classifyError(item, logic.expectedAnswer(item)) !== null) problems.push(`${where}: error tag on correct answer`);
       if (logic.explain(item, logic.expectedAnswer(item)).trim() === '') problems.push(`${where}: empty explanation`);
+      const texts = [
+        logic.explain(item, logic.expectedAnswer(item)), logic.explain(item, ''), logic.correctAnswerLabel(item),
+        logic.speech(item) ?? '', ...(logic.choices?.(item).map((c) => c.label) ?? []),
+      ];
+      for (const text of texts) {
+        if (/undefined|NaN|null|\{|\}/.test(text)) problems.push(`${where}: broken text "${text}"`);
+      }
       if (logic.choices) {
         const choices = logic.choices(item);
         const expectedCount = logic.id === 'M2' ? 6 : 4;

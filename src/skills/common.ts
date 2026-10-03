@@ -3,7 +3,7 @@
 /** Parses a typed whole number ("  45 " -> 45). Returns null if not a number. */
 export function parseWholeNumber(answer: string): number | null {
   const cleaned = answer.replace(/\s/g, '');
-  if (!/^\d{1,4}$/.test(cleaned)) return null;
+  if (!/^\d{1,6}$/.test(cleaned)) return null;
   return Number(cleaned);
 }
 

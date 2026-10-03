@@ -12,7 +12,7 @@ export function M10View({ item, onSubmit, disabled }: SkillViewProps<M10Item>) {
       <Text style={styles.calc} accessibilityLabel={displayM10(item).replace('…', 'combien')}>
         {displayM10(item)}
       </Text>
-      <NumPad value={value} onChange={setValue} onSubmit={() => onSubmit(value)} maxLength={2} disabled={disabled} />
+      <NumPad value={value} onChange={setValue} onSubmit={() => onSubmit(value)} maxLength={3} disabled={disabled} />
     </>
   );
 }

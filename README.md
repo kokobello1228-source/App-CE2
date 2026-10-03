@@ -3,19 +3,28 @@
 Application mobile d'entraînement aux évaluations nationales « Repères CE2 », pour Mia.
 100 % hors ligne : pas de compte, pas de serveur, pas de publicité, aucune donnée collectée.
 
-## État actuel : étape 1 (version minimale)
+## État actuel : étape 2 (toutes les mathématiques)
 
 | Compétence | Contenu |
 |---|---|
-| M10 – Faits numériques | Générateur : tables d'addition, doubles, compléments à 10, calculs à trou (3 niveaux) |
-| M3 – Ligne graduée | Générateur : pas de 1, 2, 5, 10, 100, bornes non nulles, repères au milieu (3 niveaux) |
-| F8 – Temps du verbe | 60 phrases originales (imparfait, présent, futur, passé composé), lues à voix haute |
-| F2 – Mots dictés | 150 mots fréquents classés en 3 niveaux, dictés 2 fois avec une phrase de contexte |
+| M1 – Écrire des nombres | Nombre dicté 2 fois (en toutes lettres pour la voix), 70-99 et zéros intercalés au niveau 3 |
+| M2 – Problèmes | 12 types d'énoncés originaux (parties-tout, transformations, 2 étapes, multiplication, partage), 6 réponses, brouillon au doigt |
+| M3 – Ligne graduée | Format officiel : bornes encadrées, 2 à 10 graduations, étiquette vide fléchée |
+| M4 / M5 – Opérations posées | Additions (avec ou sans retenue, 2 ou 3 termes) et soustractions sans retenue, saisie de droite à gauche, cases de retenue |
+| M6 – Unités de numération | Décompositions lues, ordre mélangé, unité absente, plus de 9 dans une unité |
+| M7 / M8 – Fractions | Lire (piège numérateur / dénominateur) et représenter (disques et bandes, parts inégales) |
+| M9 – Dénombrer | Plaques, barres et cubes, rangés ou dispersés, plus de 9 barres ou cubes |
+| M10 / M11 – Calcul mental | Faits numériques (1 min) et procédures : + 9, + 19, dizaines, compléments (3 min) |
+| F2 – Mots dictés | 150 mots fréquents en 3 niveaux |
+| F8 – Temps du verbe | 60 phrases originales lues à voix haute avec les 4 propositions |
 
-Fonctionnalités incluses : séance du jour, entraînement libre, « Comme à l'école » (par
-compétence, avec les durées officielles), synthèse vocale, retour immédiat expliqué, difficulté
-adaptative, répétition espacée des erreurs, étoiles et série de jours, espace parent provisoire
-(positionnement estimé, erreur fréquente et conseil, réglages).
+Pour chaque compétence : 3 niveaux calqués sur la « caractérisation des groupes » du guide des
+scores, mauvaises réponses construites à partir des erreurs types, explication d'une phrase,
+erreurs types et conseils pour le parent. Aucun item officiel n'est réutilisé (contrôle automatique).
+
+Fonctionnalités : séance du jour, entraînement libre, « Comme à l'école » (durées officielles),
+synthèse vocale, difficulté adaptative, répétition espacée des erreurs, étoiles et série de jours,
+espace parent provisoire. Référence officielle résumée dans `docs/reference-officielle-2026.md`.
 
 ## Lancer l'application sur le téléphone (Expo Go)
 

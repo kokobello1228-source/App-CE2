@@ -1,5 +1,6 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 import type { Rng } from '../../engine/rng';
+import { additionFactSchema, displayFact, expectedFact, makeFact, type AdditionFact } from '../additionFact';
 import { parseWholeNumber } from '../common';
 import type { Level, SkillLogic } from '../types';
 
@@ -9,26 +10,11 @@ import type { Level, SkillLogic } from '../types';
  */
 export type M10Kind = 'add' | 'double' | 'complement' | 'missing';
 
-export interface M10Item {
-  key: string;
-  level: Level;
+export interface M10Item extends AdditionFact {
   kind: M10Kind;
-  a: number;
-  b: number;
-  total: number;
-  /** Which number the child must find. */
-  blank: 'a' | 'b' | 'total';
 }
 
-const schema = z.object({
-  key: z.string(),
-  level: z.union([z.literal(1), z.literal(2), z.literal(3)]),
-  kind: z.enum(['add', 'double', 'complement', 'missing']),
-  a: z.number().int().min(0).max(20),
-  b: z.number().int().min(0).max(20),
-  total: z.number().int().min(0).max(20),
-  blank: z.enum(['a', 'b', 'total']),
-});
+const schema = additionFactSchema(['add', 'double', 'complement', 'missing'], 20) as z.ZodType<M10Item>;
 
 const KIND_WEIGHTS: Record<Level, [M10Kind, number][]> = {
   1: [['add', 0.5], ['double', 0.25], ['complement', 0.25]],
@@ -46,8 +32,7 @@ function pickKind(level: Level, rng: Rng): M10Kind {
 }
 
 function make(level: Level, kind: M10Kind, a: number, b: number, blank: M10Item['blank']): M10Item {
-  const total = a + b;
-  return { key: `M10:${kind}:${a}+${b}:${blank}`, level, kind, a, b, total, blank };
+  return makeFact('M10', level, kind, a, b, blank);
 }
 
 export function generateM10(level: Level, rng: Rng): M10Item {
@@ -87,15 +72,8 @@ export function generateM10(level: Level, rng: Rng): M10Item {
   }
 }
 
-export function expectedM10(item: M10Item): number {
-  return item[item.blank];
-}
-
-/** Text shown on screen, e.g. "… + 8 = 10". */
-export function displayM10(item: M10Item): string {
-  const show = (part: 'a' | 'b' | 'total') => (item.blank === part ? '…' : String(item[part]));
-  return `${show('a')} + ${show('b')} = ${show('total')}`;
-}
+export const expectedM10 = expectedFact;
+export const displayM10 = displayFact;
 
 export const m10Logic: SkillLogic<M10Item> = {
   id: 'M10',

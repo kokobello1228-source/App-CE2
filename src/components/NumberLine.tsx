@@ -21,7 +21,7 @@ export function NumberLine({ item }: { item: M3Item }) {
   const ticks = Array.from({ length: item.intervals + 1 }, (_, i) => i);
   const [first, last] = item.labels;
   // The empty box is lifted when it would overlap an end label.
-  const nearEnd = item.arrow * spacing < BOX_W || (item.intervals - item.arrow) * spacing < BOX_W;
+  const nearEnd = item.arrow * spacing < BOX_W + 24 || (item.intervals - item.arrow) * spacing < BOX_W + 24;
   const emptyBoxY = nearEnd ? 8 : 70;
   const labelBoxY = 70;
   return (
