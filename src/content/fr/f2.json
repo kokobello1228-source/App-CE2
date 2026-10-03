@@ -291,9 +291,9 @@
  },
  {
   "id": "F2-042",
-  "word": "mouton",
+  "word": "melon",
   "level": 1,
-  "sentence": "Le mouton a une laine épaisse.",
+  "sentence": "Nous mangeons du melon.",
   "invariable": false
  },
  {
@@ -438,9 +438,9 @@
  },
  {
   "id": "F2-063",
-  "word": "oiseau",
+  "word": "couteau",
   "level": 2,
-  "sentence": "Un oiseau chante sur la branche.",
+  "sentence": "Coupe le pain avec un couteau.",
   "invariable": false
  },
  {
@@ -508,9 +508,9 @@
  },
  {
   "id": "F2-073",
-  "word": "fille",
+  "word": "feuille",
   "level": 2,
-  "sentence": "Cette fille joue du violon.",
+  "sentence": "Une feuille tombe de l’arbre.",
   "invariable": false
  },
  {
@@ -665,9 +665,9 @@
  },
  {
   "id": "F2-095",
-  "word": "chaud",
+  "word": "rond",
   "level": 2,
-  "sentence": "Le thé est très chaud.",
+  "sentence": "Le ballon est rond.",
   "invariable": false
  },
  {
@@ -742,9 +742,9 @@
  },
  {
   "id": "F2-106",
-  "word": "demain",
+  "word": "loin",
   "level": 3,
-  "sentence": "Demain, nous irons à la plage.",
+  "sentence": "Mon école est loin de chez moi.",
   "invariable": true
  },
  {
@@ -1011,9 +1011,9 @@
  },
  {
   "id": "F2-144",
-  "word": "enfant",
+  "word": "gentil",
   "level": 3,
-  "sentence": "Cet enfant a huit ans.",
+  "sentence": "Ce chien est très gentil.",
   "invariable": false
  },
  {

@@ -1,22 +1,23 @@
 import { z } from 'zod';
 import type { Rng } from '../../engine/rng';
+import { OFFICIAL_M3_LINES } from '../../content/officialItems';
 import { parseWholeNumber } from '../common';
 import type { Level, SkillLogic } from '../types';
 
 /**
- * M3 – Number line: a graduated line with two labelled ticks and an arrow.
- * The child deduces the step and writes the number shown by the arrow.
+ * M3 – Number line, official format: the two ends are labelled, there are
+ * 2 to 10 intervals, and an arrow points at an empty label on one tick.
  */
 export interface M3Item {
   key: string;
   level: Level;
   start: number;
   step: number;
-  /** Number of intervals between the first and the last tick. */
+  /** Number of intervals between the two labelled ends. */
   intervals: number;
-  /** Indices of the labelled ticks (exactly two). */
+  /** Indices of the labelled ticks: always the two ends [0, intervals]. */
   labels: [number, number];
-  /** Index of the tick pointed by the arrow. */
+  /** Index of the tick pointed by the arrow (never an end). */
   arrow: number;
 }
 
@@ -25,9 +26,9 @@ const schema = z.object({
   level: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   start: z.number().int().min(0),
   step: z.number().int().positive(),
-  intervals: z.number().int().min(4).max(12),
+  intervals: z.number().int().min(2).max(10),
   labels: z.tuple([z.number().int().min(0), z.number().int().min(0)]),
-  arrow: z.number().int().min(0),
+  arrow: z.number().int().min(1),
 });
 
 export const MAX_VALUE = 1000;
@@ -40,50 +41,66 @@ export function expectedM3(item: M3Item): number {
   return valueAt(item, item.arrow);
 }
 
-function make(level: Level, start: number, step: number, intervals: number, labels: [number, number], arrow: number): M3Item {
-  return {
-    key: `M3:${start}:${step}:${intervals}:${labels.join(',')}:${arrow}`,
-    level, start, step, intervals, labels, arrow,
-  };
+interface LineShape {
+  step: number;
+  intervals: number;
+  /** Possible start values. */
+  starts: () => number;
 }
 
-function pickArrow(rng: Rng, intervals: number, labels: [number, number]): number {
-  const candidates: number[] = [];
-  for (let i = 1; i < intervals; i++) if (!labels.includes(i)) candidates.push(i);
-  return rng.pick(candidates);
+/**
+ * Line shapes per level, following the score guide:
+ * 1 – step 1, close bounds, numbers under 100;
+ * 2 – step 1 crossing a ten, or step 10;
+ * 3 – any step (2, 5, 10, 100), bounds in different tens or hundreds.
+ */
+function shapesFor(level: Level, rng: Rng): LineShape[] {
+  const tens = (min: number, max: number) => () => rng.int(min, max) * 10;
+  switch (level) {
+    case 1:
+      return [
+        { step: 1, intervals: 2, starts: () => rng.int(1, 97) },
+        { step: 1, intervals: 4, starts: () => rng.int(1, 95) },
+        { step: 1, intervals: 5, starts: () => rng.int(1, 94) },
+      ];
+    case 2:
+      return [
+        { step: 1, intervals: 10, starts: () => rng.int(11, 89) },
+        { step: 1, intervals: 4, starts: () => rng.int(1, 9) * 10 + rng.int(7, 9) },
+        { step: 10, intervals: 10, starts: () => 0 },
+        { step: 10, intervals: 2, starts: tens(1, 40) },
+        { step: 10, intervals: 4, starts: tens(0, 30) },
+        { step: 10, intervals: 5, starts: tens(1, 20) },
+      ];
+    case 3:
+      return [
+        { step: 2, intervals: 5, starts: () => rng.int(1, 40) * 2 },
+        { step: 5, intervals: 4, starts: () => rng.int(0, 30) * 5 },
+        { step: 10, intervals: 4, starts: tens(10, 60) },
+        { step: 10, intervals: 10, starts: tens(1, 50) },
+        { step: 100, intervals: 10, starts: () => 0 },
+        { step: 100, intervals: 4, starts: () => rng.int(0, 6) * 100 },
+        { step: 1, intervals: 10, starts: () => rng.int(1, 9) * 100 + rng.int(91, 99) - 100 },
+      ];
+  }
 }
 
 export function generateM3(level: Level, rng: Rng): M3Item {
-  if (level === 1) {
-    // Step 1, labels at both ends; start is 0 half of the time.
-    const start = rng.chance(0.5) ? 0 : rng.int(1, 9) * 10;
-    const labels: [number, number] = [0, 10];
-    return make(level, start, 1, 10, labels, pickArrow(rng, 10, labels));
-  }
-  if (level === 2) {
-    const step = rng.pick([1, 2, 5, 10]);
-    const startChoices: Record<number, number[]> = {
-      1: [0, 10, 30, 50, 80],
-      2: [0, 0, 20, 40],
-      5: [0, 0, 50, 100],
-      10: [0, 0, 100, 200, 500],
-    };
-    const start = rng.pick(startChoices[step]);
-    const labels: [number, number] = rng.chance(0.7) ? [0, 10] : [0, 5];
-    return make(level, start, step, 10, labels, pickArrow(rng, 10, labels));
-  }
-  // Level 3: bigger steps, non-zero start, labels not always at the ends.
-  const step = rng.pick([2, 5, 10, 10, 100]);
-  const intervals = step === 100 ? rng.pick([8, 10]) : rng.pick([8, 10, 10, 12]);
-  // Keep the whole line within 0..MAX_VALUE.
-  const maxStartIndex = Math.floor((MAX_VALUE - intervals * step) / step);
-  const upper = Math.min(maxStartIndex, step === 2 ? 50 : 60);
-  const lower = Math.min(step === 100 ? 0 : 1, upper);
-  const start = rng.int(lower, upper) * step;
-  const gap = rng.pick([2, 4, 5]);
-  const first = rng.int(0, intervals - gap);
-  const labels: [number, number] = [first, first + gap];
-  return make(level, start, step, intervals, labels, pickArrow(rng, intervals, labels));
+  let shape: LineShape;
+  let start: number;
+  do {
+    shape = rng.pick(shapesFor(level, rng));
+    // Keep the whole line within 0..MAX_VALUE.
+    start = Math.min(shape.starts(), MAX_VALUE - shape.intervals * shape.step);
+    // Never reuse a line of the official assessment.
+  } while (OFFICIAL_M3_LINES.includes(`${start}-${start + shape.intervals * shape.step}`));
+  const intervals = shape.intervals;
+  const labels: [number, number] = [0, intervals];
+  const arrow = rng.int(1, intervals - 1);
+  return {
+    key: `M3:${start}:${shape.step}:${intervals}:${arrow}`,
+    level, start, step: shape.step, intervals, labels, arrow,
+  };
 }
 
 /** Labelled tick closest to the arrow, used as the starting point of the explanation. */

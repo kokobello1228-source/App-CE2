@@ -13,10 +13,10 @@ export type Tense = 'imparfait' | 'present' | 'futur' | 'passe_compose';
 export const TENSES: Tense[] = ['imparfait', 'present', 'futur', 'passe_compose'];
 
 export const TENSE_LABELS: Record<Tense, string> = {
-  imparfait: 'imparfait',
-  present: 'présent',
-  futur: 'futur',
-  passe_compose: 'passé composé',
+  imparfait: 'l’imparfait',
+  present: 'le présent',
+  futur: 'le futur',
+  passe_compose: 'le passé composé',
 };
 
 /** Sentence with exactly one verb group between square brackets. */
@@ -120,7 +120,7 @@ const confusionTips: Record<string, { label: string; tip: string }> = {
 
 export const f8Logic: SkillLogic<F8Item> = {
   id: 'F8',
-  instruction: 'Écoute la phrase. À quel temps est le verbe souligné ? Choisis la bonne réponse.',
+  instruction: 'Écoute la phrase. Le verbe est souligné. Tu dois trouver le temps de ce verbe.',
   avgItemSeconds: 15,
   schema: itemSchema,
   generate: generateF8,
@@ -140,6 +140,8 @@ export const f8Logic: SkillLogic<F8Item> = {
     },
     ...confusionTips,
   },
-  speech: (item) => plainSentence(item.sentence),
+  // As in the official instructions: the sentence, then the four choices.
+  speech: (item) =>
+    `${plainSentence(item.sentence)} Dans cette phrase, le temps du verbe souligné est : ${TENSES.map((t) => TENSE_LABELS[t]).join(', ')} ?`,
   choices: (): Choice[] => TENSES.map((t) => ({ id: t, label: TENSE_LABELS[t] })),
 };

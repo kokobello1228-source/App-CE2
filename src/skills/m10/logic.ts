@@ -32,7 +32,7 @@ const schema = z.object({
 
 const KIND_WEIGHTS: Record<Level, [M10Kind, number][]> = {
   1: [['add', 0.5], ['double', 0.25], ['complement', 0.25]],
-  2: [['add', 0.45], ['double', 0.2], ['complement', 0.35]],
+  2: [['add', 0.4], ['double', 0.15], ['complement', 0.3], ['missing', 0.15]],
   3: [['add', 0.3], ['double', 0.15], ['complement', 0.2], ['missing', 0.35]],
 };
 
@@ -59,10 +59,10 @@ export function generateM10(level: Level, rng: Rng): M10Item {
         const b = rng.int(1, 10 - a);
         return make(level, kind, a, b, 'total');
       }
-      // Tables up to 10; level 3 favours sums over 10.
+      // Tables up to 10, sometimes with 0 (6 + 0); level 3 favours sums over 10.
       const a = rng.int(level === 3 ? 4 : 2, 10);
-      const b = rng.int(level === 3 ? 4 : 1, 10);
-      return make(level, kind, a, b, 'total');
+      const b = level === 2 && rng.chance(0.1) ? 0 : rng.int(level === 3 ? 4 : 1, 10);
+      return rng.chance(0.5) ? make(level, kind, a, b, 'total') : make(level, kind, b, a, 'total');
     }
     case 'double': {
       const n = level === 1 ? rng.int(1, 5) : rng.int(level === 2 ? 2 : 5, 10);
@@ -74,6 +74,12 @@ export function generateM10(level: Level, rng: Rng): M10Item {
       return make(level, kind, a, 10 - a, blank);
     }
     case 'missing': {
+      if (level === 2) {
+        // Small missing-term additions: 5 + … = 9.
+        const small = rng.int(4, 9);
+        const a = rng.int(1, small - 1);
+        return make(level, kind, a, small - a, rng.pick(['a', 'b'] as const));
+      }
       const total = rng.int(11, 20);
       const a = rng.int(total - 10, 10);
       return make(level, kind, a, total - a, rng.pick(['a', 'b'] as const));

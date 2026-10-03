@@ -26,7 +26,7 @@ describe('F8 logic', () => {
     expect(plainSentence(item.sentence)).toBe('Les hirondelles reviendront au printemps.');
   });
   it('offers the four official choices in order', () => {
-    expect(f8Logic.choices?.(item).map((c) => c.label)).toEqual(['imparfait', 'présent', 'futur', 'passé composé']);
+    expect(f8Logic.choices?.(item).map((c) => c.label)).toEqual(['l’imparfait', 'le présent', 'le futur', 'le passé composé']);
   });
   it('checks and tags confusions symmetrically', () => {
     expect(f8Logic.check(item, 'futur')).toBe(true);

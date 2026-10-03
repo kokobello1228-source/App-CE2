@@ -1,4 +1,5 @@
 import { SKILLS } from '../../skills.config';
+import { OFFICIAL_F2_WORDS, OFFICIAL_F8_SENTENCES } from './officialItems';
 import { createRng } from '../engine/rng';
 import { normalizeText } from '../skills/common';
 import { F2_BANK } from '../skills/f2/logic';
@@ -49,6 +50,7 @@ export function validateF8Bank(): string[] {
     const { before, verb, after } = splitSentence(entry.sentence);
     if (!/^[A-ZÀ-Ý]/.test((before + verb).trim())) problems.push(`${entry.id}: sentence must start with a capital`);
     if (!/[.!?]$/.test(after.trim() || verb)) problems.push(`${entry.id}: sentence must end with punctuation`);
+    if (OFFICIAL_F8_SENTENCES.includes(entry.sentence.replace(/[[\]]/g, ''))) problems.push(`${entry.id}: official item`);
     const words = verb.trim().split(/\s+/).length;
     if (entry.tense === 'passe_compose' && words !== 2) problems.push(`${entry.id}: passé composé must have 2 words`);
     if (entry.tense !== 'passe_compose' && words !== 1) problems.push(`${entry.id}: simple tense must have 1 word`);
@@ -63,6 +65,7 @@ export function validateF2Bank(): string[] {
   for (const entry of F2_BANK) {
     if (words.has(entry.word)) problems.push(`${entry.id}: duplicate word ${entry.word}`);
     words.add(entry.word);
+    if (OFFICIAL_F2_WORDS.includes(entry.word)) problems.push(`${entry.id}: official item "${entry.word}"`);
     const sentence = normalizeText(entry.sentence);
     if (!sentence.includes(normalizeText(entry.word))) problems.push(`${entry.id}: sentence does not contain "${entry.word}"`);
     if (!/^[A-ZÀ-Ý]/.test(entry.sentence)) problems.push(`${entry.id}: sentence must start with a capital`);
