@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { VOICE_SAMPLE } from '../content/phrases';
-import { listFrenchVoices, setNaturalVoice, setVoice, speak, type FrenchVoice } from '../services/speech';
+import { listFrenchVoices, speak, type FrenchVoice } from '../services/speech';
 import { colors, font, fonts, radius, space } from '../theme';
 import { Text } from './Text';
 
@@ -21,10 +21,9 @@ export function VoicePicker({ value, natural, onChange }: Props) {
     void listFrenchVoices().then(setVoices);
   }, []);
 
+  /** Plays the sample with a voice without selecting it (listening is not choosing). */
   const preview = (identifier: string, useNatural = false) => {
-    setNaturalVoice(useNatural);
-    setVoice(identifier);
-    void speak(SAMPLE);
+    void speak(SAMPLE, { natural: useNatural, voiceId: identifier });
   };
 
   if (voices === null) return <ActivityIndicator color={colors.primary} />;

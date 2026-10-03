@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import { setSoundsEnabled } from '../services/feedback';
 import { setNaturalVoice, setSpeechRate, setVoice } from '../services/speech';
 import { Repository } from '../storage/repository';
-import { DEFAULT_SETTINGS, type Settings } from '../storage/settings';
+import { DEFAULT_SETTINGS, voiceDefaultsPatch, type Settings } from '../storage/settings';
 
 interface AppState {
   repo: Repository;
@@ -24,7 +24,12 @@ export function AppProvider({ children, fallback }: { children: ReactNode; fallb
     let cancelled = false;
     void (async () => {
       const opened = await Repository.open();
-      const stored = await opened.getSettings();
+      let stored = await opened.getSettings();
+      const patch = voiceDefaultsPatch(stored);
+      if (patch) {
+        await opened.saveSettings(patch);
+        stored = { ...stored, ...patch };
+      }
       if (cancelled) return;
       setSpeechRate(stored.voiceRate);
       setVoice(stored.voiceId);

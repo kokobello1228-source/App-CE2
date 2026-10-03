@@ -93,10 +93,12 @@ if (isWeb && typeof document !== 'undefined') {
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+let voices: Speech.Voice[] = [];
+
 async function resolveVoice(): Promise<void> {
   if (voiceResolved) return;
   try {
-    const voices = await Speech.getAvailableVoicesAsync();
+    voices = await Speech.getAvailableVoicesAsync();
     // Browsers load their voices late: try again next time if the list is still empty.
     voiceResolved = voices.length > 0;
     const french = voices.filter((v) => v.language.replace('_', '-').toLowerCase().startsWith('fr-fr'));
@@ -157,11 +159,19 @@ export async function listFrenchVoices(): Promise<FrenchVoice[]> {
   return [...unique.values()].sort((a, b) => score(a) - score(b) || a.name.localeCompare(b.name));
 }
 
+/** A voice to use for one reading only (voice preview), instead of the selected one. */
+export interface VoiceOverride {
+  natural: boolean;
+  /** Device voice identifier ('' = automatic). */
+  voiceId: string;
+}
+
 /** Reads a text aloud. Resolves when finished, stopped or failed. */
-export async function speak(text: string): Promise<void> {
+export async function speak(text: string, override?: VoiceOverride): Promise<void> {
   const current = ++generation;
   player?.pause();
-  const keys = useNatural ? clipsFor(text) : null;
+  const natural = override ? override.natural : useNatural;
+  const keys = natural ? clipsFor(text) : null;
   const audio = keys ? audioElement() : null;
   if (keys && audio) {
     await Speech.stop();
@@ -180,10 +190,11 @@ export async function speak(text: string): Promise<void> {
   if (isWeb) await wait(60);
   await resolveVoice();
   if (current !== generation) return;
+  const overrideVoice = override?.voiceId ? voices.find((v) => v.identifier === override.voiceId)?.identifier : undefined;
   await new Promise<void>((resolve) => {
     Speech.speak(text, {
       language: 'fr-FR',
-      voice: voiceId,
+      voice: overrideVoice ?? voiceId,
       rate,
       onDone: () => resolve(),
       onStopped: () => resolve(),
