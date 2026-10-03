@@ -183,7 +183,7 @@ function ParentArea() {
       <BigButton label="Effacer la progression" variant="secondary" onPress={reset} />
       <Text style={styles.muted}>
         Aucune donnée ne quitte ce téléphone : pas de compte, pas de publicité, pas de statistiques envoyées. Voix naturelle :
-        modèle « Siwis » de Piper (licence CC-BY 4.0, Université d’Édimbourg).
+        voix « Jessica » du modèle Piper « UPMC » (licence CC-BY-SA 4.0).
       </Text>
     </Screen>
   );
