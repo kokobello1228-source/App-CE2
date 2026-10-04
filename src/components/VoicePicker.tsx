@@ -28,8 +28,8 @@ export function VoicePicker({ value, natural, naturalId, onChange }: Props) {
     void speak(SAMPLE, { natural: useNatural, naturalId: id, voiceId: identifier });
   };
 
-  if (voices === null) return <ActivityIndicator color={colors.primary} />;
-  const options: (FrenchVoice | null)[] = [null, ...voices];
+  // The natural voices are shown at once; only the device voices wait for their list.
+  const options: (FrenchVoice | null)[] = voices === null ? [] : [null, ...voices];
   return (
     <View style={styles.list} accessibilityRole="radiogroup">
       <Text style={styles.muted}>Voix naturelles :</Text>
@@ -58,7 +58,8 @@ export function VoicePicker({ value, natural, naturalId, onChange }: Props) {
         );
       })}
       <Text style={styles.muted}>Voix de l’appareil :</Text>
-      {voices.length === 0 && <Text style={styles.muted}>Aucune voix française n’a été trouvée sur cet appareil.</Text>}
+      {voices === null && <ActivityIndicator color={colors.primary} />}
+      {voices?.length === 0 && <Text style={styles.muted}>Aucune voix française n’a été trouvée sur cet appareil.</Text>}
       {options.map((voice) => {
         const id = voice?.identifier ?? '';
         const selected = id === value && !natural;

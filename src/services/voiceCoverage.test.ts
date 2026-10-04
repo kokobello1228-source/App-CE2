@@ -7,6 +7,7 @@ import { m1Logic } from '../skills/m1/logic';
 import { generateM2, m2Logic } from '../skills/m2/logic';
 import { generateM5, m5Logic } from '../skills/m5/logic';
 import { poolItems } from '../skills/pool';
+import { naturalVoice } from './naturalVoices';
 import { clipsFor } from './speech';
 import { MIN_SEGMENT_WORDS, segments, spokenForm } from './voiceClips';
 
@@ -54,5 +55,14 @@ describe('what Plume says', () => {
   });
   it('spells words with letter names', () => {
     expect(spokenForm(f2Explanation('pomme', 'other'))).toBe('On écrit « pomme » : p, o, deux m, euh.');
+  });
+});
+
+describe('second natural voice', () => {
+  it('Pierre reads almost everything Plume reads', () => {
+    const pierre = naturalVoice('pierre');
+    expect(pierre.id).toBe('pierre');
+    const texts = [...F2_BANK.map((e) => f2Logic.speech({ ...e, key: e.id })!), ...poolItems(generateM2, 2).map((i) => m2Logic.speech(i)!)];
+    expect(texts.filter((t) => clipsFor(t, pierre) !== null).length / texts.length).toBeGreaterThan(0.85);
   });
 });
