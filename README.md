@@ -22,7 +22,9 @@ Voix : voix naturelle pré-enregistrée (Piper « UPMC », voix « Jessica », C
 consignes, dictées, textes, problèmes, calculs et corrections. Les compétences de maths à nombres aléatoires tirent leurs
 exercices d'une réserve fixe (80 par niveau, `src/skills/pool.ts`) : tout ce qui peut être dit est enregistré à l'avance.
 Pour les rares phrases restantes, la voix de l'appareil (voix féminine choisie en priorité).
-Règles de prononciation : jamais de mot ou de nombre dit seul (« Le mot à écrire est cabane. »), épellation avec le nom des
+Deux voix naturelles au choix (Espace parent → Voix) : Plume (« Jessica », par défaut) et Pierre (même modèle) ;
+`--voice pierre` pour générer la seconde. Liaisons : seules les liaisons naturelles sont gardées (le générateur réécrit
+le texte donné à la voix, pas l'affichage). Règles de prononciation : jamais de mot ou de nombre dit seul (« Le mot à écrire est cabane. »), épellation avec le nom des
 lettres (« p, o, deux m, e »). Chaque enregistrement est réécouté par une reconnaissance vocale (Whisper) : jusqu'à 6 prises,
 on garde la plus fidèle ; un texte jamais bien compris est lu par la voix de l'appareil (`scripts/voice/report.json`).
 Régénérer après une modification de contenu (mode d'emploi en tête de `scripts/voice/synthesize.py`), puis augmenter

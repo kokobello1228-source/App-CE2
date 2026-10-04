@@ -1,9 +1,13 @@
+import type { NaturalVoiceId } from '../services/naturalVoices';
+
 export interface Settings {
   childName: string;
   /** Duration of the daily session, in minutes. */
   dailyMinutes: number;
   /** Pre-recorded natural voice (Plume) when available; otherwise the device voice below. */
   naturalVoice: boolean;
+  /** Which natural voice: Plume (female, default) or Pierre (male). */
+  naturalVoiceId: NaturalVoiceId;
   /** Chosen device voice identifier ('' = best French voice found automatically). */
   voiceId: string;
   /** Speech rate (1 = normal). */
@@ -21,6 +25,7 @@ export const DEFAULT_SETTINGS: Settings = {
   childName: '',
   dailyMinutes: 10,
   naturalVoice: true,
+  naturalVoiceId: 'plume',
   voiceId: '',
   voiceRate: 0.9,
   sounds: true,

@@ -34,7 +34,7 @@ export function AppProvider({ children, fallback }: { children: ReactNode; fallb
       setSpeechRate(stored.voiceRate);
       setVoice(stored.voiceId);
       setSoundsEnabled(stored.sounds);
-      setNaturalVoice(stored.naturalVoice);
+      setNaturalVoice(stored.naturalVoice, stored.naturalVoiceId);
       setSettings(stored);
       setRepo(opened);
     })();
@@ -52,7 +52,7 @@ export function AppProvider({ children, fallback }: { children: ReactNode; fallb
         setSpeechRate(next.voiceRate);
         setVoice(next.voiceId);
         setSoundsEnabled(next.sounds);
-        setNaturalVoice(next.naturalVoice);
+        setNaturalVoice(next.naturalVoice, next.naturalVoiceId);
         return next;
       });
     },

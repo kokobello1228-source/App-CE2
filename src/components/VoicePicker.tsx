@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { VOICE_SAMPLE } from '../content/phrases';
+import { NATURAL_VOICES, type NaturalVoiceId } from '../services/naturalVoices';
 import { listFrenchVoices, speak, type FrenchVoice } from '../services/speech';
 import { colors, font, fonts, radius, space } from '../theme';
 import { Text } from './Text';
@@ -10,11 +11,12 @@ const SAMPLE = VOICE_SAMPLE;
 interface Props {
   value: string;
   natural: boolean;
-  onChange(choice: { natural: boolean; voiceId: string }): void;
+  naturalId: NaturalVoiceId;
+  onChange(choice: { natural: boolean; naturalId: NaturalVoiceId; voiceId: string }): void;
 }
 
 /** List of the French voices of the device, each with a preview button. */
-export function VoicePicker({ value, natural, onChange }: Props) {
+export function VoicePicker({ value, natural, naturalId, onChange }: Props) {
   const [voices, setVoices] = useState<FrenchVoice[] | null>(null);
 
   useEffect(() => {
@@ -22,32 +24,39 @@ export function VoicePicker({ value, natural, onChange }: Props) {
   }, []);
 
   /** Plays the sample with a voice without selecting it (listening is not choosing). */
-  const preview = (identifier: string, useNatural = false) => {
-    void speak(SAMPLE, { natural: useNatural, voiceId: identifier });
+  const preview = (identifier: string, useNatural = false, id: NaturalVoiceId = naturalId) => {
+    void speak(SAMPLE, { natural: useNatural, naturalId: id, voiceId: identifier });
   };
 
   if (voices === null) return <ActivityIndicator color={colors.primary} />;
   const options: (FrenchVoice | null)[] = [null, ...voices];
   return (
     <View style={styles.list} accessibilityRole="radiogroup">
-      <Pressable
-        accessibilityRole="radio"
-        accessibilityState={{ selected: natural }}
-        onPress={() => {
-          onChange({ natural: true, voiceId: value });
-          preview(value, true);
-        }}
-        style={[styles.row, natural && styles.selected]}
-      >
-        <View style={[styles.radio, natural && styles.radioOn]} />
-        <View style={{ flex: 1 }}>
-          <Text style={styles.name}>🦉 Plume – voix naturelle</Text>
-          <Text style={styles.detail}>Recommandée. Les phrases calculées à la volée utilisent la voix choisie dessous.</Text>
-        </View>
-        <Pressable accessibilityRole="button" accessibilityLabel="Écouter Plume" onPress={() => preview(value, true)} style={styles.play}>
-          <Text style={styles.playText}>▶</Text>
-        </Pressable>
-      </Pressable>
+      <Text style={styles.muted}>Voix naturelles :</Text>
+      {NATURAL_VOICES.map((nv) => {
+        const selected = natural && naturalId === nv.id;
+        return (
+          <Pressable
+            key={nv.id}
+            accessibilityRole="radio"
+            accessibilityState={{ selected }}
+            onPress={() => {
+              onChange({ natural: true, naturalId: nv.id, voiceId: value });
+              preview(value, true, nv.id);
+            }}
+            style={[styles.row, selected && styles.selected]}
+          >
+            <View style={[styles.radio, selected && styles.radioOn]} />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.name}>{`${nv.emoji} ${nv.name}`}</Text>
+              <Text style={styles.detail}>{nv.description}</Text>
+            </View>
+            <Pressable accessibilityRole="button" accessibilityLabel={`Écouter ${nv.name}`} onPress={() => preview(value, true, nv.id)} style={styles.play}>
+              <Text style={styles.playText}>▶</Text>
+            </Pressable>
+          </Pressable>
+        );
+      })}
       <Text style={styles.muted}>Voix de l’appareil :</Text>
       {voices.length === 0 && <Text style={styles.muted}>Aucune voix française n’a été trouvée sur cet appareil.</Text>}
       {options.map((voice) => {
@@ -59,7 +68,7 @@ export function VoicePicker({ value, natural, onChange }: Props) {
             accessibilityRole="radio"
             accessibilityState={{ selected }}
             onPress={() => {
-              onChange({ natural: false, voiceId: id });
+              onChange({ natural: false, naturalId, voiceId: id });
               preview(id);
             }}
             style={[styles.row, selected && styles.selected]}

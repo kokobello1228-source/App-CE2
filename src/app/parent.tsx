@@ -141,14 +141,14 @@ function ParentArea() {
 
       <Text style={styles.label}>Voix</Text>
       <Text style={styles.muted}>
-        Plume, la voix naturelle, lit les consignes, les dictées, les textes et les corrections enregistrés. Pour les phrases
-        calculées à la volée (problèmes, calculs), l’application utilise une voix de l’iPhone : téléchargez une voix
-        « améliorée » dans Réglages → Accessibilité → Contenu énoncé → Voix → Français pour qu’elle soit plus agréable.
+        Les voix naturelles lisent tout ce qui a été enregistré à l’avance : consignes, dictées, textes, problèmes et
+        corrections. Les rares phrases non enregistrées sont lues par une voix de l’iPhone.
       </Text>
       <VoicePicker
         value={settings.voiceId}
         natural={settings.naturalVoice}
-        onChange={(c) => void updateSettings({ naturalVoice: c.natural, voiceId: c.voiceId })}
+        naturalId={settings.naturalVoiceId}
+        onChange={(c) => void updateSettings({ naturalVoice: c.natural, naturalVoiceId: c.naturalId, voiceId: c.voiceId })}
       />
 
       <Text style={styles.label}>Vitesse de la voix</Text>
@@ -183,7 +183,7 @@ function ParentArea() {
       <BigButton label="Effacer la progression" variant="secondary" onPress={reset} />
       <Text style={styles.muted}>
         Aucune donnée ne quitte ce téléphone : pas de compte, pas de publicité, pas de statistiques envoyées. Voix naturelle :
-        voix « Jessica » du modèle Piper « UPMC » (licence CC-BY-SA 4.0).
+        voix « Jessica » (Plume) et « Pierre » du modèle Piper « UPMC » (licence CC-BY-SA 4.0).
       </Text>
     </Screen>
   );

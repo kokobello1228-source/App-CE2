@@ -16,7 +16,7 @@ Setup (once):
   curl -L https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-turbo.tar.bz2 | tar xj
 Usage:
   npx tsx scripts/voice/collect.ts > texts.json
-  python3 scripts/voice/synthesize.py texts.json vits-piper-fr_FR-upmc-medium sherpa-onnx-whisper-turbo [--force] [--verify] [--workers N]
+  python3 scripts/voice/synthesize.py texts.json vits-piper-fr_FR-upmc-medium sherpa-onnx-whisper-turbo [--voice plume|pierre] [--force] [--verify] [--workers N]
   (--verify listens again to every published clip before generating the missing ones)
 
 Writes public/voice/<key>.mp3, src/content/voiceManifest.json and scripts/voice/report.json
@@ -25,7 +25,9 @@ Writes public/voice/<key>.mp3, src/content/voiceManifest.json and scripts/voice/
 import difflib, json, os, re, subprocess, sys, tempfile
 from multiprocessing import Pool
 
-SPEAKER = 0  # jessica
+# --voice plume (speaker "jessica", default) or --voice pierre (speaker "pierre"): same model
+VOICES = {'plume': (0, 'voice', 'voiceManifest.json', 'report.json'),
+          'pierre': (1, 'voice-pierre', 'voiceManifest.pierre.json', 'report.pierre.json')}
 SPEED = 0.9
 ATTEMPTS = 6
 GOOD = 0.95   # accept this take at once
@@ -37,22 +39,79 @@ SOFTEN = ('silenceremove=start_periods=1:start_threshold=-50dB,areverse,'
 MIN_WORDS = 3  # same rule as MIN_SEGMENT_WORDS in src/services/voiceClips.ts
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
-texts_path, model_dir, asr_dir = args[0], args[1], args[2]
 force = '--force' in sys.argv
 workers = int(sys.argv[sys.argv.index('--workers') + 1]) if '--workers' in sys.argv else 2
+voice_name = sys.argv[sys.argv.index('--voice') + 1] if '--voice' in sys.argv else 'plume'
+SPEAKER, folder, manifest_name, report_name = VOICES[voice_name]
+args = [a for a in args if a != voice_name]
+texts_path, model_dir, asr_dir = args[0], args[1], args[2]
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-out_dir = os.path.join(root, 'public', 'voice')
-report_path = os.path.join(root, 'scripts', 'voice', 'report.json')
+out_dir = os.path.join(root, 'public', folder)
+report_path = os.path.join(root, 'scripts', 'voice', report_name)
 
 
 def tts_input(text):
-    """Short sentences are joined to their neighbour with a comma: synthesized alone, they are garbled."""
-    parts = re.split(r'(?<=[.!?…])\s+', text.strip())
+    """Text given to the voice: no false liaison, and short sentences joined to their neighbour with a
+    comma (synthesized alone, they are garbled)."""
+    parts = re.split(r'(?<=[.!?…])\s+', no_false_liaisons(text.strip()))
     words = lambda s: len([w for w in s.split() if re.search(r'\w', w)])
     for i in range(len(parts) - 1):
         if words(parts[i]) < MIN_WORDS or words(parts[i + 1]) < MIN_WORDS:
             parts[i] = re.sub(r'\s*[.!?…]+$', ',', parts[i])
     return ' '.join(parts)
+
+
+# Liaisons kept: after determiners, pronouns, numbers, a few short words and adjectives placed
+# before the noun. Every other liaison made by espeak ("toujours-z-avec", "Lucas-z-a",
+# "jouent-t-ici") is removed by respelling the word without its silent final letters.
+LIAISON_WORDS = set('''les des ces mes tes ses nos vos leurs aux quels quelles plusieurs certains certaines tous toutes
+autres petits petites grands grandes grand bons bonnes beaux gros mauvais vieux premiers premières derniers mêmes
+nous vous ils elles on deux trois six dix vingt cent cents quatre-vingts est sont ont c’est c'est très plus moins dans
+sans sous chez quand dont tout bien pas avons avez sommes êtes'''.split())
+_liaison_cache = {}
+
+
+def _phones(text):
+    from phonemizer.separator import Separator
+    return phonemizer.phonemize([text], strip=True, separator=Separator(word=' | ', phone=''))[0]
+
+
+def unlink(word, following):
+    """A respelling of word, pronounced the same alone, that makes no liaison before following."""
+    key = (word, following)
+    if key not in _liaison_cache:
+        alone = _phones(word)
+        result = word
+        if _phones(f'{word} {following}').split(' | ')[0] != alone:  # espeak makes a liaison
+            for cut in (re.sub(r'ent$', 'e', word), word[:-1], word[:-2]):
+                if cut and cut != word and _phones(cut) == alone and _phones(f'{cut} {following}').split(' | ')[0] == alone:
+                    result = cut
+                    break
+        _liaison_cache[key] = result
+    return _liaison_cache[key]
+
+
+_verb_cache = {}
+
+
+def silent_ent(word):
+    """Plural verbs in -ent are read like their -e form: espeak garbles some ("jouent" -> "jw", "peignent")."""
+    if word not in _verb_cache:
+        phones = _phones(word)
+        _verb_cache[word] = word if phones.endswith(('ɑ̃', 'ɛ̃')) else word[:-3] + 'e'
+    return _verb_cache[word]
+
+
+def no_false_liaisons(text):
+    # 82-89 and 91: espeak says "quatre-vingt-t-deux"
+    text = re.sub(r'quatre-vingt-(?=deux|trois|quatre|cinq|six|sept|huit|neuf|onze)', 'quatre-vin-', text)
+    text = re.sub(r"\b[\wÀ-ÿ]{2,}ent\b", lambda m: silent_ent(m.group(0)), text)
+    def fix(m):
+        word, space, following = m.group(1), m.group(2), m.group(3)
+        if word.lower() in LIAISON_WORDS:
+            return m.group(0)
+        return unlink(word, following) + space
+    return re.sub(r"([\wÀ-ÿœ’']*(?:s|x|t|d|z))(\s+)(?=([aeiouyéèêàâîïôûœhAEIOUYÉÈÊÀÂÎÏÔÛŒH][\wÀ-ÿœ’']*))", fix, text)
 
 
 tts = rec = phonemizer = None
@@ -247,6 +306,6 @@ if __name__ == '__main__':
     report = {k: v for k, v in report.items() if k in wanted}
     json.dump(dict(sorted(report.items())), open(report_path, 'w'), ensure_ascii=False, indent=0)
     keys = sorted(k for k, v in report.items() if v['score'] >= KEEP and os.path.exists(os.path.join(out_dir, k + '.mp3')))
-    json.dump(keys, open(os.path.join(root, 'src', 'content', 'voiceManifest.json'), 'w'))
+    json.dump(keys, open(os.path.join(root, 'src', 'content', manifest_name), 'w'))
     left = [v for v in report.values() if v['score'] < KEEP]
     print(f'manifest: {len(keys)} clips; {len(left)} left to the device voice')
