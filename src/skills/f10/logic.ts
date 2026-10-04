@@ -49,7 +49,7 @@ export const f10Logic = createQcmSkill({
   avgItemSeconds: 18,
   generate: generateF10,
   readChoices: true,
-  speech: (item) => `${item.say} ${item.choices.join(' ; ')} ?`,
+  speech: (item) => `${item.say} ${item.choices.map((c) => `Est-ce que ça veut dire ${c} ?`).join(' ')}`,
   classify(item, answer) {
     const e = F10_BANK.find((x) => x.id === item.id);
     if (e && answer === e.opposite) return 'antonym';

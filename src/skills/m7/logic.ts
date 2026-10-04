@@ -94,6 +94,6 @@ export const m7Logic: SkillLogic<M7Item> = {
       tip: 'Faites colorier le nombre de parts entendu sur une bande partagée.',
     },
   },
-  speech: (item) => `${fractionWords(item)}.`,
+  speech: (item) => `La fraction est ${fractionWords(item)}. Je répète : ${fractionWords(item)}.`,
   choices: (item): Choice[] => item.choices.map((f) => ({ id: fractionId(f), label: `${f.n}/${f.d}` })),
 };

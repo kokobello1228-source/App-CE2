@@ -118,5 +118,6 @@ export const m1Logic: SkillLogic<M1Item> = {
       tip: 'Faites répéter le nombre entendu avant de l’écrire, puis relire le nombre écrit à voix haute.',
     },
   },
-  speech: (item) => `${frenchNumber(item.value)}. Je répète : ${frenchNumber(item.value)}.`,
+  // Never a number alone: inside a sentence, the voice says it clearly.
+  speech: (item) => `Le nombre à écrire est ${frenchNumber(item.value)}. Je répète : ${frenchNumber(item.value)}.`,
 };

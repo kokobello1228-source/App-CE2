@@ -46,7 +46,7 @@ export const f11Logic = createQcmSkill({
   avgItemSeconds: 16,
   generate: generateF11,
   readChoices: true,
-  speech: (item) => `${item.say} ${item.choices.join(' ; ')} ?`,
+  speech: (item) => `${item.say} ${item.choices.map((c) => `Voici le mot ${c}.`).join(' ')}`,
   errorTags: {
     radical: {
       label: 'Ne repère pas le radical commun (fleur → fleuriste, fleurir)',

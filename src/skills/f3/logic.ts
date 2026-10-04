@@ -8,8 +8,9 @@ import type { Choice, SkillLogic } from '../types';
  */
 export const F3_BANK = textBankSchema.parse(bankJson);
 
+/** Each choice in its own sentence: clips do not depend on the (random) order of the choices. */
 function readQuestion(item: TextQuestionItem): string {
-  return `${item.question} ${item.choices.join(' ; ')} ?`;
+  return `${item.question} ${item.choices.map((c) => `Réponse possible : ${c.replace(/[.!?…]+$/, '')}.`).join(' ')}`;
 }
 
 export const f3Logic: SkillLogic<TextQuestionItem> = {

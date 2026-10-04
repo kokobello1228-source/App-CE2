@@ -86,6 +86,24 @@ export function phoneticKey(text: string): string {
     .replace(/[sxtdzp]$/, '');
 }
 
+export const F2_EXPLANATION_KINDS = ['correct', 'accent', 'silent_letter', 'double_consonant', 'other'] as const;
+
+/** Explanation shown (and spelled aloud with letter names) after a dictated word. */
+export function f2Explanation(word: string, kind: (typeof F2_EXPLANATION_KINDS)[number]): string {
+  switch (kind) {
+    case 'correct':
+      return `Bravo ! « ${word} » s’écrit ${spell(word)}.`;
+    case 'accent':
+      return `On écrit « ${word} » avec un accent : ${spell(word)}.`;
+    case 'silent_letter':
+      return `On écrit « ${word} » : attention à la lettre muette à la fin, ${spell(word)}.`;
+    case 'double_consonant':
+      return `On écrit « ${word} » : regarde bien les lettres doublées, ${spell(word)}.`;
+    default:
+      return `On écrit « ${word} » : ${spell(word)}.`;
+  }
+}
+
 export const f2Logic: SkillLogic<F2Item> = {
   id: 'F2',
   instruction: 'Écoute bien le mot, puis écris-le. Le mot est dit deux fois.',
@@ -96,18 +114,9 @@ export const f2Logic: SkillLogic<F2Item> = {
   expectedAnswer: (item) => item.word,
   correctAnswerLabel: (item) => item.word,
   explain(item, answer) {
-    const word = item.word;
-    if (f2Logic.check(item, answer)) return `Bravo ! « ${word} » s’écrit ${spell(word)}.`;
-    switch (f2Logic.classifyError(item, answer)) {
-      case 'accent':
-        return `On écrit « ${word} » avec un accent : ${spell(word)}.`;
-      case 'silent_letter':
-        return `On écrit « ${word} » : attention à la lettre muette à la fin, ${spell(word)}.`;
-      case 'double_consonant':
-        return `On écrit « ${word} » : regarde bien les lettres doublées, ${spell(word)}.`;
-      default:
-        return `On écrit « ${word} » : ${spell(word)}.`;
-    }
+    if (f2Logic.check(item, answer)) return f2Explanation(item.word, 'correct');
+    const tag = f2Logic.classifyError(item, answer);
+    return f2Explanation(item.word, tag === 'accent' || tag === 'silent_letter' || tag === 'double_consonant' ? tag : 'other');
   },
   classifyError(item, answer) {
     if (f2Logic.check(item, answer)) return null;
@@ -151,5 +160,6 @@ export const f2Logic: SkillLogic<F2Item> = {
       tip: 'Dites le mot syllabe par syllabe et faites écrire chaque syllabe ; vérifiez ensemble lettre par lettre.',
     },
   },
-  speech: (item) => `${item.word}. ${item.sentence} ${item.word}.`,
+  // The word is always said inside a short sentence: alone, the neural voice garbles it.
+  speech: (item) => `Le mot à écrire est ${item.word}. ${item.sentence} Je répète : le mot ${item.word}.`,
 };

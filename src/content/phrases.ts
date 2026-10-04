@@ -1,5 +1,6 @@
 /** Phrases said by Plume (also pre-recorded with the natural voice). */
-export const CHEERS = ['Bravo !', 'Super !', 'Génial !', 'Excellent !', 'Trop fort !', 'Parfait !'];
+/** Never a single word: alone, the neural voice garbles it ("Excellent !" heard "assez lent"). */
+export const CHEERS = ['Bravo, c’est juste !', 'Super, bien joué !', 'Génial, tu as trouvé !', 'Excellent travail !', 'Trop fort, bravo !', 'Parfait, c’est ça !'];
 export const RETRY_TITLE = 'Presque ! Regarde bien.';
 export const HELLO = 'Bonjour !';
 export const MISSION_QUESTION = 'On part en mission aujourd’hui ?';

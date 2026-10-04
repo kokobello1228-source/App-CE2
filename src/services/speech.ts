@@ -1,7 +1,7 @@
 import * as Speech from 'expo-speech';
 import { Platform } from 'react-native';
 import manifest from '../content/voiceManifest.json';
-import { clipKey, segments } from './voiceClips';
+import { clipKey, segments, spokenForm } from './voiceClips';
 
 /**
  * Single entry point for speech synthesis (French voice).
@@ -15,7 +15,7 @@ let useNatural = true;
 const CLIPS = new Set<string>(manifest as string[]);
 let player: HTMLAudioElement | null = null;
 /** Bumped whenever the clips are re-recorded, so devices do not replay the old voice. */
-const VOICE_VERSION = 2;
+const VOICE_VERSION = 3;
 /** A tiny silent MP3, played on the first touch to unlock audio in Safari. */
 const SILENCE = 'data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABgAAAowAZmZmZmZmZmZmZmZmZmZmZoWFhYWFhYWFhYWFhYWFhYWFo6Ojo6Ojo6Ojo6Ojo6Ojo8LCwsLCwsLCwsLCwsLCwsLC4eHh4eHh4eHh4eHh4eHh4eH/////////////////////AAAAAExhdmM2MC4zMQAAAAAAAAAAAAAAACQCowAAAAAAAAKMPp3BgAAAAAAAAAAAAAAAAAD/8zDEAAAAA0gAAAAATEFNRVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/8zLEQQAAA0gAAAAAVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MwxIMAAANIAAAAAFVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MyxL0AAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zMMS+AAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zMMS+AAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==';
 
@@ -48,7 +48,7 @@ export function setNaturalVoice(value: boolean): void {
 
 /** Clip keys for a text, or null if one segment has no recording. */
 export function clipsFor(text: string): string[] | null {
-  const keys = segments(text).map(clipKey);
+  const keys = segments(spokenForm(text)).map(clipKey);
   return keys.length > 0 && keys.every((k) => CLIPS.has(k)) ? keys : null;
 }
 
@@ -192,7 +192,7 @@ export async function speak(text: string, override?: VoiceOverride): Promise<voi
   if (current !== generation) return;
   const overrideVoice = override?.voiceId ? voices.find((v) => v.identifier === override.voiceId)?.identifier : undefined;
   await new Promise<void>((resolve) => {
-    Speech.speak(text, {
+    Speech.speak(spokenForm(text), {
       language: 'fr-FR',
       voice: overrideVoice ?? voiceId,
       rate,

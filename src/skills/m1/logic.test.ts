@@ -26,7 +26,7 @@ describe('M1 generator', () => {
 
 describe('M1 speech, checking and errors', () => {
   it('reads the number in words, twice', () => {
-    expect(m1Logic.speech(item(97))).toBe('quatre-vingt-dix-sept. Je répète : quatre-vingt-dix-sept.');
+    expect(m1Logic.speech(item(97))).toBe('Le nombre à écrire est quatre-vingt-dix-sept. Je répète : quatre-vingt-dix-sept.');
   });
   it.each([
     [904, '9004', 'written_as_heard'],

@@ -37,8 +37,8 @@ export function generateF12(level: Level, rng: Rng): QcmItem {
     choices: rng.shuffle([...adjective.forms]),
     answer,
     tag: `${noun.gender}${plural ? 'p' : 's'}`,
-    say: `${group.replace('……', '')}. Quel adjectif est bien accordé ?`,
-    explanation: `« ${nounText} » est ${GENDER_WORDS[noun.gender]} ${plural ? 'pluriel' : 'singulier'} (${det} ${nounText}) : ${rule}, ça donne « ${answer} ».`,
+    say: `${group.replace('……', '').replace(/\s+/g, ' ').trim()}. Quel adjectif est bien accordé ?`,
+    explanation: `« ${nounText} » est ${GENDER_WORDS[noun.gender]} ${plural ? 'pluriel' : 'singulier'} (${det} ${nounText}). Alors ${rule}, ça donne « ${answer} ».`,
   };
 }
 
