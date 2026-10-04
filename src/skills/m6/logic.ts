@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import { z } from 'zod';
 import { OFFICIAL_M6_TEXTS } from '../../content/officialItems';
 import type { Rng } from '../../engine/rng';
@@ -114,7 +115,7 @@ export const m6Logic: SkillLogic<M6Item> = {
   instruction: 'Écoute la décomposition. Trouve le nombre qui correspond.',
   avgItemSeconds: 18,
   schema,
-  generate: generateM6,
+  generate: pooled(generateM6),
   check: (item, answer) => Number(answer) === valueOf(item.parts),
   expectedAnswer: (item) => String(valueOf(item.parts)),
   correctAnswerLabel: (item) => String(valueOf(item.parts)),

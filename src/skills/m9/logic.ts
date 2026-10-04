@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import { z } from 'zod';
 import type { Rng } from '../../engine/rng';
 import { parseWholeNumber } from '../common';
@@ -100,7 +101,7 @@ export const m9Logic: SkillLogic<M9Item> = {
   instruction: 'Une plaque vaut 100 cubes, une barre vaut 10 cubes. Combien y a-t-il de cubes en tout ?',
   avgItemSeconds: 25,
   schema,
-  generate: generateM9,
+  generate: pooled(generateM9),
   check: (item, answer) => parseWholeNumber(answer) === totalOf(item),
   expectedAnswer: (item) => String(totalOf(item)),
   correctAnswerLabel: (item) => String(totalOf(item)),

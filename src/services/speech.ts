@@ -101,10 +101,8 @@ async function resolveVoice(): Promise<void> {
     voices = await Speech.getAvailableVoicesAsync();
     // Browsers load their voices late: try again next time if the list is still empty.
     voiceResolved = voices.length > 0;
-    const french = voices.filter((v) => v.language.replace('_', '-').toLowerCase().startsWith('fr-fr'));
     const chosen = chosenVoice ? voices.find((v) => v.identifier === chosenVoice) : undefined;
-    const best = chosen ?? french.find((v) => v.quality === Speech.VoiceQuality.Enhanced) ?? french[0];
-    voiceId = best?.identifier;
+    voiceId = chosen?.identifier ?? (await listFrenchVoices(voices))[0]?.identifier;
   } catch {
     voiceId = undefined;
   }
@@ -131,11 +129,15 @@ export interface FrenchVoice {
 /** Novelty voices shipped by Apple that are not suitable for school reading. */
 const NOVELTY = /^(eddy|flo|grandma|grandpa|grand-mère|grand-père|reed|rocky|sandy|shelley|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|kathy|ralph)\b/i;
 
-/** French voices available on this device, best first (France before other French). */
-export async function listFrenchVoices(): Promise<FrenchVoice[]> {
-  let voices: Speech.Voice[] = [];
+/** Female voices first: closest to Plume (the default iPhone voice, Thomas, is a man's). */
+const FEMALE = /\b(audrey|aurélie|aurelie|marie|amélie|amelie|google français|céline|celine|julie|hortense|denise|vivienne|eloise|élodie|chantal|virginie|sylvie|léa|lea)\b/i;
+const MALE = /\b(thomas|daniel|nicolas|jacques|henri|paul|claude|antoine|jean|mathieu|remy|rémy|guillaume|olivier)\b/i;
+
+/** French voices available on this device, best first (female, enhanced, France before other French). */
+export async function listFrenchVoices(known?: Speech.Voice[]): Promise<FrenchVoice[]> {
+  let voices: Speech.Voice[] = known ?? [];
   // Browsers load their voices late: try a few times.
-  for (let attempt = 0; attempt < 6 && voices.length === 0; attempt++) {
+  for (let attempt = 0; !known && attempt < 6 && voices.length === 0; attempt++) {
     try {
       voices = await Speech.getAvailableVoicesAsync();
     } catch {
@@ -155,7 +157,10 @@ export async function listFrenchVoices(): Promise<FrenchVoice[]> {
     });
   }
   const score = (v: FrenchVoice) =>
-    (v.language.toLowerCase() === 'fr-fr' ? 0 : 2) + (v.enhanced ? 0 : 1) + (NOVELTY.test(v.name) ? 10 : 0);
+    (FEMALE.test(v.name) ? 0 : MALE.test(v.name) ? 4 : 2) +
+    (v.language.toLowerCase() === 'fr-fr' ? 0 : 1) +
+    (v.enhanced ? 0 : 1) +
+    (NOVELTY.test(v.name) ? 20 : 0);
   return [...unique.values()].sort((a, b) => score(a) - score(b) || a.name.localeCompare(b.name));
 }
 

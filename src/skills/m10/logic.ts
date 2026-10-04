@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import type { z } from 'zod';
 import type { Rng } from '../../engine/rng';
 import { additionFactSchema, displayFact, expectedFact, makeFact, type AdditionFact } from '../additionFact';
@@ -80,7 +81,7 @@ export const m10Logic: SkillLogic<M10Item> = {
   instruction: 'Calcule le plus vite possible et écris le nombre qui manque.',
   avgItemSeconds: 8,
   schema,
-  generate: generateM10,
+  generate: pooled(generateM10),
   check: (item, answer) => parseWholeNumber(answer) === expectedM10(item),
   expectedAnswer: (item) => String(expectedM10(item)),
   correctAnswerLabel: (item) => `${item.a} + ${item.b} = ${item.total}`,

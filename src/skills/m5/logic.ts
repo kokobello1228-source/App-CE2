@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import type { Rng } from '../../engine/rng';
 import {
   columnOpSchema, digit, digitCount, isOfficial, leftAligned, makeColumnOp, randomWithDigits, resultOf,
@@ -33,7 +34,7 @@ export const m5Logic: SkillLogic<ColumnOpItem> = {
   instruction: 'Calcule la soustraction posée. Commence par la colonne des unités.',
   avgItemSeconds: 35,
   schema: columnOpSchema,
-  generate: generateM5,
+  generate: pooled(generateM5),
   check: (item, answer) => parseWholeNumber(answer) === resultOf(item),
   expectedAnswer: (item) => String(resultOf(item)),
   correctAnswerLabel: (item) => `${item.terms[0]} − ${item.terms[1]} = ${resultOf(item)}`,

@@ -128,8 +128,27 @@ def spelled_tail(text):
     return ', '.join(tail) if len(tail) >= 2 else None
 
 
+def numbers_heard(text, heard, heard_sounds):
+    """Every number written in digits must be heard, and no other number (137 never heard as 147)."""
+    from collections import Counter
+    expected = [int(n) for n in re.findall(r'\d+', text)]
+    if not expected:
+        return True  # numbers written in words are checked by KEY_PATTERNS and by the sounds
+    from num2words import num2words
+    words = ' ' + ' '.join(re.findall(r"[\w’']+", text.lower().replace('-', ' '))) + ' '
+    got = [int(n) for n in re.findall(r'\d+', heard)]
+    extra = Counter(got) - Counter(expected)
+    # a number heard in digits but written in words in the text ("trois dixièmes" heard "3 dixièmes") is fine
+    if any(f" {num2words(n, lang='fr').replace('-', ' ')} " not in words for n in extra):
+        return False
+    # A number may also be written in words by the recogniser: the sound comparison covers it.
+    return True
+
+
 def score(text, heard):
     heard_sounds = sounds(heard)
+    if not numbers_heard(text, heard, heard_sounds):
+        return 0.0
     spelled = spelled_tail(text)
     if spelled and sounds(spelled) not in heard_sounds:
         return 0.0  # every spelled letter must be heard

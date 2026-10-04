@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import { z } from 'zod';
 import type { Rng } from '../../engine/rng';
 import { OFFICIAL_M3_LINES } from '../../content/officialItems';
@@ -114,7 +115,7 @@ export const m3Logic: SkillLogic<M3Item> = {
   instruction: 'Regarde bien la ligne graduée. Écris le nombre qui correspond à la flèche.',
   avgItemSeconds: 25,
   schema,
-  generate: generateM3,
+  generate: pooled(generateM3),
   check: (item, answer) => parseWholeNumber(answer) === expectedM3(item),
   expectedAnswer: (item) => String(expectedM3(item)),
   correctAnswerLabel: (item) => String(expectedM3(item)),

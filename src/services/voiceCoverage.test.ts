@@ -4,6 +4,9 @@ import { SKILL_LOGIC } from '../skills/registry';
 import { F2_BANK, F2_EXPLANATION_KINDS, f2Explanation, f2Logic } from '../skills/f2/logic';
 import { f3Logic } from '../skills/f3/logic';
 import { m1Logic } from '../skills/m1/logic';
+import { generateM2, m2Logic } from '../skills/m2/logic';
+import { generateM5, m5Logic } from '../skills/m5/logic';
+import { poolItems } from '../skills/pool';
 import { clipsFor } from './speech';
 import { MIN_SEGMENT_WORDS, segments, spokenForm } from './voiceClips';
 
@@ -28,6 +31,12 @@ describe('natural voice coverage', () => {
     const block = f3Logic.generateBlock!(2, createRng(3), 6);
     // A question is read by Plume only if all its choices were understood: a few short ones fall back.
     expect(share(block.map((q) => f3Logic.speech(q)!))).toBeGreaterThan(0.5);
+  });
+  it('records almost all math problems and explanations (fixed pools)', () => {
+    const problems = poolItems(generateM2, 2);
+    expect(share(problems.map((i) => m2Logic.speech(i)!))).toBeGreaterThan(0.85);
+    expect(share(problems.map((i) => m2Logic.explain(i, '')))).toBeGreaterThan(0.85);
+    expect(share(poolItems(generateM5, 3).map((i) => m5Logic.explain(i, '')))).toBeGreaterThan(0.85);
   });
   it('falls back to the device voice for texts computed on the fly', () => {
     expect(clipsFor('Léa a 137 billes et 58 cartes.')).toBeNull();

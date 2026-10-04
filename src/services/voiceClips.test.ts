@@ -31,4 +31,8 @@ describe('spoken form', () => {
     expect(spokenForm('Peut-être, a-t-il vingt-deux ans ?')).toBe('Peut-être, a-t-il vingt-deux ans ?');
     expect(spokenForm('3 dizaines + 4 unités')).toBe('3 dizaines plus 4 unités');
   });
+  it('reads calculations in words', () => {
+    expect(spokenForm('6 − 3 = 3, et 2 × 4 = 8.')).toBe('6 moins 3 égale 3, et 2 fois 4 égale 8.');
+    expect(spokenForm('Il paie 12 €.')).toBe('Il paie 12 euros.');
+  });
 });

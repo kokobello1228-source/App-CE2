@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import type { Rng } from '../../engine/rng';
 import {
   columnOpSchema, concatenatedColumns, digit, hasCarry, isOfficial, leftAligned, makeColumnOp, randomWithDigits,
@@ -50,7 +51,7 @@ export const m4Logic: SkillLogic<ColumnOpItem> = {
   instruction: 'Calcule l’addition posée. Commence par la colonne des unités. Tu peux noter les retenues en touchant les petites cases.',
   avgItemSeconds: 40,
   schema: columnOpSchema,
-  generate: generateM4,
+  generate: pooled(generateM4),
   check: (item, answer) => parseWholeNumber(answer) === resultOf(item),
   expectedAnswer: (item) => String(resultOf(item)),
   correctAnswerLabel: (item) => `${item.terms.join(' + ')} = ${resultOf(item)}`,

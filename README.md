@@ -19,7 +19,9 @@ erreurs types et conseils pour le parent. Aucun item officiel n'est réutilisé 
 
 Interface : Plume la chouette accompagne l'enfant (consignes, encouragements), boutons « 3D », confettis et petits sons de réussite.
 Voix : voix naturelle pré-enregistrée (Piper « UPMC », voix « Jessica », CC-BY-SA 4.0, adoucie et sans écho) pour les
-consignes, dictées, textes et corrections ; voix de l'appareil pour les phrases calculées à la volée.
+consignes, dictées, textes, problèmes, calculs et corrections. Les compétences de maths à nombres aléatoires tirent leurs
+exercices d'une réserve fixe (80 par niveau, `src/skills/pool.ts`) : tout ce qui peut être dit est enregistré à l'avance.
+Pour les rares phrases restantes, la voix de l'appareil (voix féminine choisie en priorité).
 Règles de prononciation : jamais de mot ou de nombre dit seul (« Le mot à écrire est cabane. »), épellation avec le nom des
 lettres (« p, o, deux m, e »). Chaque enregistrement est réécouté par une reconnaissance vocale (Whisper) : jusqu'à 6 prises,
 on garde la plus fidèle ; un texte jamais bien compris est lu par la voix de l'appareil (`scripts/voice/report.json`).

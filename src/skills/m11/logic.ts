@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import type { z } from 'zod';
 import { OFFICIAL_M11_FACTS } from '../../content/officialItems';
 import type { Rng } from '../../engine/rng';
@@ -88,7 +89,7 @@ export const m11Logic: SkillLogic<M11Item> = {
   instruction: 'Calcule dans ta tête le plus vite possible et écris le nombre qui manque.',
   avgItemSeconds: 10,
   schema,
-  generate: generateM11,
+  generate: pooled(generateM11),
   check: (item, answer) => parseWholeNumber(answer) === expectedFact(item),
   expectedAnswer: (item) => String(expectedFact(item)),
   correctAnswerLabel: (item) => `${item.a} + ${item.b} = ${item.total}`,

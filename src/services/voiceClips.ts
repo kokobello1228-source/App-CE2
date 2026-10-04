@@ -47,13 +47,17 @@ export function spellAloud(letters: string[]): string {
 
 /**
  * What must be said for a displayed text: spelled words ("c-a-b-a-n-e") become
- * letter names and " + " becomes "plus". Applied before every reading, so the
- * device voice benefits too.
+ * letter names and calculations are read in words ("6 − 3 = 3" -> "6 moins 3 égale 3").
+ * Applied before every reading, so the device voice benefits too.
  */
 export function spokenForm(text: string): string {
   return text
     .replace(/(?<![\p{L}-])\p{L}(?:-\p{L})+(?!-?\p{L})/gu, (spelled) => spellAloud(spelled.split('-')))
-    .replace(/\s\+\s/g, ' plus ');
+    .replace(/\s\+\s/g, ' plus ')
+    .replace(/\s[−-]\s/g, ' moins ')
+    .replace(/\s×\s/g, ' fois ')
+    .replace(/\s=\s/g, ' égale ')
+    .replace(/(\d)\s?€/g, (_, d: string) => `${d} euros`);
 }
 
 const wordCount = (text: string) => text.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;

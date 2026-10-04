@@ -23,6 +23,15 @@ import { m7Logic } from '../../src/skills/m7/logic';
 import { m8Logic } from '../../src/skills/m8/logic';
 import { textQuestionSchema, questionItem } from '../../src/skills/textQuestions';
 import { SKILL_LOGIC } from '../../src/skills/registry';
+import { poolItems } from '../../src/skills/pool';
+import { generateM2 } from '../../src/skills/m2/logic';
+import { generateM3 } from '../../src/skills/m3/logic';
+import { generateM4 } from '../../src/skills/m4/logic';
+import { generateM5 } from '../../src/skills/m5/logic';
+import { generateM6 } from '../../src/skills/m6/logic';
+import { generateM9 } from '../../src/skills/m9/logic';
+import { generateM10 } from '../../src/skills/m10/logic';
+import { generateM11 } from '../../src/skills/m11/logic';
 import type { AnySkillLogic, ItemBase } from '../../src/skills/types';
 
 const texts = new Map<string, string>();
@@ -96,7 +105,16 @@ for (const adj of ADJECTIVES) for (const gender of ['m', 'f'] as const) for (con
   add(`Alors ${rule}, ça donne « ${adjectiveForm(adj, gender, plural)} ».`);
 }
 // M1 numbers (M6 decompositions are computed: device voice), M7 / M8 fractions
-for (let n = 0; n <= 999; n++) add(m1Logic.speech({ key: 'x', level: 1, value: n }));
+for (let n = 0; n <= 999; n++) {
+  add(m1Logic.speech({ key: 'x', level: 1, value: n }));
+  add(m1Logic.explain({ key: 'x', level: 1, value: n }, ''));
+}
+// Math skills with random numbers: every item of their fixed pools (problems and explanations)
+const POOLED = { M2: generateM2, M3: generateM3, M4: generateM4, M5: generateM5, M6: generateM6, M9: generateM9, M10: generateM10, M11: generateM11 };
+for (const [id, generate] of Object.entries(POOLED)) {
+  const logic = SKILL_LOGIC[id as keyof typeof SKILL_LOGIC] as unknown as AnySkillLogic;
+  for (const level of [1, 2, 3] as const) for (const item of poolItems(generate as (l: 1 | 2 | 3, r: ReturnType<typeof createRng>) => ItemBase, level)) say(logic, item);
+}
 for (const d of DENOMINATORS) for (let n = 1; n <= d; n++) {
   const m7 = { key: 'x', level: 1 as const, n, d, choices: [] };
   add(m7Logic.speech(m7));

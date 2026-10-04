@@ -1,3 +1,4 @@
+import { pooled } from '../pool';
 import { z } from 'zod';
 import { NAMES, TEMPLATES, type ProblemType } from '../../content/fr/m2Templates';
 import type { Rng } from '../../engine/rng';
@@ -198,7 +199,7 @@ export const m2Logic: SkillLogic<M2Item> = {
   instruction: 'Écoute bien le problème. Il est lu deux fois. Tu peux chercher dans le brouillon, puis choisis le bon nombre.',
   avgItemSeconds: 70,
   schema,
-  generate: generateM2,
+  generate: pooled(generateM2),
   check: (item, answer) => Number(answer) === item.answer && answer !== '',
   expectedAnswer: (item) => String(item.answer),
   correctAnswerLabel: (item) => String(item.answer),
